@@ -1,0 +1,513 @@
+#main-container {
+    padding: 120px 60px 0 60px;
+}
+
+/* Section 1 top card */
+.section-1-top-card-container {
+    display: flex;
+    justify-content: center;
+}
+
+.main-top-card {
+    width: 90%;
+    height: 80vh;
+    background-color: var(--grey-2-background);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.top-card-text {
+    padding: 220px 60px 60px 60px;
+    border-radius: 25px 0 0 25px;
+    font-size: 2.5em;
+    width: 45%;
+    color: white;
+}
+
+.top-card-text p span {
+    color: var(--blue-background);
+    flex-wrap: wrap;
+}
+
+.top-card-button {
+    background-color: #fff;
+    padding: 10px 40px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.top-card-button:hover {
+    background-color: rgba(255, 255, 255, 0.578);
+}
+
+/* Top vertical slider*/
+.top-card-vertical-slider {
+    border-radius: 0 25px 25px 0;
+    background-color: var(--blue-background);
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Fim top vertical slider */
+/* Fim section 1 top card */
+
+/* Section 2 */
+.section-2-main-container {
+    margin: 110px 0 0 0;
+}
+
+.section-2-cards-container {
+    margin: 50px 0 0 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.section-2-card-1, .section-2-card-2, .section-2-card-3, .section-2-card-4 {
+    width: 280px;
+    background-color: #f6f6f6;
+    border-radius: 0 0 20px 20px;
+}
+
+.section-2-card-1 img, .section-2-card-2 img, .section-2-card-3 img, .section-2-card-4 img {
+    width: 100%;
+}
+
+.card-description {
+    background-color: var(--blue-background);
+    padding: 20px;
+    border-radius: 20px;
+}
+/* Fim section 2 */
+
+/* Sessão 3 */
+.section-3-main-container {
+    margin: 110px 0 0 0;
+    background-color: var(--grey-1-background);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 20px;
+    padding: 30px 0 0 0;
+}
+
+.section-3-main-container img {
+    width: 450px;
+}
+
+.section-3-initial-items {
+    width: 500px;
+    padding: 80px 20px;
+}
+
+.section-3-initial-items > h1 {
+    font-size: 3em;
+    color: var(--blue-background);
+}
+
+.section-3-initial-items p {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.playstore-appstore-icons img {
+    margin: 50px 0 0 0;
+    width: 180px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.playstore-appstore-icons img:hover {
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+.playstore-appstore-icons img:not(:last-child) {
+    margin: 0 20px 0 0;
+}
+/* Fim sessão 3 */
+
+/* Sessão 4 */
+.section-4-main-container {
+    margin: 110px 0 0 0;
+}
+
+.section-4-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-4-header button {
+    border: 1px solid var(--blue-background);
+    border-radius: 20px;
+    padding: 6px 15px;
+    cursor: pointer
+}
+
+.section-4-header button:hover {
+    background-color: #0055ff5c;
+}
+
+.section-4-cards-container {
+    margin: 50px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.section-4-card-1, .section-4-card-2, .section-4-card-3, .section-4-card-4 {
+    background-color: var(--grey-1-background);
+    border-radius: 20px;
+    padding: 20px 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-4-card-description {
+    margin: 15px 0 0 0;
+}
+
+.section-4-card-icon {
+    width: 30px;
+}
+/* Fim sessão 4 */
+
+/* Sessão 5 */
+.section-5-main-container {
+    margin: 110px 0 0 0;
+}
+
+.section-5-contents {
+    display: flex;
+    justify-content: space-around;
+}
+
+.section-5-contents h3 {
+    color: var(--blue-background);
+}
+
+.section-5-content-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section-5-range-1 {
+    margin: 0 0 20px 0;
+}
+
+input[type=range] {
+    background-color: var(--grey-1-background);
+    width: 100%;
+    height: 2px;
+}
+
+.section-5-range-description {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 12px;
+    color: var(--font-description-grey);
+}
+
+.section-5-range-description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.section-5-range-observation {
+    font-size: 12px;
+}
+
+.section-5-info-content {
+    background-color: var(--grey-1-background);
+    padding: 40px 90px;
+    border-radius: 25px 25px 0 0;
+    text-align: center;
+}
+
+.section-5-info-container h3 {
+    color: var(--blue-background);
+}
+
+.section-5-info-footer {
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 0 0 25px 25px;
+    background-color: var(--blue-background);
+    width: 100%;
+    color: white;
+}
+
+.info-content-1, .info-content-2 {
+    margin: 0 0 20px 0;
+} 
+/* Fim sessão 5 */
+
+/* Sessão 6 */
+.section-6-main-container {
+    margin: 110px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.section-6-card {
+    width: 90%;
+    height: 80vh;
+    background-color: var(--blue-background);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section-6-card-text {
+    border-radius: 25px 0 0 25px;
+    width: 45%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-6-card-text h1 {
+    font-size: 2.3em;
+}
+
+.section-6-card-text p {
+    font-size: 13px;
+}
+
+.section-6-card-text input[type=tel] {
+    border: 1px solid white;
+    background-color: var(--blue-background);
+    color: white;
+    width: 185px;
+    margin: 20px 0 0 0;
+    padding: 10px 15px;
+    border-radius: 30px;
+}
+
+.section-6-card-text input[type=tel]:focus {
+    border: none;
+}
+
+.section-6-card-text a {
+    margin: 15px 0 0 0;
+    color: white;
+    width: 65px;
+}
+
+.section-6-card-vertical-slider {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.section-6-card-vertical-slider img {
+    width: 400px;
+}
+/* Fim sessão 6 */
+
+/* Sessão 7 */
+.section-7-main-container {
+    margin: 110px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.section-7-card {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 500px;
+    min-width: 500px;
+}
+
+.section-7-left-card {
+    background-color: var(--grey-2-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 25px;
+    padding: 60px 50px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.section-7-left-card h1 {
+    color: #fff;
+    font-weight: 200;
+    font-size: 2em;
+}
+
+.text-box-container {
+    width: 100%;
+    position: relative;
+}
+
+.text-box-container input[type=number] {
+    width: 100%;
+    height: 70px;
+    border-radius: 20px;
+    border: 1px solid var(--blue-background);
+    padding: 40px 20px 20px 20px;
+    font-size: 18px;
+}
+
+.manual-placeholder {
+    color: var(--font-description-grey);
+    position: absolute;
+    left: 20px;
+    top: 0;
+    font-size: 20px;
+}
+
+.text-box-buttons-container {
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.text-box-buttons-container button {
+    border-radius: 30px;
+    padding: 3px 15px;
+    border: 0;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.text-box-buttons-container button:hover {
+    background-color: var(--blue-background);
+    color: #fff;
+}
+
+.text-box-buttons-container button:focus {
+    background-color: var(--blue-background);
+    color: #fff;
+}
+
+.section-7-left-card {
+    color: var(--font-description-grey);
+    font-size: 13px;
+}
+
+.section-7-right-card {
+    width: 100%;
+    border-radius: 25px;
+    background-color: var(--grey-1-background);
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-card-table-values-container {
+    width: 100%;
+}
+
+.table-row-title {
+    font-weight: 600;
+    margin: 15px 0 15px 0;
+}
+
+.table-row-title p, .table-comment p {
+    color: var(--grey-2-background);
+}
+
+.table-row {
+    font-size: 1.2em;
+}
+
+.table-row p:last-child {
+    color: var(--blue-background);
+}
+
+.table-row-title, .table-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-comment {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+/* Fim sessão 7 */
+
+/* Sessão 8 */
+.section-8-main-container {
+    margin: 110px 0 110px 0;
+}
+
+.newsletter-title {
+    margin: 0 0 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newsletter-button {
+    padding: 8px 20px;
+    background-color: var(--blue-background);
+    border: 0;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.newsletter-button:hover {
+    background-color: #0055ffa2;
+}
+
+.section-8-cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.section-8-card {
+    height: 400px;
+    width: 360px;
+    background-color: var(--grey-1-background);
+    padding: 30px 25px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-date-container::before {
+    content: " ";
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.645);
+    position: absolute;
+    top: 0;
+}
+
+.card-date-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 25px 0 0 0 ;
+}
+
+.card-date-container h1 {
+    font-size: 2.5em;
+    color: var(--blue-background);
+}
+/* Fim sessão 8 */

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>citybens | do seu jeito.</title>
+    <link rel="stylesheet" href="css/{{style.default}}">
+    <link rel="stylesheet" href="css/{{style.header}}">
+    <link rel="stylesheet" href="css/{{style.content}}">
+    <link rel="stylesheet" href="css/{{style.footer}}">
+</head>
+<body>
+    {{> header}}
+
+    {{{ body }}}
+
+    {{> footer}}
+    <script src="script/phonemask.min.js">;</script>
+    <script>const cssPhone = 'input[name="phone"'; (new phoneMask()).init(cssPhone);</script>
+</body>
+</html>
