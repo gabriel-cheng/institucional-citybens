@@ -83,22 +83,22 @@
                 <div class="section-5-range-container">
                     <div class="section-5-range-1">
                         <p>Valor a pagar</p>
-                        <h3 class="value">R$ 75.000</h3>
-                        <input type="range" name="range-1" id="range-1">
+                        <h3 class="h3-valor-pagar">R$ 130.000,00</h3>
+                        <input value="130000" class="input-pagar" min="40000" max="130000" step="1000" type="range" name="range-1">
                         <div class="section-5-range-description">
-                            <p>R$ 50.000</p>
-                            <p>R$ 75.000</p>
-                            <p>R$200.000</p>
+                            <p>R$ 40.000,00</p>
+                            <p>R$ 85.000,00</p>
+                            <p>R$ 130.000,00</p>
                         </div>
                     </div>
                     <div class="section-5-range-2">
-                        <p>Parcelas</p>
-                        <h3>24 parcelas</h3>
-                        <input type="range" name="range-2" id="range-2">
+                        <p>Valor de parcelas</p>
+                        <h3 class="h3-valor-parcelas">R$ 6.600,00</h3>
+                        <input value="6600" class="input-parcelas" min="600" max="6600" step="600" type="range" name="range-2">
                         <div class="section-5-range-description">
-                            <p>12 parcelas</p>
-                            <p>24 parcelas</p>
-                            <p>48 parcelas</p>
+                            <p>R$ 600,00</p>
+                            <p>R$ 3.600,00</p>
+                            <p>R$ 6.600,00</p>
                         </div>
                     </div>
                 </div>
@@ -106,25 +106,23 @@
                     <p>*Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
             </div>
-            <div class="section-5-info-container">
+            <form action="/disponibilidade" method="POST" class="section-5-info-container">
                 <div class="section-5-info-content">
                     <div class="info-content-1">
-                        <p>Default percent</p>
-                        <h3>Percentual: 18.0%</h3>
+                        <h1>Visualizar valores</h1>
+                        {{!-- <h3>Percentual: 18.0%</h3> --}}
                     </div>
                     <div class="info-content-2">
                         <p>Total a pagar</p>
-                        <h3>Valor: $75.000,00</h3>
+                        <input name="valorPagar" type="text" id="display_pagar" value="R$ 130.000,00" readonly>
                     </div>
                     <div class="info-content-3">
                         <p>Parcelas</p>
-                        <h3>24 parcelas</h3>
+                        <input name="valorParcelas" type="text" id="display_parcelas" value="R$ 6.600,00" readonly>
                     </div>
                 </div>
-                <div class="section-5-info-footer">
-                    <p>Lorem ipsum dolor set</p>
-                </div>
-            </div>
+                <input type="submit" class="section-5-input" value="Verificar disponibilidade">
+            </form>
         </div>
     </section>
     <section class="section-6-main-container">
@@ -133,7 +131,7 @@
                 <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <input type="tel" id="phone" name="phone" value="+55 (__) _____ - ____" mask="+55 (__) _____ - ____" placeholder="+55 (__) _____ - ____" />
-                <a href="#">lorem &#8827;</a>
+                <a href="#">lorem →</a>
             </div>
             <div class="section-6-card-vertical-slider">
                 <img src="images/background/section-6/cell-app-screen.png" alt="apps na tela">
