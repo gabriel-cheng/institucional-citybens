@@ -228,6 +228,10 @@ input[type=range] {
     font-size: 12px;
 }
 
+.section-5-info-container h3 {
+    color: var(--blue-background);
+}
+
 .section-5-info-content {
     background-color: var(--grey-1-background);
     padding: 40px 90px;
@@ -235,42 +239,34 @@ input[type=range] {
     text-align: center;
 }
 
-.section-5-info-container input[type=text] {
-    /* border: 0; */
-    background-color: var(--grey-1-background);
-    color: var(--blue-background);
-    font-size: 16px;
-}
-
 .section-5-input {
-    border: 0;
     text-align: center;
     padding: 20px 0;
     border-radius: 0 0 25px 25px;
     background-color: var(--blue-background);
     width: 100%;
     color: white;
-    font-size: 18px;
     cursor: pointer;
+    border: 0;
+    font-size: 18px;
 }
 
 .section-5-input:hover {
-    background-color: #0055ffc6;
+    background-color: #0055ffdc;
 }
 
 .info-content-1, .info-content-2 {
     margin: 0 0 20px 0;
 }
 
-.info-content-1 h1 {
-    color: var(--blue-background);
-}
-
 #display_pagar, #display_parcelas {
+    width: 180px;
+    font-size: 25px;
+    color: var(--blue-background);
     text-align: center;
     border: 0;
-    font-size: 2em;
-    width: 220px;
+    background-color: rgba(0, 0, 0, 0);
+    font-weight: 550;
 }
 /* Fim sessão 5 */
 
