@@ -10,27 +10,31 @@ function formatoBRL(n, c, d, t) {
     return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 }
 
-function mostrarValores(input, saida) {
-    input.addEventListener('input', () => {
-        const value = input.value;
-        saida.innerHTML = `R$ ${formatoBRL(value)}`;
-    });
-}
-
-mostrarValores(inputValor, h3ValorPagar);
-mostrarValores(inputParcelas, h3ValorParcelas);
-
-function formDisponibilidade(input, display) {
-    try {
+(function() {
+    function mostrarValores(input, saida) {
         input.addEventListener('input', () => {
-            display.value = `R$ ${formatoBRL(input.value)}`;
-        });
-    } catch {
-        input.addEventListener('change', () => {
-            display.innerHTML = `R$ ${formatoBRL(input.value)}`;
+            const value = input.value;
+            saida.innerHTML = `R$ ${formatoBRL(value)}`;
         });
     }
-}
+    
+    mostrarValores(inputValor, h3ValorPagar);
+    mostrarValores(inputParcelas, h3ValorParcelas);
+})();
 
-formDisponibilidade(inputValor, displayPagar);
-formDisponibilidade(inputParcelas, displayParcelas);
+(function() {
+    function formDisponibilidade(input, display) {
+        try {
+            input.addEventListener('input', () => {
+                display.value = `R$ ${formatoBRL(input.value)}`;
+            });
+        } catch {
+            input.addEventListener('change', () => {
+                display.innerHTML = `R$ ${formatoBRL(input.value)}`;
+            });
+        }
+    }
+    
+    formDisponibilidade(inputValor, displayPagar);
+    formDisponibilidade(inputParcelas, displayParcelas);
+})();
