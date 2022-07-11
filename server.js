@@ -17,15 +17,12 @@
 
     // Routes
     (function() {
-        app.get('/', (require, response) => {
-            response.render('content', {
-                style: {
-                    default: 'default.css',
-                    header: 'header.css',
-                    content: 'content.css',
-                    footer: 'footer.css',
-                }
-            });
+        app.post('/consorcio-dados', (require, response) => {
+            response.send('Dados recebidos!');
+        });
+
+        app.get('/consorcio', (require, response) => {
+            response.render('consorcio', styles);
         });
 
         app.post('/disponibilidade', (require, response) => {
@@ -33,8 +30,15 @@
                 '<h1>Recebi seus dados!</h1><br><br>' +
                 `Valor: ${require.body.valorPagar}<br>` +
                 `Parcelas: ${require.body.valorParcelas}`
-            );
+                );
+            });
+
+        app.get('/', (require, response) => {
+            response.render('content', styles);
         });
+
+        const styles = {default: 'default.css'}
+
     })();
 
     // Port config
