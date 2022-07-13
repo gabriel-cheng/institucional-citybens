@@ -30,8 +30,8 @@
                 '<h1>Recebi seus dados!</h1><br><br>' +
                 `Valor: ${require.body.valorPagar}<br>` +
                 `Parcelas: ${require.body.valorParcelas}`
-                );
-            });
+            );
+        });
 
         app.get('/', (require, response) => {
             response.render('content', styles);

@@ -1,7 +1,6 @@
 const dropbox = document.querySelector('#input-drop');
 const droplist = document.querySelector('.dropDown');
-const dropItem = document.querySelector('.item');
-const arrows = document.querySelector('.arrow');
+const arrows = document.querySelector('#paranaue');
 
 // Events
 (function() {
@@ -13,6 +12,4 @@ const arrows = document.querySelector('.arrow');
 
     includeEvent(dropbox, 'focus', 'block');
     includeEvent(dropbox, 'blur', 'none');
-    includeEvent(arrows, 'focus', 'block');
-    includeEvent(arrows, 'blur', 'none');
 })();
