@@ -1,5 +1,12 @@
 #consorcio-main-container {
-    margin: 120px 0 0 0;
+    margin: 170px 0 0 0;
+}
+
+.consorcio-sections {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #input-drop {
@@ -27,11 +34,6 @@
     width: 20px;
 }
 
-.arrow-down {
-    position: absolute;
-    top: 10px;
-}
-
 #input-drop:focus {
     outline: none;
 }
@@ -39,6 +41,59 @@
 #input-drop, .consorcio-btn {
     height: 55px;
 }
+
+.consorcio-sections, #form-sonho, .consorcior-image-container, .consorcio-images {
+    height: 500px;
+}
+
+#form-sonho {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.consorcio-title h1 {
+    color: var(--blue-background);
+    font-size: 4em;
+    width: 500px;
+}
+
+.consorcio-description {
+    font-size: 25px;
+    color: var(--font-description-grey);
+}
+
+.consorcio-images {
+    width: 450px;
+    border-radius: 15px;
+}
+
+/* Error */
+.text-error {
+    color: red;
+}
+
+.input-error {
+    border: 2px solid red !important;
+}
+
+.btn-error {
+    border: 2px solid red !important;
+    border-left: 0 !important;
+    color: red !important;
+}
+
+.btn-error:hover {
+    background-color: red !important;
+    color: #fff !important;
+}
+
+.error-message {
+    position: absolute;
+    top: -30px;
+}
+/* End error */
 
 .consorcio-btn {
     position: absolute;
@@ -55,13 +110,8 @@
     color: white;
 }
 
-.item {
-    color: var(--font-description-grey);
-}
-
-.item-span {
-    color: var(--blue-background);
-    font-weight: 600;
+.dropDown-container {
+    position: relative;
 }
 
 .dropDown {
@@ -74,6 +124,9 @@
     background-color: #dbe7e6;
     border-right: 0;
     display: none;
+    position: absolute;
+    bottom: 57px;
+    z-index: 1;
 }
 
 .dropDown::-webkit-scrollbar, .dropDown::-webkit-scrollbar-thumb, .dropDown::-webkit-scrollbar-track {
@@ -101,14 +154,15 @@
     background-color: rgb(0, 0, 0, 0);
     border-bottom: 1px solid var(--blue-background);
     border-top: 0;
-    padding: 10px;
+    padding: 0 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
+    color: var(--font-description-grey);
 }
 
-.item span {
-    margin: 0 0 0 5px;
+.item > div {
+    padding: 20px 0;
 }
 
 .item:last-child {
@@ -126,4 +180,8 @@
     text-align: center !important;
     color: var(--blue-background) !important;
     margin: 0 20px 0 0 !important;
+}
+
+.last_child_color {
+    color: var(--blue-background) !important;
 }

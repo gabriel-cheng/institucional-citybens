@@ -18,7 +18,7 @@
     // Routes
     (function() {
         app.post('/consorcio-dados', (require, response) => {
-            response.send('Dados recebidos!');
+            response.send(`Sonho recebido, seu sonho é:<br> ${require.body.sonho}`);
         });
 
         app.get('/consorcio', (require, response) => {
