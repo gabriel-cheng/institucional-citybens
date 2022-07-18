@@ -23,6 +23,7 @@ const arraySonhos = [1, 2, 3, 4, 5, 6];
 (function() {
     function inputItem(num) {
         const item = document.querySelector('#item-' + num);
+        const slider = document.querySelector('.slider-' + num);
 
         item.addEventListener('mousedown', () => {
             dropbox.value = item.textContent;
