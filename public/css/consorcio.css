@@ -2,7 +2,7 @@
     margin: 170px 0 0 0;
     padding: 0 60px;
 }
-
+/*
 .consorcio-sections {
     display: flex;
     flex-direction: row;
@@ -13,7 +13,7 @@
 .consorcio-section-1 {
     width: 100%;
 }
-
+*/
 #input-drop {
     min-width: 300px;
     border: 2px solid var(--blue-background);
@@ -23,13 +23,6 @@
     font-size: 20px;
 }
 
-.input-arrows-container {
-    position: absolute;
-    top: 130px;
-    left: 320px;
-    z-index: 50;
-}
-
 #input-drop:focus {
     outline: none;
 }
@@ -37,7 +30,7 @@
 #input-drop, .consorcio-btn {
     height: 55px;
 }
-
+/*
 .consorcio-sections, #form-sonho {
     height: 500px;
 }
@@ -105,7 +98,7 @@
     text-align: center;
 }
 
-/* Error */
+*/
 .text-error {
     color: red;
 }
@@ -130,15 +123,13 @@
     bottom: 40px;
     z-index: 1;
 }
-/* End error */
-
 .consorcio-btn {
     position: absolute;
     border: 2px solid var(--blue-background);
     border-left: 0;
     width: 60px;
     border-radius: 0 10px 10px 0;
-    background-color: rgb(0, 0, 0, 0);
+    background-color: #fff;
     color: var(--blue-background);
 }
 
@@ -226,59 +217,32 @@
     color: var(--blue-background) !important;
 }
 
-/* media queries */
-@media screen and (max-width: 970px) {
-    #consorcio-main-container {
-        padding: 0 0;
-    }
-    
-    #form-sonho {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-width: 320px;
-        max-width: 1024px;
-        width: 100%;
+/* media queries 601x962 / 414x896 / 360x640 */
+@media screen and (max-width: 700px) {
+    .consorcio-title h1 {
+        color: var(--blue-background);
+        font-size: 3em;
     }
 
-    .consorcio-slider-container, .slides, .slider, .slider img {
-        min-width: 420px;
-        max-width: 490px;
-        width: 100%;
-        height: 320px;
-        border-radius: 10px;
+    .consorcio-description p {
+        font-size: 25px;
     }
 
-    .slider-citybens-icon, .slider-text {
+    .consorcio-slider-container, .slider, .slider-image {
+        min-width: 490px;
+        max-width: 540px;
+        width: 100%;
+        height: 300px;
+    }
+
+    .slider-description {
         display: none;
     }
 
     #input-drop {
-        min-width: 120px;
-        max-width: 490px;
-        width: 80%;
-        font-size: 18px;
-    }
-
-    .consorcio-title h1 {
-        font-size: 3em;
-        min-width: 200px;
-        max-width: 500px;
+        min-width: 430px;
+        max-width: 600px;
         width: 100%;
-    }
-
-    .consorcio-description p {
-        min-width: 200px;
-        max-width: 500px;
-        width: 100%;
-        font-size: 20px;
-    }
-}
-
-@media screen and (max-width: 460px) {
-    .consorcio-slider-container, .slides, .slider, .slider img {
-        display: none;
     }
 }
 /* Fim media queries */
