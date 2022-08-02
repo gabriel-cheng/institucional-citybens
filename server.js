@@ -34,7 +34,7 @@
         });
 
         app.get('/', (require, response) => {
-            response.render('content', styles);
+            response.render('index', styles);
         });
 
         const styles = {default: 'default.css'}

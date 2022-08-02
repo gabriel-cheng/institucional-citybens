@@ -9,24 +9,26 @@
 }
 
 .main-top-card {
-    width: 90%;
-    height: 80vh;
-    background-color: var(--grey-2-background);
-    border-radius: 25px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-areas:
+        'left-container right-container'
+    ;
 }
 
-.top-card-text {
-    padding: 220px 60px 60px 60px;
+.left-card-container {
+    background-color: var(--grey-2-background);
+    grid-area: left-container;
     border-radius: 25px 0 0 25px;
+}
+
+.left-card-text {
+    padding: 30px;
     font-size: 2.5em;
     width: 45%;
     color: white;
 }
 
-.top-card-text p span {
+.left-card-text p span {
     color: var(--blue-background);
     flex-wrap: wrap;
 }
@@ -43,17 +45,23 @@
     background-color: rgba(255, 255, 255, 0.578);
 }
 
-/* Top vertical slider*/
-.top-card-vertical-slider {
+.left-card-container, .left-card-text, .right-card-slider {
+    max-width: 600px;
+    width: 100%;
+    min-width: 280px;
+    max-height: 490px;
+    height: 40vw;
+    min-height: 186px;
+}
+
+.right-card-slider {
     border-radius: 0 25px 25px 0;
     background-color: var(--blue-background);
-    width: 50%;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-/* Fim top vertical slider */
 /* Fim section 1 top card */
 
 /* Section 2 */
@@ -529,3 +537,26 @@
     color: var(--blue-background);
 }
 /* Fim sessão 8 */
+
+/* Media queries */
+@media screen and (max-width: 867px) {
+    .main-top-card {
+        grid-template-areas:
+            'left-container'
+            'right-container'
+        ;
+    }
+
+    .left-card-container, .right-card-slider {
+        width: 95vw;
+    }
+
+    .left-card-container {
+        border-radius: 25px 25px 0 0;
+    }
+
+    .right-card-slider {
+        border-radius: 0 0 25px 25px;
+    }
+}
+/* FIm media queries */
