@@ -1,5 +1,5 @@
 #main-container {
-    padding: 120px 60px 0 60px;
+    padding: 120px 0 0 0;
 }
 
 /* Section 1 top card */
@@ -45,7 +45,9 @@
     background-color: rgba(255, 255, 255, 0.578);
 }
 
-.left-card-container, .left-card-text, .right-card-slider {
+.left-card-container,
+.left-card-text,
+.right-card-slider {
     max-width: 600px;
     width: 100%;
     min-width: 280px;
@@ -67,23 +69,54 @@
 /* Section 2 */
 .section-2-main-container {
     margin: 110px 0 0 0;
+    
 }
 
 .section-2-cards-container {
+    max-width: 1250px;
+    width: 100%;
     margin: 50px 0 0 0;
+    /*
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    width: 100%;
+    align-items: center;*/
+    display: grid;
+    justify-items: center;
+    grid-template-rows: auto;
+    grid-template-areas:
+        'card-1 card-2 card-3 card-4'
+    ;
 }
 
-.section-2-card-1, .section-2-card-2, .section-2-card-3, .section-2-card-4 {
+.section-2-card-1 {
+    grid-area: card-1;
+}
+
+.section-2-card-2 {
+    grid-area: card-2;
+}
+
+.section-2-card-3{
+    grid-area: card-3;
+}
+
+.section-2-card-4 {
+    grid-area: card-4;
+}
+
+.section-2-card-1,
+.section-2-card-2,
+.section-2-card-3,
+.section-2-card-4 {
     width: 280px;
     background-color: #f6f6f6;
     border-radius: 0 0 20px 20px;
 }
 
-.section-2-card-1 img, .section-2-card-2 img, .section-2-card-3 img, .section-2-card-4 img {
+.section-2-card-1 img,
+.section-2-card-2 img,
+.section-2-card-3 img,
+.section-2-card-4 img {
     width: 100%;
 }
 
@@ -96,36 +129,61 @@
 
 /* Sessão 3 */
 .section-3-main-container {
-    margin: 110px 0 0 0;
-    background-color: var(--grey-1-background);
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    border-radius: 20px;
-    padding: 30px 0 0 0;
+    justify-content: center;
+    width: 100%;
+    margin: 110px 0 0 0;
 }
 
-.section-3-main-container img {
-    width: 450px;
+.section-3-container-items {
+    background-color: var(--grey-1-background);
+    padding: 5% 0;
+    border-radius: 20px;
+    max-width: 1300px;
+    width: 90%;
+    min-width: 290px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+    'items cellphone'
+    ;
 }
 
 .section-3-initial-items {
-    width: 500px;
-    padding: 80px 20px;
+    width: 100%;
+    grid-area: items;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.section-3-initial-items > h1 {
+.section-3-items > h1 {
     font-size: 3em;
     color: var(--blue-background);
 }
 
-.section-3-initial-items p {
+.section-3-items p {
     font-size: 1.2em;
     font-weight: 600;
 }
 
+.section-3-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playstore-appstore-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 .playstore-appstore-icons img {
-    margin: 50px 0 0 0;
+    margin: 4% 0 0 0;
     width: 180px;
     cursor: pointer;
     transition: .5s;
@@ -136,8 +194,17 @@
     transition: .5s;
 }
 
-.playstore-appstore-icons img:not(:last-child) {
-    margin: 0 20px 0 0;
+.cellphone-background {
+    grid-area: cellphone;
+    display: flex;
+    justify-content: center;
+}
+
+.cellphone-background img {
+    max-width: 430px;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    padding: 5px;
 }
 /* Fim sessão 3 */
 
@@ -171,7 +238,10 @@
     justify-content: space-around;
 }
 
-.section-4-card-1, .section-4-card-2, .section-4-card-3, .section-4-card-4 {
+.section-4-card-1,
+.section-4-card-2,
+.section-4-card-3,
+.section-4-card-4 {
     background-color: var(--grey-1-background);
     border-radius: 20px;
     padding: 20px 70px;
@@ -264,11 +334,13 @@
     background-color: #0055ffdc;
 }
 
-.info-content-1, .info-content-2 {
+.info-content-1,
+.info-content-2 {
     margin: 0 0 20px 0;
 }
 
-#display_pagar, #display_parcelas {
+#display_pagar,
+#display_parcelas {
     width: 180px;
     font-size: 25px;
     color: var(--blue-background);
@@ -539,6 +611,28 @@
 /* Fim sessão 8 */
 
 /* Media queries */
+@media screen and (max-width: 943px) {
+    .section-3-container-items {
+        grid-template-columns: auto;
+        grid-template-areas:
+            'items'
+            'cellphone'
+        ;
+    }
+    
+    .section-3-items {
+        margin: 4% 0 0 0;
+    }
+
+    .playstore-appstore-icons {
+        margin: 0 0 3% 0;
+    }
+
+    .cellphone-background img {
+        width: 75%;
+    }
+}
+
 @media screen and (max-width: 867px) {
     .main-top-card {
         grid-template-areas:
@@ -547,7 +641,8 @@
         ;
     }
 
-    .left-card-container, .right-card-slider {
+    .left-card-container,
+    .right-card-slider {
         width: 95vw;
     }
 
@@ -557,6 +652,22 @@
 
     .right-card-slider {
         border-radius: 0 0 25px 25px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .playstore-appstore-icons {
+        justify-content: space-around;
+        flex-direction: column-reverse;
+        margin: 0 0 3% 0;
+    }
+    
+    .cellphone-background {
+        display: none;
+    }
+
+    .section-3-items h1 {
+        font-size: 7vw;
     }
 }
 /* FIm media queries */
