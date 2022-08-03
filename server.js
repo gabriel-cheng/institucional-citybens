@@ -43,7 +43,7 @@
 
     // Port config
     (function() {
-        const port = 5000;
+        const port = process.env.PORT || 3000;
         app.listen(port, () => {
             console.log(`Server is running on port: ${port}`);
             console.log(`Access: http://localhost:${port}`);
