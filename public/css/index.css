@@ -68,7 +68,7 @@
 
 /* Section 2 */
 .section-2-main-container {
-    margin: 110px 0 0 0;
+    margin: 10% 0 0 0;
     
 }
 
@@ -133,7 +133,7 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    margin: 110px 0 0 0;
+    margin: 10% 0 0 0;
 }
 
 .section-3-container-items {
@@ -210,7 +210,7 @@
 
 /* Sessão 4 */
 .section-4-main-container {
-    margin: 110px 0 0 0;
+    margin: 10% 0 0 0;
 }
 
 .section-4-header {
@@ -261,12 +261,16 @@
 
 /* Sessão 5 */
 .section-5-main-container {
-    margin: 110px 0 0 0;
+    margin: 10% 0 0 0;
+    width: 100%;
 }
 
 .section-5-contents {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    max-width: 1360px;
+    width: 100%;
 }
 
 .section-5-contents h3 {
@@ -311,11 +315,23 @@
     color: var(--blue-background);
 }
 
+.section-5-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .section-5-info-content {
     background-color: var(--grey-1-background);
-    padding: 40px 90px;
+    padding: 40px 70px;
     border-radius: 25px 25px 0 0;
     text-align: center;
+}
+
+.section-5-info-content,
+.section-5-input {
+    max-width: 430px;
+    width: 100%;
 }
 
 .section-5-input {
@@ -323,7 +339,6 @@
     padding: 20px 0;
     border-radius: 0 0 25px 25px;
     background-color: var(--blue-background);
-    width: 100%;
     color: white;
     cursor: pointer;
     border: 0;
@@ -353,7 +368,7 @@
 
 /* Sessão 6 */
 .section-6-main-container {
-    margin: 110px 0 0 0;
+    margin: 10% 0 0 0;
     display: flex;
     justify-content: center;
 }
@@ -418,7 +433,7 @@
 
 /* Sessão 7 */
 .section-7-main-container {
-    margin: 110px 0 0 0;
+    margin: 10% 0 0 0;
     display: flex;
     justify-content: center;
 }
@@ -546,7 +561,7 @@
 
 /* Sessão 8 */
 .section-8-main-container {
-    margin: 110px 0 0 0;
+    margin: 10% 0 0 0;
 }
 
 .newsletter-title {
@@ -653,6 +668,20 @@
     .right-card-slider {
         border-radius: 0 0 25px 25px;
     }
+
+    .section-5-contents {
+        flex-direction: column;
+    }
+
+    .section-5-content-1 {
+        max-width: 500px;
+        width: 90%;
+        margin: 0 0 5% 0;
+    }
+
+    .section-5-content-1 h1 {
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 430px) {
@@ -668,6 +697,16 @@
 
     .section-3-items h1 {
         font-size: 7vw;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .section-5-info-content {
+        padding: 30px 60px;
+    }
+
+    .info-content-1 h1 {
+        font-size: 6vw;
     }
 }
 /* FIm media queries */
