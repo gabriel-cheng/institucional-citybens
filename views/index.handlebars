@@ -18,37 +18,37 @@
             </div>
         </div>
     </section>
-<!-- Configurando responsividade
     <section class="section-2-main-container">
+        <div class="section-2-contents">
         <h1>Sessão 2 lorem ipsum</h1>
-        <div class="section-2-cards-container">
-            <div class="section-2-card-1">
-                <img src="images/background/section-2/percentual.png" alt="imagem de percentual 3d">
-                <div class="card-description">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="section-2-cards-container">
+                <div class="section-2-card-1">
+                    <img src="images/background/section-2/percentual.png" alt="imagem de percentual 3d">
+                    <div class="card-description">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="section-2-card-2">
-                <img src="images/background/section-2/grafico.png" alt="imagem de grafico 3d">
-                <div class="card-description">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="section-2-card-2">
+                    <img src="images/background/section-2/grafico.png" alt="imagem de grafico 3d">
+                    <div class="card-description">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="section-2-card-3">
-                <img src="images/background/section-2/carteira.png" alt="imagem de carteira 3d">
-                <div class="card-description">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="section-2-card-3">
+                    <img src="images/background/section-2/carteira.png" alt="imagem de carteira 3d">
+                    <div class="card-description">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="section-2-card-4">
-                <img src="images/background/section-2/moedas.png" alt="imagem de moedas em 3d">
-                <div class="card-description">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="section-2-card-4">
+                    <img src="images/background/section-2/moedas.png" alt="imagem de moedas em 3d">
+                    <div class="card-description">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
--->
     <section class="section-3-main-container">
         <div class="section-3-container-items">
             <div class="section-3-initial-items">
@@ -126,7 +126,7 @@
                 <div class="section-5-info-content">
                     <div class="info-content-1">
                         <h1>Visualizar valores</h1>
-                        {{!-- <h3>Percentual: 18.0%</h3> --}}
+                        <h3>Percentual: 18.0%</h3>
                     </div>
                     <div class="info-content-2">
                         <p>Total a pagar</p>
@@ -141,7 +141,8 @@
             </form>
         </div>
     </section>
-    <section class="section-6-main-container">
+<!-- Display none -->
+    <section class="displayNone section-6-main-container">
     <div class="section-6-card">
             <div class="section-6-card-text">
                 <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
@@ -154,27 +155,29 @@
             </div>
         </div>
     </section>
+<!-- Fim display none -->
     <section class="section-7-main-container">
         <div class="section-7-card">
             <div class="section-7-left-card">
-                <h1>Lorem ipsum dolor</h1>
-                <div class="text-box-container">
-                <input type="number" step="0.01" name="valor" min="0.01">
-                    <p class="manual-placeholder">Informar valor</p>
-                    <div class="text-box-buttons-container">
+                <div class="left-card-contents">
+                    <h1>Lorem ipsum dolor</h1>
+                    <div class="input-number-container">
+                        <input type="number" step="0.01" name="valor" min="0.01">
+                        <p class="manual-placeholder">Informar valor</p>
+                    </div>
+                    <div class="moedas-container">
                         <button>BRL</button>
                         <button>EUR</button>
                         <button>USD</button>
                         <button>GBP</button>
                         <button>CHF</button>
                     </div>
+                    <p class="card-left-taxa">
+                        *Sujeito a taxas em relação a cotação atual da moeda.
+                    </p>
                 </div>
-                <p>
-                    *Sujeito a taxas em relação a cotação atual da moeda.
-                </p>
             </div>
             <div class="section-7-right-card">
-            <!-- CORRIGIR
                 <h1>Lorem ipsum dolor sit amet</h1>
                 <div class="right-card-table-values-container">
                     <div class="table-row-title">
@@ -217,9 +220,7 @@
                         </div>
                     </div>
                 </div>
-            -->
 
-            <!--
                 <table class="right-card-table">
                     <tr>
                         <td>Moeda</td>
@@ -247,11 +248,11 @@
                         <td>R$ 9,00</td>
                     </tr>
                 </table>
-            -->
             </div>
         </div>
     </section>
-    <section class="section-8-main-container">
+    {{!-- Display none --}}
+    <section class="displayNone section-8-main-container">
         <div class="section-8-contents">
             <div class="newsletter-title">
                 <h1>Citybens Newsletter</h1>
@@ -282,4 +283,5 @@
             </div>
         </div>
     </section>
+    {{!-- Fim display none --}}
 </main>

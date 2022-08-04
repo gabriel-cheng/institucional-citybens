@@ -1,3 +1,7 @@
+.displayNone {
+    display: none !important;
+}
+
 #main-container {
     padding: 120px 0 0 0;
 }
@@ -69,39 +73,36 @@
 /* Section 2 */
 .section-2-main-container {
     margin: 10% 0 0 0;
-    
+}
+
+.section-2-contents {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .section-2-cards-container {
-    max-width: 1250px;
-    width: 100%;
     margin: 50px 0 0 0;
-    /*
     display: flex;
-    justify-content: space-around;
-    align-items: center;*/
-    display: grid;
-    justify-items: center;
-    grid-template-rows: auto;
-    grid-template-areas:
-        'card-1 card-2 card-3 card-4'
-    ;
 }
 
-.section-2-card-1 {
-    grid-area: card-1;
+.section-2-cards-container,
+.section-2-contents h1 {
+    max-width: 1237px;
+    width: 100%;
 }
 
-.section-2-card-2 {
-    grid-area: card-2;
+.card-description {
+    width: 280px;
+    background-color: var(--blue-background);
+    padding: 20px;
+    border-radius: 20px;
 }
 
-.section-2-card-3{
-    grid-area: card-3;
-}
-
-.section-2-card-4 {
-    grid-area: card-4;
+.section-2-card-1,
+.section-2-card-2,
+.section-2-card-3 {
+    margin: 0 20px 0 0;
 }
 
 .section-2-card-1,
@@ -118,12 +119,6 @@
 .section-2-card-3 img,
 .section-2-card-4 img {
     width: 100%;
-}
-
-.card-description {
-    background-color: var(--blue-background);
-    padding: 20px;
-    border-radius: 20px;
 }
 /* Fim section 2 */
 
@@ -211,6 +206,7 @@
 /* Sessão 4 */
 .section-4-main-container {
     margin: 10% 0 0 0;
+    display: none;
 }
 
 .section-4-header {
@@ -263,6 +259,8 @@
 .section-5-main-container {
     margin: 10% 0 0 0;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .section-5-contents {
@@ -436,45 +434,80 @@
     margin: 10% 0 0 0;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .section-7-card {
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    height: 500px;
-    min-width: 500px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: auto;
+    grid-template-areas:
+        'card-1 card-2'
+    ;
 }
 
 .section-7-left-card {
     background-color: var(--grey-2-background);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border-radius: 25px;
-    padding: 60px 50px;
-    width: 100%;
+    display: grid;
+    justify-items: center;
+    grid-template-areas:
+        'title'
+        'input'
+        'moedas'
+        'taxa'
+    ;
+    border-radius: 25px 0 0 25px;
+    padding: 40px 30px;
+    color: var(--font-description-grey);
+    font-size: 13px;
+    grid-area: card-1;
+    text-align: center;
+}
+
+.card-left-taxa {
+    grid-area: taxa;
+}
+
+.section-7-left-card,
+.section-7-right-card {
     max-width: 500px;
+    width: 100%;
 }
 
 .section-7-left-card h1 {
     color: #fff;
     font-weight: 200;
     font-size: 2em;
+    grid-area: title;
 }
 
-.text-box-container {
+.section-7-left-card h1,
+.input-number-container input[type=number] {
+    margin: 0 0 6% 0;
+} 
+
+.input-number-container {
     width: 100%;
     position: relative;
+    grid-area: input;
 }
 
-.text-box-container input[type=number] {
+.left-card-contents {
+    max-width: 430px;
+    width: 100%;
+}
+
+.input-number-container input[type=number] {
     width: 100%;
     height: 70px;
     border-radius: 20px;
     border: 1px solid var(--blue-background);
     padding: 40px 20px 20px 20px;
     font-size: 18px;
+}
+
+.input-number-container input[type=number]:focus {
+    outline: 0;
 }
 
 .manual-placeholder {
@@ -485,45 +518,42 @@
     font-size: 20px;
 }
 
-.text-box-buttons-container {
+.moedas-container {
     margin: 10px 0 0 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.text-box-buttons-container button {
+.moedas-container button {
     border-radius: 30px;
     padding: 3px 15px;
     border: 0;
     font-size: 12px;
     font-weight: 400;
     cursor: pointer;
+    width: 60px;
+    height: 30px;
 }
 
-.text-box-buttons-container button:hover {
+.moedas-container button:hover {
     background-color: var(--blue-background);
     color: #fff;
 }
 
-.text-box-buttons-container button:focus {
+.moedas-container button:focus {
     background-color: var(--blue-background);
     color: #fff;
-}
-
-.section-7-left-card {
-    color: var(--font-description-grey);
-    font-size: 13px;
 }
 
 .section-7-right-card {
-    width: 100%;
-    border-radius: 25px;
+    border-radius: 0 25px 25px 0;
     background-color: var(--grey-1-background);
     padding: 20px 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    grid-area: card-2;
 }
 
 .right-card-table-values-container {
@@ -626,6 +656,13 @@
 /* Fim sessão 8 */
 
 /* Media queries */
+@media screen and (max-width: 1180px) {
+    .section-2-cards-container {
+        overflow: auto;
+        padding: 0 10px;
+    }
+}
+
 @media screen and (max-width: 943px) {
     .section-3-container-items {
         grid-template-columns: auto;
@@ -645,6 +682,29 @@
 
     .cellphone-background img {
         width: 75%;
+    }
+
+    .section-7-card {
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            'card-1'
+            'card-2'
+        ;
+        width: 100%;
+    }
+
+    .section-7-left-card,
+    .section-7-right-card {
+        max-width: 635px;
+        width: 95%;
+    }
+
+    .section-7-left-card {
+        border-radius: 25px 25px 0 0;
+    }
+    
+    .section-7-right-card {
+        border-radius: 0 0 25px 25px;
     }
 }
 
@@ -681,6 +741,30 @@
 
     .section-5-content-1 h1 {
         text-align: center;
+    }
+}
+
+@media screen and (max-width: 621px) {
+    .section-2-card-1,
+    .section-2-card-2,
+    .section-2-card-3,
+    .section-2-card-4,
+    .card-description {
+        max-width: 280px;
+        width: 100%;
+        min-width: 180px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .section-7-left-card {
+        text-align: center;
+    }
+
+    .moedas-container {
+        flex-direction: column;
+        margin: 0;
+        display: none;
     }
 }
 
