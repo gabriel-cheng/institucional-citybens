@@ -84,6 +84,7 @@
 .section-2-cards-container {
     margin: 50px 0 0 0;
     display: flex;
+    justify-content: center;
 }
 
 .section-2-cards-container,
@@ -565,7 +566,7 @@
     margin: 15px 0 15px 0;
 }
 
-.table-row-title p, .table-comment p {
+.table-row-title div, .table-comment div {
     color: var(--grey-2-background);
 }
 
@@ -573,7 +574,7 @@
     font-size: 1.2em;
 }
 
-.table-row p:last-child {
+.table-row div:last-child {
     color: var(--blue-background);
 }
 
@@ -594,11 +595,18 @@
     margin: 10% 0 0 0;
 }
 
+.section-8-main-container h1 {
+    margin-bottom: 0;
+}
+
 .newsletter-title {
-    margin: 0 0 50px 0;
+    margin: 0 0 30px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1120px;
+    width: 100%;
+    padding: 0 20px;
 }
 
 .newsletter-button {
@@ -608,27 +616,41 @@
     border-radius: 20px;
     color: #fff;
     cursor: pointer;
+    font-size: 1.3rem;
 }
 
 .newsletter-button:hover {
     background-color: #0055ffa2;
 }
 
-.section-8-cards-container {
+.section-8-contents {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section-8-cards-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .section-8-card {
-    height: 400px;
-    width: 360px;
+    max-width: 360px;
+    width: 100%;
+    max-height: 400px;
+    height: 100vw;
+    min-height: 312px;
     background-color: var(--grey-1-background);
     padding: 30px 25px;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.section-8-card:not(:last-child) {
+    margin: 0 20px 0 0;
 }
 
 .card-date-container::before {
@@ -660,6 +682,20 @@
     .section-2-cards-container {
         overflow: auto;
         padding: 0 10px;
+    }
+
+    .section-2-contents h1 {
+        padding: 0 0 0 10px;
+    }
+
+    .section-2-cards-container {
+        justify-content: initial;
+    }
+
+    .section-8-cards-container {
+        overflow: auto;
+        padding: 0 10px;
+        justify-content: initial;
     }
 }
 
@@ -705,6 +741,15 @@
     
     .section-7-right-card {
         border-radius: 0 0 25px 25px;
+    }
+
+    .section-8-card {
+        max-width: 365px;
+        width: 100%;
+        min-width: 249px;
+        max-height: 200px;
+        height: 100vw;
+        min-height: 312px;
     }
 }
 
@@ -754,6 +799,8 @@
         width: 100%;
         min-width: 180px;
     }
+
+    
 }
 
 @media screen and (max-width: 460px) {
@@ -791,6 +838,10 @@
 
     .info-content-1 h1 {
         font-size: 6vw;
+    }
+
+    .newsletter-title {
+        padding: 0 6px;
     }
 }
 /* FIm media queries */
