@@ -5,88 +5,155 @@
 
 #header-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 20px 60px;
+    justify-content: center;
     width: 100%;
     position: fixed;
-    top: 0;
-    text-transform: uppercase;
     z-index: 1;
+    transition: .3s ease-in-out;
 }
 
-#header-container a {
-    color: black;
+.header-subcontainer {
+    display: flex;
+    align-items: center;
+    width: 85%;
+    padding: 10px 0 0 0;
 }
 
-.logo-header {
-    width: 120px;
-    margin: 0 60px 0 0;
+.header-logo img{
+    width: 130px;
 }
 
 .header-navigation {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
     position: relative;
-    padding: 0 0 5px 0;
+    width: 100%;
+    margin: 0 0 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0;
 }
 
-.header-navigation::after {
+.header-navigation ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-navigation li:not(:last-child) {
+    margin: 0 10px 0 0;
+}
+
+.header-navigation li a {
+    font-size: 1.6rem;
+    color: black;
+    text-transform: uppercase;
+}
+
+.header-navigation ul::after {
     content: " ";
     width: 100%;
-    height: 2px;
-    background-color: rgba(0, 0, 0, 0.562);
+    height: 1px;
+    background-color: grey;
     position: absolute;
-    bottom: 0;
     left: 0;
-    z-index: -1;
+    bottom: 0;
 }
 
-.header-btn-lorem {
-    background-color: var(--cor-base);
+.navigation-button button {
     border: 0;
-    padding: 8px 20px;
+    width: 100px;
+    height: 30px;
+    background-color: var(--blue-background);
     border-radius: 20px;
     color: #fff;
-    cursor: pointer;
-    transition: .1s;
 }
 
-.header-btn-lorem:hover {
-    background-color: #0055ffb6;
-    transition: .1s;
-}
-
-/* Menu dropdown */
-
-.header-dropdown-menu {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    list-style-type: none;
-    position: relative;
-}
-
-.header-dropdown-menu a {
-    padding: 0 0 10px 0;
-}
-
-.header-dropdown-submenu {
-    list-style-type: none;
-    position: absolute;
+.menu-toggle {
     display: none;
-    top: 35px;
 }
 
-.header-dropdown-menu li:hover > .header-dropdown-submenu {
-    display: flex;
-}
 
-.header-dropdown-submenu li:not(:last-child) {
-    margin: 0 20px 0 0;
-}
+@media screen and (max-width: 710px) {
+    .header-navigation > ul, .navigation-button {
+        display: none;
+    }
 
-/* Fim menu dropdown */
+    .header-navigation {
+        justify-content: flex-end;
+    }
+
+    .one,
+    .two,
+    .three {
+        background-color: #000;
+        width: 100%;
+        height: 5px;
+        margin: 6px auto;
+        transition-duration: 0.3s;
+    }
+
+    .menu-toggle {
+        display: block;
+        width: 40px;
+        height: 30px;
+    }
+
+    .header-navigation.on {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .1s ease-in-out;
+    }
+
+    .header-navigation.on
+    .menu-toggle {
+        position: absolute;
+        right: 7.5vw;
+        top: 23px;
+    }
+
+    .header-navigation.on
+    .menu-toggle
+    .one {
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    .header-navigation.on
+    .menu-toggle
+    .two {
+        opacity: 0;
+    }
+
+    .header-navigation.on
+    .menu-toggle
+    .three {
+        transform: rotate(-45deg) translate(8px, -9px);
+    }
+
+    .header-navigation.on ul {
+        text-align: center;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .header-navigation.on ul li {
+        margin: 0;
+    }
+    
+    .header-navigation.on ul li a {
+        transition-duration: 0.5s;
+        font-size: 2.5rem;
+        line-height: 6rem;
+    }
+}

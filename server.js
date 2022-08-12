@@ -22,7 +22,7 @@
         });
 
         app.get('/consorcio', (require, response) => {
-            response.render('consorcio', styles);
+            response.render('consorcio');
         });
 
         app.post('/disponibilidade', (require, response) => {
@@ -34,11 +34,8 @@
         });
 
         app.get('/', (require, response) => {
-            response.render('index', styles);
+            response.render('index');
         });
-
-        const styles = {default: 'default.css'}
-
     })();
 
     // Port config
