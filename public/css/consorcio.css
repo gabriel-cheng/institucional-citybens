@@ -1,32 +1,27 @@
 #consorcio-main-container {
-    margin: 170px 0 0 0;
-    padding: 0 60px;
+    margin: 110px 0 0 0;
     display: flex;
     justify-content: center;
 }
 
 .consorcio-contents-2 {
     display: grid;
-    grid-template-columns: 5fr 3fr auto;
-    grid-template-rows: auto auto;
     grid-template-areas:
-        'title slider'
+        'titles slider'
         'form slider'
     ;
+    justify-items: center;
     align-items: center;
+    max-width: 1300px;
+    width: 100%;
 }
 
-/* grid area */
 .consorcio-titles-container {
+    padding: 0 10px;
+}
+
+.consorcio-title {
     grid-area: title;
-}
-
-.consorcio-title h1 {
-    font-size: 3rem;
-}
-
-.consorcio-description {
-    font-size: ;
 }
 
 #form-sonho {
@@ -34,10 +29,24 @@
     width: 360px;
 }
 
+.error-message {
+    color: red;
+    margin: 10px 0 5px 0;
+    font-size: 1.3rem;
+}
+
 .consorcio-slider-container {
     grid-area: slider;
 }
-/* fim grid area */
+
+.consorcio-title h1 {
+    font-size: 4rem;
+    color: var(--blue-background);
+}
+
+.consorcio-description {
+    font-size: 1.6rem;
+}
 
 #input-drop {
     width: 300px;
@@ -52,7 +61,8 @@
     outline: none;
 }
 
-#input-drop, .consorcio-btn {
+#input-drop,
+.consorcio-btn {
     height: 55px;
 }
 
@@ -127,8 +137,8 @@
     height: 60px;
 }
 
-.item span {
-    margin: 0 0 0 5px;
+.item{
+    font-size: 1.6rem;
 }
 
 .item:last-child {
@@ -146,6 +156,10 @@
     text-align: center !important;
     color: var(--blue-background) !important;
     margin: 0 20px 0 0 !important;
+}
+
+span {
+    color: var(--blue-background);
 }
 
 .consorcio-slider-container {
@@ -182,37 +196,74 @@
 }
 
 .slider-description img {
-    width: 150px;
-    height: 80px;
+    width: 130px;
+    height: 70px;
 }
 
 .slider-text {
     color: #fff;
     text-align: center;
+    font-size: 1.3rem;
 }
 
-@media screen and (max-width: 890px) {
-    #consorcio-main-container {
-        display: block;
-        padding: 0 10px;
-    }
-
-    /*
+@media screen and (max-width: 825px) {
     .consorcio-contents-2 {
         grid-template-areas:
-            'title'
+            'titles'
             'slider'
             'form'
         ;
-    } */
-
-    #input-drop, .dropDown {
-        min-width: 245px;
-        width: 65vw;
-        max-width: 300px;
     }
 
-    .consorcio-slider-container {
-        display: none;
+    #form-sonho {
+        width: 90%;
+        max-width: 548px;
+    }
+
+    #input-drop, .dropDown {
+        width: 91%;
+    }
+
+    .consorcio-slider-container,
+    .slides,
+    .slider,
+    .slider-image {
+        display: flex;
+        justify-content: center;
+        max-width: 584px;
+        width: 98%;
+        max-height: 334px;
+        height: 100vw;
+    }
+
+    .slider-description {
+        width: 98%;
+    }
+}
+
+@media screen and (max-width: 548px) {
+    #input-drop, .dropDown {
+        width: 87%;
+    }
+}
+
+@media screen and (max-width: 438px) {
+    #input-drop, .dropDown {
+        width: 84%;
+    }
+
+    .consorcio-title h1 {
+        font-size: 10vw;
+    }
+
+    .item {
+        font-size: 3.5vw;
+    }
+}
+
+@media screen and (max-width: 364px) {
+    #input-drop, .dropDown {
+        width: 80%;
+        font-size: 4.7vw;
     }
 }
