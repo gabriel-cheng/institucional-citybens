@@ -11,6 +11,8 @@
     z-index: 1;
     transition: .3s ease-in-out;
     top: 0;
+    background-color: #fff;
+    padding: 0 0 10px 0;
 }
 
 .header-subcontainer {
