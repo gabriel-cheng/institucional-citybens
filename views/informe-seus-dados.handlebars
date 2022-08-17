@@ -1,0 +1,32 @@
+<main id="consorcio-dados-container">
+    <div class="consorcio-dados-subcontainer">
+        <div class="consorcio-dados-title">
+            <p class="dados-hello">Olá!</p>
+            <div class="opcao-consorcio-escolhida">
+                <p class="testezinho"></p>
+                <i class="escolha-icone material-icons"></i>
+                <p class="escolha-text">{{text}}</p>
+            </div>
+            <p>*Antes continuar, precisamos que informe alguns dados.</p>
+        </div>
+        <form class="consorcio-dados-form" action="/dados-recebidos">
+            <input class="consorcio-dados-input consorcio-dados-input-name" type="text" name="input-name" id="input-name" placeholder="Nome Completo (Obrigatório)">
+
+            <input class="consorcio-dados-input consorcio-dados-input-email" type="email" name="input-email" id="input-email" placeholder="E-mail (Obrigatório)">
+
+            <input class="consorcio-dados-input consorcio-dados-input-celular" type="tel" name="input-celular" id="input-celular" placeholder="Celular (Obrigatório)">
+
+            <input class="consorcio-dados-input consorcio-dados-input-cep" type="text" name="input-cep" id="input-cep" placeholder="CEP (Obrigatório)">
+
+            <div class="termos-uso">
+                <input class="checkbox-termos" type="checkbox" name="" id="">
+                <p class="termos-de-uso">
+                    Eu concordo com os
+                    <a href="/termos-de-uso">termos de uso</a>
+                </p>
+            </div>
+
+            <input class="btn-enviar-dados" type="submit" value="Enviar">
+        </form>
+    </div>
+</main>

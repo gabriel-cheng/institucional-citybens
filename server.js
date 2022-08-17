@@ -6,7 +6,7 @@
     
     // Configs
     (function() {
-        app.use(bodyParser.urlencoded({ extended: false}));
+        app.use(bodyParser.urlencoded({extended: false}));
         app.use(bodyParser.json());
 
         app.engine('handlebars', exphbs.engine({defaultLayout: 'main'}));
@@ -17,8 +17,8 @@
 
     // Routes
     (function() {
-        app.post('/consorcio-dados', (require, response) => {
-            response.send(`Sonho recebido, seu sonho é:<br> ${require.body.sonho}`);
+        app.post('/informe-seus-dados', (require, response) => {
+            response.render('informe-seus-dados', {text: require.body.sonho});
         });
 
         app.get('/consorcio', (require, response) => {

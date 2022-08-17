@@ -221,7 +221,7 @@ span {
     }
 
     #input-drop, .dropDown {
-        width: 91%;
+        width: 89%;
     }
 
     .consorcio-slider-container,
@@ -263,7 +263,7 @@ span {
 
 @media screen and (max-width: 364px) {
     #input-drop, .dropDown {
-        width: 80%;
+        width: 79%;
         font-size: 4.7vw;
     }
 }

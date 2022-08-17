@@ -1,0 +1,115 @@
+#consorcio-dados-container {
+    margin: 160px 0 0 0;
+}
+
+.consorcio-dados-subcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.consorcio-dados-title {
+    max-width: 550px;
+    width: 100%;
+    margin: 0 0 5px 0;
+}
+
+.dados-hello {
+    font-size: 5rem;
+    color: grey;
+}
+
+.escolha-text {
+    width: 190px;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.opcao-consorcio-escolhida {
+    display: flex;
+    align-items: center;
+}
+
+.escolha-icone {
+    color: var(--blue-background);
+    font-size: 8.5rem !important;
+    margin: 0 10px 0 0;
+}
+
+.consorcio-dados-form {
+    display: grid;
+    grid-template-areas:
+        'nome nome'
+        'email email'
+        'celular cep'
+        'termos .'
+        '. botao'
+    ;
+    gap: 35px;
+    max-width: 550px;
+    width: 100%;
+}
+
+.consorcio-dados-input {
+    height: 45px;
+    width: 100%;
+    border-radius: 8px;
+    outline: 0;
+    border: 1px solid var(--blue-background);
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.consorcio-dados-input-name {
+    grid-area: nome;
+}
+
+.consorcio-dados-input-email {
+    grid-area: email;
+}
+
+.consorcio-dados-input-celular {
+    grid-area: celular;
+}
+
+.consorcio-dados-input-cep {
+    grid-area: cep;
+}
+
+.checkbox-termos {
+    width: 15px;
+}
+
+.termos-uso {
+    display: flex;
+    align-items: center;
+    grid-area: termos;
+}
+
+.termos-uso input {
+    margin: 0 5px 0 0;
+}
+
+.termos-uso p {
+    margin: 0;
+}
+
+.btn-enviar-dados {
+    grid-area: botao;
+}
+
+@media screen and (max-width: 416px) {
+    .consorcio-dados-input-celular::placeholder {
+        font-size: 3.2vw;
+    }
+}
+
+@media screen and (max-width: 366px) {
+    .consorcio-dados-input-cep::placeholder {
+        font-size: 3.8vw;
+    }
+}
