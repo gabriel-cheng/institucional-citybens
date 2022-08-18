@@ -2,6 +2,12 @@
     margin: 160px 0 0 0;
 }
 
+.last_word_format {
+    color: var(--blue-background);
+    font-size: 5rem;
+    line-height: 40px;
+}
+
 .consorcio-dados-subcontainer {
     display: flex;
     flex-direction: column;
@@ -18,7 +24,7 @@
 }
 
 .dados-hello {
-    font-size: 5rem;
+    font-size: 4rem;
     color: grey;
 }
 
@@ -45,10 +51,10 @@
         'nome nome'
         'email email'
         'celular cep'
-        'termos .'
+        'termos termos'
         '. botao'
     ;
-    gap: 35px;
+    gap: 35px 10px;
     max-width: 550px;
     width: 100%;
 }
@@ -72,11 +78,17 @@
     grid-area: email;
 }
 
-.consorcio-dados-input-celular {
+.input-celular-container {
     grid-area: celular;
 }
 
-.consorcio-dados-input-cep {
+.input-celular-container input,
+.input-cep-container input {
+    width: 100%;
+    min-width: 130px;
+}
+
+.input-cep-container {
     grid-area: cep;
 }
 
@@ -84,32 +96,59 @@
     width: 15px;
 }
 
-.termos-uso {
+.termos-de-uso {
     display: flex;
     align-items: center;
     grid-area: termos;
+    width: 100%;
 }
 
-.termos-uso input {
+.termos-de-uso input {
     margin: 0 5px 0 0;
 }
 
-.termos-uso p {
+.termos-de-uso p {
     margin: 0;
+    font-size: 1.3rem
+}
+
+.termos-de-uso p a {
+    color: var(--blue-background)
+}
+
+.dados-button-container {
+    grid-area: botao;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .btn-enviar-dados {
-    grid-area: botao;
+    background-color: var(--blue-background);
+    width: 160px;
+    height: 50px;
+    outline: 0;
+    border-radius: 10px;
+    color: #fff;
+    border: 0;
+    font-size: 1.6rem;
+}
+
+.btn-enviar-dados:hover {
+    background-color: rgba(0, 0, 255, 0.371);
 }
 
 @media screen and (max-width: 416px) {
     .consorcio-dados-input-celular::placeholder {
         font-size: 3.2vw;
     }
+
+    .last_word_format {
+        font-size: 10.5vw;
+    }
 }
 
-@media screen and (max-width: 366px) {
+@media screen and (max-width: 398px) {
     .consorcio-dados-input-cep::placeholder {
-        font-size: 3.8vw;
+        font-size: 3.3vw;
     }
 }
