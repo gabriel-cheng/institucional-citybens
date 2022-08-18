@@ -1,0 +1,49 @@
+<main class="section-5-main-container">
+    <div class="section-5-contents">
+        <div class="section-5-content-1">
+            <h1>Simular consórcio</h1>
+            <div class="section-5-range-container">
+                <div class="section-5-range-1">
+                    <p>Valor a pagar</p>
+                    <h3 class="h3-valor-pagar">R$ 130.000,00</h3>
+                    <input value="130000" class="input-pagar" min="40000" max="130000" step="1000" type="range" name="range-1">
+                    <div class="section-5-range-description">
+                        <p>R$ 40.000,00</p>
+                        <p>R$ 85.000,00</p>
+                        <p>R$ 130.000,00</p>
+                    </div>
+                </div>
+                <div class="section-5-range-2">
+                    <p>Valor de parcelas</p>
+                    <h3 class="h3-valor-parcelas">R$ 6.600,00</h3>
+                    <input value="6600" class="input-parcelas" min="600" max="6600" step="600" type="range" name="range-2">
+                    <div class="section-5-range-description">
+                        <p>R$ 600,00</p>
+                        <p>R$ 3.600,00</p>
+                        <p>R$ 6.600,00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-5-range-observation">
+                <p>*Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+        <form action="/disponibilidade" method="POST" class="section-5-info-container">
+            <div class="section-5-info-content">
+                <div class="info-content-1">
+                    <h1>Visualizar valores</h1>
+                    <h3>Percentual: 18.0%</h3>
+                </div>
+                <div class="info-content-2">
+                    <p>Total a pagar</p>
+                    <input name="valorPagar" type="text" id="display_pagar" value="R$ 130.000,00" readonly>
+                </div>
+                <div class="info-content-3">
+                    <p>Parcelas</p>
+                    <input name="valorParcelas" type="text" id="display_parcelas" value="R$ 6.600,00" readonly>
+                </div>
+            </div>
+            <input type="submit" class="section-5-input" value="Verificar disponibilidade">
+        </form>
+    </div>
+</main>

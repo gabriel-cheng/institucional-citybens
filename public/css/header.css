@@ -66,11 +66,17 @@
 
 .navigation-button button {
     border: 0;
-    width: 100px;
+    padding: 0 8px;
+    width: auto;
     height: 30px;
     background-color: var(--blue-background);
     border-radius: 20px;
     color: #fff;
+    font-size: 1.2rem;
+}
+
+.navigation-button button:hover {
+    background-color: rgb(118, 118, 190);
 }
 
 .menu-toggle {

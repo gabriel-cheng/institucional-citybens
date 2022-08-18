@@ -1,0 +1,129 @@
+.section-5-main-container {
+    margin: 10% 0 0 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.section-5-contents {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1360px;
+    width: 100%;
+}
+
+.section-5-contents h3 {
+    color: var(--blue-background);
+}
+
+.section-5-content-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section-5-range-1 {
+    margin: 0 0 20px 0;
+}
+
+.section-5-main-container input[type=range] {
+    background-color: var(--grey-1-background);
+    width: 100%;
+    height: 2px;
+}
+
+.section-5-range-description {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 12px;
+    color: var(--font-description-grey);
+}
+
+.section-5-range-description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.section-5-range-observation {
+    font-size: 12px;
+}
+
+.section-5-info-container h3 {
+    color: var(--blue-background);
+}
+
+.section-5-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-5-info-content {
+    background-color: var(--grey-1-background);
+    padding: 40px 70px;
+    border-radius: 25px 25px 0 0;
+    text-align: center;
+}
+
+.section-5-info-content,
+.section-5-input {
+    max-width: 430px;
+    width: 100%;
+}
+
+.section-5-input {
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 0 0 25px 25px;
+    background-color: var(--blue-background);
+    color: white;
+    cursor: pointer;
+    border: 0;
+    font-size: 18px;
+}
+
+.section-5-input:hover {
+    background-color: #0055ffdc;
+}
+
+.info-content-1,
+.info-content-2 {
+    margin: 0 0 20px 0;
+}
+
+#display_pagar,
+#display_parcelas {
+    width: 180px;
+    font-size: 25px;
+    color: var(--blue-background);
+    text-align: center;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    font-weight: 550;
+    outline: 0;
+}
+
+@media screen and (max-width: 867px) {
+    .section-5-contents {
+        flex-direction: column;
+    }
+
+    .section-5-content-1 {
+        max-width: 500px;
+        width: 90%;
+        margin: 0 0 5% 0;
+    }
+
+    .section-5-content-1 h1 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .section-5-info-content {
+        padding: 30px 60px;
+    }
+}

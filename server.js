@@ -17,6 +17,10 @@
 
     // Routes
     (function() {
+        app.post('/simulacao', (require, response) => {
+            response.render('simulacao');
+        });
+
         app.post('/informe-seus-dados', (require, response) => {
             response.render('informe-seus-dados', {text: require.body.sonho});
         });
