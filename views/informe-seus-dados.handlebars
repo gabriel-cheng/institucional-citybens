@@ -3,30 +3,35 @@
         <div class="consorcio-dados-title">
             <p class="dados-hello">Olá!</p>
             <div class="opcao-consorcio-escolhida">
-                <p class="testezinho"></p>
                 <i class="escolha-icone material-icons"></i>
                 <p class="escolha-text">{{text}}</p>
             </div>
-            <p>*Antes continuar, precisamos que informe alguns dados.</p>
+            <p>*Antes de continuar, precisamos de algumas informações.</p>
         </div>
-        <form class="consorcio-dados-form" action="/dados-recebidos">
-            <input class="consorcio-dados-input consorcio-dados-input-name" type="text" name="input-name" id="input-name" placeholder="Nome Completo (Obrigatório)">
+        <form class="consorcio-dados-form" method="post" action="/dados-recebidos">
+            <input class="consorcio-dados-input consorcio-dados-input-name" type="text" name="input-name" id="input-name" placeholder="Nome Completo (Obrigatório)" required>
 
-            <input class="consorcio-dados-input consorcio-dados-input-email" type="email" name="input-email" id="input-email" placeholder="E-mail (Obrigatório)">
+            <input class="consorcio-dados-input consorcio-dados-input-email" type="email" name="input-email" id="input-email" placeholder="E-mail (Obrigatório)" required>
 
-            <input class="consorcio-dados-input consorcio-dados-input-celular" type="tel" name="input-celular" id="input-celular" placeholder="Celular (Obrigatório)">
+            <div class="input-celular-container">
+                <input class="consorcio-dados-input consorcio-dados-input-celular" type="tel" name="input-celular" id="input-celular" placeholder="Celular (Obrigatório)" required>
+            </div>
 
-            <input class="consorcio-dados-input consorcio-dados-input-cep" type="text" name="input-cep" id="input-cep" placeholder="CEP (Obrigatório)">
+            <div class="input-cep-container">
+                <input class="consorcio-dados-input consorcio-dados-input-cep" type="text" name="input-cep" id="input-cep" placeholder="CEP (Obrigatório)" required>
+            </div>
 
-            <div class="termos-uso">
-                <input class="checkbox-termos" type="checkbox" name="" id="">
-                <p class="termos-de-uso">
-                    Eu concordo com os
-                    <a href="/termos-de-uso">termos de uso</a>
+            <div class="termos-de-uso">
+                <input class="checkbox-termos" type="checkbox" name="" id="" required>
+                <p>
+                    Eu concordo com o 
+                    <a target="_blank" href="/termos-de-uso">termo de privacidade</a>
                 </p>
             </div>
 
-            <input class="btn-enviar-dados" type="submit" value="Enviar">
+            <div class="dados-button-container">
+                <input class="btn-enviar-dados" type="submit" value="Enviar">
+            </div>
         </form>
     </div>
 </main>
