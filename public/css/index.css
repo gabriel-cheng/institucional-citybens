@@ -135,59 +135,56 @@
     justify-content: center;
     width: 100%;
     margin: 10% 0 0 0;
+    height: 500px;
 }
 
-.section-3-container-items {
-    background-color: var(--grey-1-background);
-    padding: 5% 0;
-    border-radius: 20px;
-    max-width: 1300px;
+.section-3-grid-items {
+    max-width: 1200px;
     width: 90%;
-    min-width: 290px;
+    background-color: var(--grey-1-background);
+    border-radius: 20px;
     display: grid;
-    align-items: center;
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50%;
     grid-template-areas:
-    'items cellphone'
+        'title cell'
+        'playstore cell'
     ;
+    padding: 0 30px;
 }
 
-.section-3-initial-items {
-    width: 100%;
-    grid-area: items;
+.section-3-titles {
+    grid-area: title;
     display: flex;
+    align-items: center;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
-.section-3-items > h1 {
+.section-3-titles > h1 {
     font-size: 3em;
     color: var(--blue-background);
 }
 
-.section-3-items p {
+.section-3-titles p {
     font-size: 1.2em;
     font-weight: 600;
 }
 
-.section-3-items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .playstore-appstore-icons {
+    grid-area: playstore;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .playstore-appstore-icons img {
-    margin: 4% 0 0 0;
     width: 180px;
+    height: 55px;
     cursor: pointer;
     transition: .5s;
+}
+
+.playstore-appstore-icons img:nth-of-type(1) {
+    margin: 0 15px 0 0;
 }
 
 .playstore-appstore-icons img:hover {
@@ -196,8 +193,9 @@
 }
 
 .cellphone-background {
-    grid-area: cellphone;
+    grid-area: cell;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
@@ -685,6 +683,35 @@ button:nth-of-type(2) {
     }
 }
 
+@media screen and (max-width: 962px) {
+    .section-3-main-container {
+        height: auto;
+    }
+
+    .section-3-grid-items {
+        align-items: center;
+        grid-template-columns: auto;
+        grid-template-areas:
+            'title'
+            'cell'
+            'playstore'
+        ;
+        padding: 20px 0;
+    }
+
+    .cellphone-background img {
+        width: 60vw;
+    }
+
+    .section-3-titles h1 {
+        font-size: 5vw;
+    }
+
+    .playstore-appstore-icons {
+        margin: 20px 0 0 0;
+    }
+}
+
 @media screen and (max-width: 867px) {
     .main-top-card {
         grid-template-areas:
@@ -723,6 +750,25 @@ button:nth-of-type(2) {
     }
 }
 
+@media screen and (max-width: 484px) {
+    .section-3-titles h1 {
+        font-size: 6vw;
+    }
+
+    .playstore-appstore-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .playstore-appstore-icons img:nth-of-type(1) {
+        margin: 0 0 0 0;
+    }
+
+    .playstore-appstore-icons img:nth-of-type(2) {
+        margin: 10px 0 0 0;
+    }
+}
+
 @media screen and (max-width: 460px) {
     .section-7-left-card {
         text-align: center;
@@ -746,16 +792,6 @@ button:nth-of-type(2) {
 }
 
 @media screen and (max-width: 430px) {
-    .playstore-appstore-icons {
-        justify-content: space-around;
-        flex-direction: column-reverse;
-        margin: 0 0 3% 0;
-    }
-    
-    .cellphone-background {
-        display: none;
-    }
-
     .section-3-items h1 {
         font-size: 7vw;
     }
