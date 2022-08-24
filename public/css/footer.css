@@ -3,11 +3,12 @@
     position: relative;
     display: flex;
     justify-content: center;
+    background-color: var(--grey-2-background);
 }
 
 .footer-subcontainer {
     background-color: var(--grey-2-background);
-    max-width: 1360px;
+    max-width: 1900px;
     width: 100%;
 }
 

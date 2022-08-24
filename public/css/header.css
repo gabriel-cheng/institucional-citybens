@@ -18,7 +18,6 @@
 .header-subcontainer {
     display: flex;
     align-items: center;
-    max-width: 1300px;
     width: 85%;
     padding: 10px 0 0 0;
 }
