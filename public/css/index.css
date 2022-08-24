@@ -9,10 +9,10 @@
 }
 
 .main-top-card {
-    display: grid;
-    grid-template-areas:
-        'left-container right-container'
-    ;
+    display: flex;
+    justify-content: center;
+    max-width: 4000px;
+    width: 85%;
 }
 
 .left-card-container {
@@ -20,20 +20,21 @@
     grid-area: left-container;
     border-radius: 25px 0 0 25px;
     display: flex;
-}
-
-.left-card-text {
-    padding: 15px;
-    font-size: 2.5em;
-    width: 45%;
-    color: white;
-    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    padding: 15px;
+    font-size: 2.5em;
+    width: 100%;
+    color: white;
+}
+ 
+.left-card-container p,
+.right-card-slider p {
+    margin: 0;
 }
 
-.left-card-text p span {
+.left-card-container p span {
     color: var(--blue-background);
     flex-wrap: wrap;
 }
@@ -45,7 +46,6 @@
     cursor: pointer;
     font-size: 15px;
     max-width: 250px;
-    width: 100%;
     border: 0;
 }
 
@@ -54,14 +54,12 @@
 }
 
 .left-card-container,
-.left-card-text,
 .right-card-slider {
-    max-width: 600px;
-    width: 100%;
+    max-width: 1400px;
+    width: 80%;
     min-width: 280px;
-    max-height: 490px;
-    height: 40vw;
-    min-height: 186px;
+    height: 35vw;
+    min-height: 320px
 }
 
 .right-card-slider {
@@ -72,6 +70,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+    grid-area: right-container;
 }
 /* Fim section 1 top card */
 
@@ -714,6 +713,7 @@ button:nth-of-type(2) {
 
 @media screen and (max-width: 867px) {
     .main-top-card {
+        display: grid;
         grid-template-areas:
             'left-container'
             'right-container'
@@ -723,6 +723,8 @@ button:nth-of-type(2) {
     .left-card-container,
     .right-card-slider {
         width: 95vw;
+        height: 40vw;
+        min-height: 270px;
     }
 
     .left-card-container {
