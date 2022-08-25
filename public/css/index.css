@@ -28,8 +28,12 @@
     width: 100%;
     color: white;
 }
- 
-.left-card-container p,
+
+.left-card-container p {
+    font-size: 2.3vw;
+    margin: 0;
+}
+
 .right-card-slider p {
     margin: 0;
 }
@@ -58,6 +62,7 @@
     max-width: 1400px;
     width: 80%;
     min-width: 280px;
+    max-height: 1400px;
     height: 35vw;
     min-height: 320px
 }
@@ -134,11 +139,11 @@
     justify-content: center;
     width: 100%;
     margin: 70px 0 0 0;
-    height: 500px;
+    height: auto;
 }
 
 .section-3-grid-items {
-    max-width: 1200px;
+    max-width: 2700px;
     width: 90%;
     background-color: var(--grey-1-background);
     border-radius: 20px;
@@ -148,7 +153,7 @@
         'title cell'
         'playstore cell'
     ;
-    padding: 0 30px;
+    padding: 20px 30px;
 }
 
 .section-3-titles {
@@ -196,10 +201,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 85%;
 }
 
 .cellphone-background img {
-    max-width: 430px;
+    max-width: 1000px;
     width: 100%;
     border-radius: 0 0 20px 20px;
     padding: 5px;
@@ -628,6 +634,39 @@ button:nth-of-type(2) {
     }
 }
 
+@media screen and (max-width: 962px) {
+    .section-3-main-container {
+        height: auto;
+    }
+
+    .section-3-grid-items {
+        align-items: center;
+        grid-template-columns: auto;
+        grid-template-areas:
+            'title'
+            'cell'
+            'playstore'
+        ;
+        padding: 20px 0;
+    }
+
+    .cellphone-background {
+        max-width: none;
+    }
+
+    .cellphone-background img {
+        width: 50vw;
+    }
+
+    .section-3-titles h1 {
+        font-size: 5vw;
+    }
+
+    .playstore-appstore-icons {
+        margin: 20px 0 0 0;
+    }
+}
+
 @media screen and (max-width: 943px) {
     .section-3-container-items {
         grid-template-columns: auto;
@@ -682,35 +721,6 @@ button:nth-of-type(2) {
     }
 }
 
-@media screen and (max-width: 962px) {
-    .section-3-main-container {
-        height: auto;
-    }
-
-    .section-3-grid-items {
-        align-items: center;
-        grid-template-columns: auto;
-        grid-template-areas:
-            'title'
-            'cell'
-            'playstore'
-        ;
-        padding: 20px 0;
-    }
-
-    .cellphone-background img {
-        width: 60vw;
-    }
-
-    .section-3-titles h1 {
-        font-size: 5vw;
-    }
-
-    .playstore-appstore-icons {
-        margin: 20px 0 0 0;
-    }
-}
-
 @media screen and (max-width: 867px) {
     .main-top-card {
         display: grid;
@@ -729,6 +739,10 @@ button:nth-of-type(2) {
 
     .left-card-container {
         border-radius: 25px 25px 0 0;
+    }
+
+    .left-card-container p {
+        font-size: 5vw;
     }
 
     .right-card-slider {
