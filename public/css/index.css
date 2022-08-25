@@ -655,6 +655,7 @@ button:nth-of-type(2) {
     }
 
     .cellphone-background img {
+        max-width: 362px;
         width: 50vw;
     }
 
@@ -664,6 +665,7 @@ button:nth-of-type(2) {
 
     .playstore-appstore-icons {
         margin: 20px 0 0 0;
+        width: 100%;
     }
 }
 
@@ -678,10 +680,6 @@ button:nth-of-type(2) {
     
     .section-3-items {
         margin: 4% 0 0 0;
-    }
-
-    .playstore-appstore-icons {
-        margin: 0 0 3% 0;
     }
 
     .cellphone-background img {
@@ -772,8 +770,15 @@ button:nth-of-type(2) {
     }
 
     .playstore-appstore-icons {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+    }
+
+    .playstore-appstore-icons img {
+        max-width: 180px;
+        width: 40%;
+        min-width: 60px;
+        height: auto;
     }
 
     .playstore-appstore-icons img:nth-of-type(1) {
@@ -781,7 +786,7 @@ button:nth-of-type(2) {
     }
 
     .playstore-appstore-icons img:nth-of-type(2) {
-        margin: 10px 0 0 0;
+        margin: 0 0 0 10px;
     }
 }
 
