@@ -41,7 +41,7 @@
 
 .consorcio-title h1 {
     font-size: 4rem;
-    color: var(--city-background-1);
+    color: var(--city-background-green);
 }
 
 .consorcio-description {
@@ -50,7 +50,7 @@
 
 #input-drop {
     width: 300px;
-    border: 2px solid var(--city-background-1);
+    border: 2px solid var(--city-background-green);
     border-radius: 10px 0 0 10px;
     position: relative;
     padding: 0 15px;
@@ -68,16 +68,16 @@
 
 .consorcio-btn {
     position: absolute;
-    border: 2px solid var(--city-background-1);
+    border: 2px solid var(--city-background-green);
     border-left: 0;
     width: 60px;
     border-radius: 0 10px 10px 0;
     background-color: #fff;
-    color: var(--city-background-1);
+    color: var(--city-background-green);
 }
 
 .consorcio-btn:hover {
-    background-color: var(--city-background-1);
+    background-color: var(--city-background-green);
     color: white;
 }
 
@@ -91,7 +91,7 @@
     height: 125px;
     overflow: auto;
     border-radius: 8px 6px 6px 8px;
-    border: 1px solid var(--city-background-1);
+    border: 1px solid var(--city-background-green);
     background-color: #dbe7e6;
     border-right: 0;
     display: none;
@@ -113,7 +113,7 @@
 }
 
 .dropDown::-webkit-scrollbar-thumb {
-    background-color: var(--city-background-1);
+    background-color: var(--city-background-green);
 }
 
 .dropDown::-webkit-scrollbar-thumb:hover {
@@ -126,7 +126,7 @@
 
 .item {
     background-color: rgb(0, 0, 0, 0);
-    border-bottom: 1px solid var(--city-background-1);
+    border-bottom: 1px solid var(--city-background-green);
     border-top: 0;
     padding: 0 8px;
     cursor: pointer;
@@ -154,12 +154,12 @@
 .item-icons {
     font-size: 40px !important;
     text-align: center !important;
-    color: var(--city-background-1) !important;
+    color: var(--city-background-green) !important;
     margin: 0 20px 0 0 !important;
 }
 
 span {
-    color: var(--city-background-1);
+    color: var(--city-background-green);
 }
 
 .consorcio-slider-container {

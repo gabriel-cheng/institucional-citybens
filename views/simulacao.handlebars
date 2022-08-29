@@ -1,4 +1,25 @@
+<style scoped>
+    .consorcio-dados-title {
+        max-width: 1035px;
+        width: 100%;
+        margin: 0 0 30px 0;
+    }
+
+    @media screen and (max-width: 867px) {
+        .consorcio-dados-title {
+            max-width: 520px;
+            padding: 0 10px;
+        }
+    }
+</style>
 <main class="section-5-main-container">
+    <div class="consorcio-dados-title">
+        <p class="dados-hello">Simulação</p>
+        <div class="opcao-consorcio-escolhida">
+            <i class="escolha-icone material-icons"></i>
+            <p class="escolha-text">{{text}}</p>
+        </div>
+    </div>
     <div class="section-5-contents">
         <div class="section-5-content-1">
             <h1>Simular consórcio</h1>
@@ -42,6 +63,7 @@
                     <p>Parcelas</p>
                     <input name="valorParcelas" type="text" id="display_parcelas" value="R$ 6.600,00" readonly>
                 </div>
+                <input type="hidden" name="consorcioDadosValue" class="escolha-text-input" value="{{text}}">
             </div>
             <input type="submit" class="section-5-input" value="Verificar disponibilidade">
         </form>

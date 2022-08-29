@@ -17,8 +17,17 @@
 
     // Routes
     (function() {
+        app.post('/disponibilidade', (require, response) => {
+            response.send(
+                '<h1>Recebi seus dados!</h1><br><br>' +
+                `Consórcio: ${require.body.consorcioDadosValue}<br>` +
+                `Valor: ${require.body.valorPagar}<br>` +
+                `Parcelas: ${require.body.valorParcelas}`
+            );
+        });
+        
         app.post('/simulacao', (require, response) => {
-            response.render('simulacao');
+            response.render('simulacao', {text: require.body.consorcioDadosValue});
         });
 
         app.post('/informe-seus-dados', (require, response) => {
@@ -27,14 +36,6 @@
 
         app.get('/consorcio', (require, response) => {
             response.render('consorcio');
-        });
-
-        app.post('/disponibilidade', (require, response) => {
-            response.send(
-                '<h1>Recebi seus dados!</h1><br><br>' +
-                `Valor: ${require.body.valorPagar}<br>` +
-                `Parcelas: ${require.body.valorParcelas}`
-            );
         });
 
         app.get('/', (require, response) => {

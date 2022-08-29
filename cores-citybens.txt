@@ -1,2 +1,5 @@
+→ Fundo preto, usar o verde:
 Verde → #e8ff01
+
+→ Fundo branco, usar o azul:
 Azul → #2a43ff

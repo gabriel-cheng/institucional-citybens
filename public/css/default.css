@@ -6,7 +6,8 @@
 @import url(informe-seus-dados.css);
 
 :root {
-    --city-background-1: #0057ff;
+    --city-background-green: #e8ff01;
+    --city-background-blue: #2a43ff;
     --city-background-2: #ececec;
     --city-background-3: #1c1c1c;
     --city-background-4: #7f7f7f;
