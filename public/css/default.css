@@ -6,11 +6,20 @@
 @import url(informe-seus-dados.css);
 
 :root {
-    --blue-background: #0057ff;
-    --grey-1-background: #ececec;
-    --grey-2-background: #1c1c1c;
-    --font-description-grey: #7f7f7f;
+    --city-background-1: #0057ff;
+    --city-background-2: #ececec;
+    --city-background-3: #1c1c1c;
+    --city-background-4: #7f7f7f;
 }
+
+/* BACKUP
+:root {
+    --city-background-1: #0057ff;
+    --city-background-2: #ececec;
+    --city-background-3: #1c1c1c;
+    --city-background-4: #7f7f7f;
+}
+*/
 
 @font-face {
     font-family: 'citybens';
@@ -26,6 +35,10 @@
 
 html {
     font-size: 62.5%;
+}
+
+body {
+    background-color: #000 !important;
 }
 
 html, body {

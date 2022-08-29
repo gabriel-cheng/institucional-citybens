@@ -3,7 +3,7 @@
 }
 
 .last_word_format {
-    color: var(--blue-background);
+    color: var(--city-background-1);
     font-size: 5rem;
     line-height: 40px;
 }
@@ -39,8 +39,12 @@
     align-items: center;
 }
 
+.form-dados-consorcio {
+    display: none;
+}
+
 .escolha-icone {
-    color: var(--blue-background);
+    color: var(--city-background-1);
     font-size: 8.5rem !important;
     margin: 0 10px 0 0;
 }
@@ -64,7 +68,7 @@
     width: 100%;
     border-radius: 8px;
     outline: 0;
-    border: 1px solid var(--blue-background);
+    border: 1px solid var(--city-background-1);
     padding: 10px;
     font-size: 1.5rem;
     font-weight: 200;
@@ -113,7 +117,7 @@
 }
 
 .termos-de-uso p a {
-    color: var(--blue-background)
+    color: var(--city-background-1)
 }
 
 .dados-button-container {
@@ -123,7 +127,7 @@
 }
 
 .btn-enviar-dados {
-    background-color: var(--blue-background);
+    background-color: var(--city-background-1);
     width: 160px;
     height: 50px;
     outline: 0;

@@ -3,11 +3,11 @@
     position: relative;
     display: flex;
     justify-content: center;
-    background-color: var(--grey-2-background);
+    background-color: var(--city-background-2);
 }
 
 .footer-subcontainer {
-    background-color: var(--grey-2-background);
+    background-color: var(--city-background-2);
     max-width: 1900px;
     width: 100%;
 }
@@ -16,6 +16,7 @@
     color: #fff;
     font-size: 1.8rem;
     padding: 30px 60px;
+    background-color: var(--city-background-3);
 }
 
 .footer-section-1 {
@@ -25,7 +26,7 @@
 }
 
 dl dt {
-    color: var(--blue-background);
+    color: var(--city-background-1);
 }
 
 .footer-section-2 {

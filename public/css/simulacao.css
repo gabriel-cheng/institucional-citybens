@@ -2,7 +2,9 @@
     margin: 20vh 0 0 0;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .section-5-contents {
@@ -14,7 +16,7 @@
 }
 
 .section-5-contents h3 {
-    color: var(--blue-background);
+    color: var(--city-background-1);
 }
 
 .section-5-content-1 {
@@ -28,7 +30,7 @@
 }
 
 .section-5-main-container input[type=range] {
-    background-color: var(--grey-1-background);
+    background-color: var(--city-background-2);
     width: 100%;
     height: 2px;
 }
@@ -38,7 +40,7 @@
     flex-direction: row;
     width: 100%;
     font-size: 12px;
-    color: var(--font-description-grey);
+    color: var(--city-background-4);
 }
 
 .section-5-range-description {
@@ -52,7 +54,7 @@
 }
 
 .section-5-info-container h3 {
-    color: var(--blue-background);
+    color: var(--city-background-1);
 }
 
 .section-5-info-container {
@@ -62,7 +64,7 @@
 }
 
 .section-5-info-content {
-    background-color: var(--grey-1-background);
+    background-color: var(--city-background-2);
     padding: 40px 70px;
     border-radius: 25px 25px 0 0;
     text-align: center;
@@ -78,7 +80,7 @@
     text-align: center;
     padding: 20px 0;
     border-radius: 0 0 25px 25px;
-    background-color: var(--blue-background);
+    background-color: var(--city-background-1);
     color: white;
     cursor: pointer;
     border: 0;
@@ -94,11 +96,17 @@
     margin: 0 0 20px 0;
 }
 
+.info-content-2 p,
+.info-content-3 p {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
 #display_pagar,
 #display_parcelas {
     width: 180px;
     font-size: 25px;
-    color: var(--blue-background);
+    color: var(--city-background-1);
     text-align: center;
     border: 0;
     background-color: rgba(0, 0, 0, 0);

@@ -16,7 +16,7 @@
 }
 
 .left-card-container {
-    background-color: var(--grey-2-background);
+    background-color: var(--city-background-3);
     grid-area: left-container;
     border-radius: 25px 0 0 25px;
     display: flex;
@@ -39,7 +39,7 @@
 }
 
 .left-card-container p span {
-    color: var(--blue-background);
+    color: var(--city-background-1);
     flex-wrap: wrap;
 }
 
@@ -69,7 +69,7 @@
 
 .right-card-slider {
     border-radius: 0 25px 25px 0;
-    background-color: var(--blue-background);
+    background-color: var(--city-background-1);
     position: relative;
     display: flex;
     justify-content: center;
@@ -104,7 +104,7 @@
 
 .card-description {
     width: 280px;
-    background-color: var(--blue-background);
+    background-color: var(--city-background-1);
     padding: 20px;
     border-radius: 20px;
 }
@@ -145,7 +145,7 @@
 .section-3-grid-items {
     max-width: 2700px;
     width: 90%;
-    background-color: var(--grey-1-background);
+    background-color: var(--city-background-2);
     border-radius: 20px;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -166,7 +166,7 @@
 
 .section-3-titles > h1 {
     font-size: 3em;
-    color: var(--blue-background);
+    color: var(--city-background-1);
 }
 
 .section-3-titles p {
@@ -225,7 +225,7 @@
 }
 
 .section-4-header button {
-    border: 1px solid var(--blue-background);
+    border: 1px solid var(--city-background-1);
     border-radius: 20px;
     padding: 6px 15px;
     cursor: pointer
@@ -246,7 +246,7 @@
 .section-4-card-2,
 .section-4-card-3,
 .section-4-card-4 {
-    background-color: var(--grey-1-background);
+    background-color: var(--city-background-2);
     border-radius: 20px;
     padding: 20px 70px;
     display: flex;
@@ -273,7 +273,7 @@
 .section-6-card {
     width: 90%;
     height: 80vh;
-    background-color: var(--blue-background);
+    background-color: var(--city-background-1);
     border-radius: 25px;
     display: flex;
     flex-direction: row;
@@ -299,7 +299,7 @@
 
 .section-6-card-text input[type=tel] {
     border: 1px solid white;
-    background-color: var(--blue-background);
+    background-color: var(--city-background-1);
     color: white;
     width: 185px;
     margin: 20px 0 0 0;
@@ -346,7 +346,7 @@
 }
 
 .section-7-left-card {
-    background-color: var(--grey-2-background);
+    background-color: var(--city-background-3);
     display: grid;
     justify-items: center;
     grid-template-areas:
@@ -357,7 +357,7 @@
     ;
     border-radius: 25px 0 0 25px;
     padding: 40px 30px;
-    color: var(--font-description-grey);
+    color: var(--city-background-4);
     font-size: 13px;
     grid-area: card-1;
     text-align: center;
@@ -404,7 +404,7 @@
     width: 100%;
     height: 70px;
     border-radius: 20px;
-    border: 1px solid var(--blue-background);
+    border: 1px solid var(--city-background-1);
     padding: 40px 20px 20px 20px;
     font-size: 18px;
 }
@@ -414,7 +414,7 @@
 }
 
 .manual-placeholder {
-    color: var(--font-description-grey);
+    color: var(--city-background-4);
     position: absolute;
     left: 20px;
     top: 0;
@@ -440,18 +440,18 @@
 }
 
 .moedas-container button:hover {
-    background-color: var(--blue-background);
+    background-color: var(--city-background-1);
     color: #fff;
 }
 
 .moedas-container button:focus {
-    background-color: var(--blue-background);
+    background-color: var(--city-background-1);
     color: #fff;
 }
 
 .section-7-right-card {
     border-radius: 0 25px 25px 0;
-    background-color: var(--grey-1-background);
+    background-color: var(--city-background-2);
     padding: 20px 50px;
     display: flex;
     flex-direction: column;
@@ -494,7 +494,7 @@ th:last-child {
 
 .section-7-right-card-container
 td:last-child {
-    color: var(--blue-background);
+    color: var(--city-background-1);
     text-align: end;
 }
 
@@ -514,14 +514,14 @@ button {
 
 .section-7-table-buttons
 button:nth-of-type(1) {
-    background-color: var(--blue-background);
+    background-color: var(--city-background-1);
     border: 0;
     color: #fff;
 }
 
 .section-7-table-buttons
 button:nth-of-type(2) {
-    border: 1px solid var(--blue-background);
+    border: 1px solid var(--city-background-1);
 }
 /* Fim sessão 7 */
 
@@ -546,7 +546,7 @@ button:nth-of-type(2) {
 
 .newsletter-button {
     padding: 8px 20px;
-    background-color: var(--blue-background);
+    background-color: var(--city-background-1);
     border: 0;
     border-radius: 20px;
     color: #fff;
@@ -576,7 +576,7 @@ button:nth-of-type(2) {
     max-height: 400px;
     height: 100vw;
     min-height: 312px;
-    background-color: var(--grey-1-background);
+    background-color: var(--city-background-2);
     padding: 30px 25px;
     border-radius: 30px;
     display: flex;
@@ -608,7 +608,7 @@ button:nth-of-type(2) {
 
 .card-date-container h1 {
     font-size: 2.5em;
-    color: var(--blue-background);
+    color: var(--city-background-1);
 }
 /* Fim sessão 8 */
 
