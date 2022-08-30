@@ -36,6 +36,7 @@
 
 .right-card-slider p {
     margin: 0;
+    color: black;
 }
 
 .left-card-container p span {
@@ -113,7 +114,7 @@
     width: 280px;
     background-color: var(--city-background-blue);
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 2%;
 }
 
 .section-2-card-1,
@@ -152,7 +153,7 @@
 .section-3-grid-items {
     max-width: 2700px;
     width: 90%;
-    background-color: var(--city-background-2);
+    background-color: var(--city-background-3);
     border-radius: 20px;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -471,7 +472,7 @@
 }
 
 .section-7-right-card-container th {
-    color: grey;
+    color: #262626;
     font-size: 1.5rem;
     font-weight: 100;
     padding: 10px 0;
@@ -582,7 +583,7 @@ button:nth-of-type(2) {
     max-height: 400px;
     height: 100vw;
     min-height: 312px;
-    background-color: var(--city-background-2);
+    background-color: var(--city-background-blue);
     padding: 30px 25px;
     border-radius: 30px;
     display: flex;
@@ -614,7 +615,7 @@ button:nth-of-type(2) {
 
 .card-date-container h1 {
     font-size: 2.5em;
-    color: var(--city-background-blue);
+    color: var(--city-background-green);
 }
 /* Fim sessão 8 */
 
@@ -631,6 +632,8 @@ button:nth-of-type(2) {
 
     .section-2-cards-container {
         justify-content: initial;
+        margin-left: 12%;
+        margin-right: 12%;
     }
 
     .section-8-cards-container {

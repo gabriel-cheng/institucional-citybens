@@ -30,7 +30,7 @@ dl dt {
 }
 
 .footer-section-2 {
-    padding: 8px 60px;
+    padding: 20px 60px;
     background-color: rgb(24, 24, 24);
     display: grid;
     grid-template-areas:

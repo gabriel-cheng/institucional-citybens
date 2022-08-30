@@ -6,17 +6,17 @@
 @import url(informe-seus-dados.css);
 
 :root {
-    --city-background-green: #e8ff01;
+    --city-background-green: #e8ff01; 
     --city-background-blue: #2a43ff;
-    --city-background-2: #ececec;
-    --city-background-3: #1c1c1c;
+    --city-background-2: #fff;
+    --city-background-3: #000;
     --city-background-4: #7f7f7f;
 }
 
 /* BACKUP
 :root {
     --city-background-1: #0057ff;
-    --city-background-2: #ececec;
+    --city-background-2: #262626;
     --city-background-3: #1c1c1c;
     --city-background-4: #7f7f7f;
 }
@@ -39,7 +39,7 @@ html {
 }
 
 body {
-    background-color: #000 !important;
+    background-color: #0D0D0D !important;
 }
 
 html, body {
@@ -53,4 +53,8 @@ a {
 
 .displayNone {
     display: none !important;
+}
+
+p {
+    color: #fff;
 }
