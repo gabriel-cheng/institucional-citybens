@@ -56,7 +56,9 @@
 }
 
 .top-card-button:hover {
-    background-color: rgba(255, 255, 255, 0.578);
+    background-color: white;
+    color: black;
+    transition: background-color 0.3 ease;
 }
 
 .left-card-container,
@@ -554,15 +556,18 @@ button:nth-of-type(2) {
 
 .blog-button {
     padding: 8px 20px;
-    background-color: var(--city-background-green);
+    background-color: var(--city-background-blue);
     border: 0;
     border-radius: 20px;
     cursor: pointer;
     font-size: 1.3rem;
+    color: white;
 }
 
 .blog-button:hover {
-    background-color: #0055ffa2;
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s ease;
 }
 
 .section-8-contents {

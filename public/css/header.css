@@ -6,7 +6,7 @@
     z-index: 1;
     transition: .3s ease-in-out;
     top: 0;
-    background-color: #000;
+    background-color: #0D0D0D;
     padding: 0 0 10px 0;
 }
 
@@ -71,7 +71,9 @@
 }
 
 .navigation-button button:hover {
-    background-color: rgba(11, 11, 255, 0.552);
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s ease;
 }
 
 .menu-toggle {

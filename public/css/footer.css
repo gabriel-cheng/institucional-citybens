@@ -16,7 +16,9 @@
     color: #fff;
     font-size: 1.8rem;
     padding: 30px 60px;
-    background-color: var(--city-background-3);
+    background-color: var(--city-background-5);
+    border-top: solid 2px;
+    border-color: var(--city-background-green);
 }
 
 .footer-section-1 {
@@ -31,7 +33,7 @@ dl dt {
 
 .footer-section-2 {
     padding: 20px 60px;
-    background-color: rgb(24, 24, 24);
+    background-color: var(--city-background-3);
     display: grid;
     grid-template-areas:
         'logo created icons'
@@ -61,6 +63,7 @@ dl dt {
 .footer-socials img {
     width: 50px;
     transition: .2s ease-in-out;
+    background-color: white;
 }
 
 .footer-socials a:not(:last-child) {
