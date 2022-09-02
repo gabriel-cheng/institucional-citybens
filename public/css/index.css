@@ -116,7 +116,7 @@
     width: 280px;
     background-color: var(--city-background-blue);
     padding: 20px;
-    border-radius: 2%;
+    border-radius: 0px 0px 12px 12px;
 }
 
 .section-2-card-1,
@@ -131,7 +131,7 @@
 .section-2-card-4 {
     width: 280px;
     background-color: #f6f6f6;
-    border-radius: 0 0 20px 20px;
+   border-radius: 12px 12px 20px 20px;
 }
 
 .section-2-card-1 img,
@@ -139,6 +139,7 @@
 .section-2-card-3 img,
 .section-2-card-4 img {
     width: 100%;
+    border-radius: 20px;
 }
 /* Fim section 2 */
 
@@ -414,7 +415,7 @@
     width: 100%;
     height: 70px;
     border-radius: 20px;
-    border: 1px solid var(--city-background-green);
+    border: 2px solid var(--city-background-blue);
     padding: 40px 20px 20px 20px;
     font-size: 18px;
 }
@@ -451,6 +452,7 @@
 
 .moedas-container button:hover {
     background-color: var(--city-background-green);
+    transition-duration: 0.3s;
 }
 
 .moedas-container button:focus {
@@ -536,7 +538,7 @@ button:nth-of-type(1):hover{
 
 .section-7-table-buttons
 button:nth-of-type(2) {
-    border: 1px solid var(--city-background-blue);
+    border: 2px solid var(--city-background-blue);
 }
 /* Fim sessão 7 */
 

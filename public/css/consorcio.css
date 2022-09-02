@@ -50,7 +50,7 @@
 
 #input-drop {
     width: 300px;
-    border: 2px solid var(--city-background-green);
+    border: 2px solid var(--city-background-blue);
     border-radius: 10px 0 0 10px;
     position: relative;
     padding: 0 15px;
@@ -68,16 +68,16 @@
 
 .consorcio-btn {
     position: absolute;
-    border: 2px solid var(--city-background-green);
+    border: 2px solid var(--city-background-blue);
     border-left: 0;
     width: 60px;
     border-radius: 0 10px 10px 0;
     background-color: #fff;
-    color: var(--city-background-green);
+    color: var(--city-background-blue);
 }
 
 .consorcio-btn:hover {
-    background-color: var(--city-background-green);
+    background-color: var(--city-background-blue);
     color: white;
 }
 
@@ -91,8 +91,8 @@
     height: 125px;
     overflow: auto;
     border-radius: 8px 6px 6px 8px;
-    border: 1px solid var(--city-background-green);
-    background-color: #dbe7e6;
+    border: 1px solid var(--city-background-blue);
+    background-color: white;
     border-right: 0;
     display: none;
     position: absolute;
@@ -113,7 +113,7 @@
 }
 
 .dropDown::-webkit-scrollbar-thumb {
-    background-color: var(--city-background-green);
+    background-color: var(--city-background-blue);
 }
 
 .dropDown::-webkit-scrollbar-thumb:hover {
@@ -126,7 +126,7 @@
 
 .item {
     background-color: rgb(0, 0, 0, 0);
-    border-bottom: 1px solid var(--city-background-green);
+    border-bottom: 1px solid var(--city-background-blue);
     border-top: 0;
     padding: 0 8px;
     cursor: pointer;
@@ -154,12 +154,12 @@
 .item-icons {
     font-size: 40px !important;
     text-align: center !important;
-    color: var(--city-background-green) !important;
+    color: var(--city-background-blue) !important;
     margin: 0 20px 0 0 !important;
 }
 
 span {
-    color: var(--city-background-green);
+    color: var(--city-background-blue);
 }
 
 .consorcio-slider-container {

@@ -47,6 +47,13 @@
     color: black;
     text-transform: uppercase;
     color: #fff;
+    transition: 0.3s ease-out;
+}
+
+.header-navigation li a:hover{
+    transition: ease-in 0.3s;
+    margin: 0px 12px 0px 12px;
+    color: var(--city-background-green);
 }
 
 .header-navigation ul::after {
