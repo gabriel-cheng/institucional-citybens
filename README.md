@@ -12,7 +12,7 @@ Site que será usado como o principal da empresa assim que concluído, trata-se 
 $git clone https://github.com/gabriel-cheng/projeto-institucional-node
 ```
 
-2°- Instale as dependências neessárias para que a aplicação seja consiga ser executada:
+2°- Dentro do diretório clonado, instale as dependências necessárias para que a aplicação consiga ser executada:
 ```
 $npm install
 ```
