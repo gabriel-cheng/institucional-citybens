@@ -116,7 +116,15 @@
     width: 280px;
     background-color: var(--city-background-blue);
     padding: 20px;
+<<<<<<< HEAD
     border-radius: 15px;
+=======
+<<<<<<< HEAD
+    border-radius: 15px;
+=======
+    border-radius: 0px 0px 12px 12px;
+>>>>>>> ba4da65d9f7f98148754cbc21d8e919208873a62
+>>>>>>> Rissollis-master
 }
 
 .section-2-card-1,
@@ -131,7 +139,15 @@
 .section-2-card-4 {
     width: 280px;
     background-color: #f6f6f6;
+<<<<<<< HEAD
     border-radius: 15px 15px 20px 20px;
+=======
+<<<<<<< HEAD
+    border-radius: 15px 15px 20px 20px;
+=======
+   border-radius: 12px 12px 20px 20px;
+>>>>>>> ba4da65d9f7f98148754cbc21d8e919208873a62
+>>>>>>> Rissollis-master
 }
 
 .section-2-card-1 img,
@@ -139,7 +155,15 @@
 .section-2-card-3 img,
 .section-2-card-4 img {
     width: 100%;
+<<<<<<< HEAD
     border-radius: 15px;
+=======
+<<<<<<< HEAD
+    border-radius: 15px;
+=======
+    border-radius: 20px;
+>>>>>>> ba4da65d9f7f98148754cbc21d8e919208873a62
+>>>>>>> Rissollis-master
 }
 /* Fim section 2 */
 
