@@ -6,7 +6,11 @@
     z-index: 1;
     transition: .3s ease-in-out;
     top: 0;
+<<<<<<< HEAD
     background-color: var(--city-background-5);
+=======
+    background-color: #0D0D0D;
+>>>>>>> ba4da65d9f7f98148754cbc21d8e919208873a62
     padding: 0 0 10px 0;
 }
 
@@ -47,6 +51,13 @@
     color: black;
     text-transform: uppercase;
     color: #fff;
+    transition: 0.3s ease-out;
+}
+
+.header-navigation li a:hover{
+    transition: ease-in 0.3s;
+    margin: 0px 12px 0px 12px;
+    color: var(--city-background-green);
 }
 
 .header-navigation ul::after {
@@ -71,7 +82,9 @@
 }
 
 .navigation-button button:hover {
-    background-color: rgba(11, 11, 255, 0.552);
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s ease;
 }
 
 .menu-toggle {
