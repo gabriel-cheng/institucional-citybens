@@ -31,7 +31,7 @@ dl dt {
 
 .footer-section-2 {
     padding: 20px 60px;
-    background-color: rgb(24, 24, 24);
+    background-color: var(--city-background-3);
     display: grid;
     grid-template-areas:
         'logo created icons'

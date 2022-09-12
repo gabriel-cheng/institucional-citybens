@@ -6,7 +6,7 @@
     z-index: 1;
     transition: .3s ease-in-out;
     top: 0;
-    background-color: #000;
+    background-color: var(--city-background-5);
     padding: 0 0 10px 0;
 }
 
