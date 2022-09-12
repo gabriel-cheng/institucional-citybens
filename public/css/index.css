@@ -116,11 +116,7 @@
     width: 280px;
     background-color: var(--city-background-blue);
     padding: 20px;
-<<<<<<< HEAD
     border-radius: 15px;
-=======
-    border-radius: 0px 0px 12px 12px;
->>>>>>> ba4da65d9f7f98148754cbc21d8e919208873a62
 }
 
 .section-2-card-1,
@@ -135,11 +131,7 @@
 .section-2-card-4 {
     width: 280px;
     background-color: #f6f6f6;
-<<<<<<< HEAD
     border-radius: 15px 15px 20px 20px;
-=======
-   border-radius: 12px 12px 20px 20px;
->>>>>>> ba4da65d9f7f98148754cbc21d8e919208873a62
 }
 
 .section-2-card-1 img,
@@ -147,11 +139,7 @@
 .section-2-card-3 img,
 .section-2-card-4 img {
     width: 100%;
-<<<<<<< HEAD
     border-radius: 15px;
-=======
-    border-radius: 20px;
->>>>>>> ba4da65d9f7f98148754cbc21d8e919208873a62
 }
 /* Fim section 2 */
 
@@ -297,7 +285,7 @@
     width: 90%;
     height: 80vh;
     background: rgb(0,0,0);
-    background: linear-gradient(115deg, rgba(0,0,0,1) 10%, rgba(13,13,13,1) 50%, rgba(232,255,1,1) 100%); 
+    background: linear-gradient(115deg, rgba(0,0,0,1) 10%, rgba(13,13,13,1) 50%, rgba(232,255,1,1) 100%);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -410,7 +398,7 @@
 .section-7-left-card h1,
 .input-number-container input[type=number] {
     margin: 0 0 6% 0;
-} 
+}
 
 .input-number-container {
     width: 100%;
@@ -713,7 +701,7 @@ button:nth-of-type(2) {
             'cellphone'
         ;
     }
-    
+
     .section-3-items {
         margin: 4% 0 0 0;
     }
@@ -740,7 +728,7 @@ button:nth-of-type(2) {
     .section-7-left-card {
         border-radius: 25px 25px 0 0;
     }
-    
+
     .section-7-right-card {
         border-radius: 0 0 25px 25px;
     }
