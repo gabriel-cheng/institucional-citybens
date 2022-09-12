@@ -3,7 +3,7 @@
     const app = express();
     const exphbs = require('express-handlebars');
     const bodyParser = require('body-parser');
-    
+
     // Configs
     (function() {
         app.use(bodyParser.urlencoded({extended: false}));
@@ -17,28 +17,32 @@
 
     // Routes
     (function() {
-        app.post('/disponibilidade', (require, response) => {
+        app.get('/filiais', (request, response) => {
+            response.render('Filiais');
+        });
+
+        app.post('/disponibilidade', (request, response) => {
             response.send(
                 '<h1>Recebi seus dados!</h1><br><br>' +
-                `Consórcio: ${require.body.consorcioDadosValue}<br>` +
-                `Valor: ${require.body.valorPagar}<br>` +
-                `Parcelas: ${require.body.valorParcelas}`
+                `Consórcio: ${request.body.consorcioDadosValue}<br>` +
+                `Valor: ${request.body.valorPagar}<br>` +
+                `Parcelas: ${request.body.valorParcelas}`
             );
         });
-        
-        app.post('/simulacao', (require, response) => {
-            response.render('simulacao', {text: require.body.consorcioDadosValue});
+
+        app.post('/simulacao', (request, response) => {
+            response.render('simulacao', {text: request.body.consorcioDadosValue});
         });
 
-        app.post('/informe-seus-dados', (require, response) => {
-            response.render('informe-seus-dados', {text: require.body.sonho});
+        app.post('/informe-seus-dados', (request, response) => {
+            response.render('informe-seus-dados', {text: request.body.sonho});
         });
 
-        app.get('/consorcio', (require, response) => {
+        app.get('/consorcio', (request, response) => {
             response.render('consorcio');
         });
 
-        app.get('/', (require, response) => {
+        app.get('/', (request, response) => {
             response.render('index');
         });
     })();

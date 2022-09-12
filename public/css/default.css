@@ -1,13 +1,14 @@
 @import url(index.css);
 @import url(footer.css);
 @import url(header.css);
+@import url(filiais.css);
 @import url(simulacao.css);
 @import url(consorcio.css);
 @import url(informe-seus-dados.css);
 
 :root {
-    --city-background-green: #e8ff01; 
-    --city-background-blue: #2A2EFF; 
+    --city-background-green: #e8ff01;
+    --city-background-blue: #2A2EFF;
     --city-background-2: #fff;
     --city-background-3: #000;
     --city-background-4: #7f7f7f;
