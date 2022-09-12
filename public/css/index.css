@@ -56,7 +56,9 @@
 }
 
 .top-card-button:hover {
-    background-color: rgba(255, 255, 255, 0.578);
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s ease;
 }
 
 .left-card-container,
@@ -114,7 +116,11 @@
     width: 280px;
     background-color: var(--city-background-blue);
     padding: 20px;
+<<<<<<< HEAD
     border-radius: 15px;
+=======
+    border-radius: 0px 0px 12px 12px;
+>>>>>>> ba4da65d9f7f98148754cbc21d8e919208873a62
 }
 
 .section-2-card-1,
@@ -129,7 +135,11 @@
 .section-2-card-4 {
     width: 280px;
     background-color: #f6f6f6;
+<<<<<<< HEAD
     border-radius: 15px 15px 20px 20px;
+=======
+   border-radius: 12px 12px 20px 20px;
+>>>>>>> ba4da65d9f7f98148754cbc21d8e919208873a62
 }
 
 .section-2-card-1 img,
@@ -137,7 +147,11 @@
 .section-2-card-3 img,
 .section-2-card-4 img {
     width: 100%;
+<<<<<<< HEAD
     border-radius: 15px;
+=======
+    border-radius: 20px;
+>>>>>>> ba4da65d9f7f98148754cbc21d8e919208873a62
 }
 /* Fim section 2 */
 
@@ -272,7 +286,7 @@
 }
 /* Fim sessão 4 */
 
-/* Sessão 6 */
+/* Sessão 6  - não usada no site*/
 .section-6-main-container {
     margin: 70px 0 0 0;
     display: flex;
@@ -282,8 +296,8 @@
 .section-6-card {
     width: 90%;
     height: 80vh;
-    background-color: var(--city-background-green);
-    border-radius: 25px;
+    background: rgb(0,0,0);
+    background: linear-gradient(115deg, rgba(0,0,0,1) 10%, rgba(13,13,13,1) 50%, rgba(232,255,1,1) 100%); 
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -351,7 +365,7 @@
     grid-template-columns: auto;
     grid-template-areas:
         'card-1 card-2'
-    ;
+     ;
 }
 
 .section-7-left-card {
@@ -413,7 +427,7 @@
     width: 100%;
     height: 70px;
     border-radius: 20px;
-    border: 1px solid var(--city-background-green);
+    border: 2px solid var(--city-background-blue);
     padding: 40px 20px 20px 20px;
     font-size: 18px;
 }
@@ -450,6 +464,7 @@
 
 .moedas-container button:hover {
     background-color: var(--city-background-green);
+    transition-duration: 0.3s;
 }
 
 .moedas-container button:focus {
@@ -528,8 +543,14 @@ button:nth-of-type(1) {
 }
 
 .section-7-table-buttons
+button:nth-of-type(1):hover{
+    background-color: #0511F2;
+    transition: background-color 0.3s ease;
+}
+
+.section-7-table-buttons
 button:nth-of-type(2) {
-    border: 1px solid var(--city-background-blue);
+    border: 2px solid var(--city-background-blue);
 }
 /* Fim sessão 7 */
 
@@ -555,15 +576,18 @@ button:nth-of-type(2) {
 
 .blog-button {
     padding: 8px 20px;
-    background-color: var(--city-background-green);
+    background-color: var(--city-background-blue);
     border: 0;
     border-radius: 20px;
     cursor: pointer;
     font-size: 1.3rem;
+    color: white;
 }
 
 .blog-button:hover {
-    background-color: #0055ffa2;
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s ease;
 }
 
 .section-8-contents {
@@ -600,7 +624,7 @@ button:nth-of-type(2) {
     content: " ";
     width: 100%;
     height: 2px;
-    background-color: rgba(0, 0, 0, 0.645);
+    background-color: rgba(255, 255, 255, 1);
     position: absolute;
     top: 0;
 }
@@ -620,7 +644,9 @@ button:nth-of-type(2) {
 }
 /* Fim sessão 8 */
 
+/**/
 /* Media queries */
+/**/
 @media screen and (max-width: 1180px) {
     .section-2-cards-container {
         overflow: auto;

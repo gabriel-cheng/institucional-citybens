@@ -25,7 +25,7 @@
 
 .dados-hello {
     font-size: 4rem;
-    color: grey;
+    color: white;
 }
 
 .escolha-text {
@@ -117,7 +117,7 @@
 }
 
 .termos-de-uso p a {
-    color: var(--city-background-green)
+    color: var(--city-background-blue)
 }
 
 .dados-button-container {
@@ -127,7 +127,7 @@
 }
 
 .btn-enviar-dados {
-    background-color: var(--city-background-green);
+    background-color: var(--city-background-blue);
     width: 160px;
     height: 50px;
     outline: 0;
@@ -138,7 +138,9 @@
 }
 
 .btn-enviar-dados:hover {
-    background-color: rgba(0, 0, 255, 0.371);
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s ease;
 }
 
 @media screen and (max-width: 416px) {
