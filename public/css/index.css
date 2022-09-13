@@ -98,6 +98,7 @@
     margin: 25px 0 0 0;
     display: flex;
     justify-content: center;
+    overflow: auto;
 }
 
 .section-2-cards-container,
@@ -588,6 +589,7 @@ button:nth-of-type(2) {
     width: 100%;
     display: flex;
     justify-content: center;
+    overflow: auto;
 }
 
 .section-8-card {
@@ -637,7 +639,6 @@ button:nth-of-type(2) {
 /**/
 @media screen and (max-width: 1180px) {
     .section-2-cards-container {
-        overflow: auto;
         padding: 0 10px;
     }
 
@@ -652,7 +653,6 @@ button:nth-of-type(2) {
     }
 
     .section-8-cards-container {
-        overflow: auto;
         padding: 0 10px;
         justify-content: initial;
     }
