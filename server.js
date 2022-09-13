@@ -18,7 +18,7 @@
     // Routes
     (function() {
         app.get('/filiais', (request, response) => {
-            response.render('Filiais');
+            response.render('filiais');
         });
 
         app.post('/disponibilidade', (request, response) => {
