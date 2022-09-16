@@ -14,15 +14,6 @@
     --city-background-5: #0D0D0D;
 }
 
-/* BACKUP
-:root {
-    --city-background-1: #0057ff;
-    --city-background-2: #262626;
-    --city-background-3: #1c1c1c;
-    --city-background-4: #7f7f7f;
-}
-*/
-
 @font-face {
     font-family: 'citybens';
     src: url(/fonts/Poppins-Medium.ttf);
