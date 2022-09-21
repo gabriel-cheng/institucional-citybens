@@ -1,6 +1,6 @@
 # Citybens
 
-Site que será usado como o principal da empresa assim que concluído, trata-se de uma aplicação simples utilizando como ferramente Node.js, gerenciador de templates Handlebars, HTML e CSS padrão e um pouco de JavaScript.
+Site que será usado como o principal da empresa assim que concluído, trata-se de uma aplicação simples utilizando como ferramentas Node.js, gerenciador de templates Handlebars, HTML e CSS padrão e um pouco de JavaScript.
 
 ### 📋 Pré-requisitos
 
