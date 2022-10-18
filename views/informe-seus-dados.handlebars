@@ -9,24 +9,24 @@
             <p>*Antes de continuar, precisamos de algumas informações.</p>
         </div>
         <form class="consorcio-dados-form" method="post" action="/simulacao">
-            <input class="consorcio-dados-input consorcio-dados-input-name" type="text" name="input-name" id="input-name" placeholder="Nome Completo (Obrigatório)" required>
+            <input class="consorcio-dados-input consorcio-dados-input-name" type="text" name="dadosInputNome" id="input-name" placeholder="Nome Completo (Obrigatório)" required>
 
             <input type="hidden" name="consorcioDadosValue" class="escolha-text-input" value="{{text}}">
 
-            <input class="consorcio-dados-input consorcio-dados-input-email" type="email" name="input-email" id="input-email" placeholder="E-mail (Obrigatório)" required>
+            <input class="consorcio-dados-input consorcio-dados-input-email" type="email" name="dadosInputEmail" id="input-email" placeholder="E-mail (Obrigatório)" required>
 
             <div class="input-celular-container">
-                <input class="consorcio-dados-input consorcio-dados-input-celular" type="tel" name="input-celular" id="input-celular" placeholder="Celular (Obrigatório)" required>
+                <input class="consorcio-dados-input consorcio-dados-input-celular" type="tel" name="dadosInputCelular" id="input-celular" placeholder="Celular (Obrigatório)" required>
             </div>
 
             <div class="input-cep-container">
-                <input class="consorcio-dados-input consorcio-dados-input-cep" type="text" name="input-cep" id="input-cep" placeholder="CEP (Obrigatório)" required>
+                <input class="consorcio-dados-input consorcio-dados-input-cep" type="text" name="dadosInputCep" id="input-cep" placeholder="CEP (Obrigatório)" required>
             </div>
 
             <div class="termos-de-uso">
-                <input class="checkbox-termos" type="checkbox" name="" id="" required>
+                <input onload="mostrarValue();" class="checkbox-termos" type="checkbox" name="dadosInputTermos" id="" required checked>
                 <p>
-                    Eu concordo com o 
+                    Eu concordo com o
                     <a target="_blank" href="/termos-de-uso">termo de privacidade</a>
                 </p>
             </div>
@@ -37,3 +37,15 @@
         </form>
     </div>
 </main>
+
+<script>
+    window.addEventListener('load', () => {
+        const valor = document.querySelector('.checkbox-termos');
+
+        if(valor.checked) {
+            valor.value = 'Concorda com os termos'
+        } else {
+            valor.value = 'Não concorda com os termos'
+        }
+    });
+</script>

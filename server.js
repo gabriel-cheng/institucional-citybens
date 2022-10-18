@@ -3,8 +3,10 @@ const app = express();
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const router = require('./routes/index');
+const cors = require('cors');
 
-(function configs() {
+(function() {
+    app.use(cors());
     app.use(bodyParser.urlencoded({extended: false}));
     app.use(bodyParser.json());
 
@@ -12,10 +14,12 @@ const router = require('./routes/index');
     app.set('view engine', 'handlebars');
 
     app.use(express.static('public'));
+    app.use(express.json());
 })();
 
-(function rotas() {
+(function() {
     app.use('/', router);
+    app.use('/api8465378731184354684', router);
 })();
 
 (function() {
