@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-const apiRouter = router.post('/api8465378731184354684', async(req, res) => {
+const apiRouter = router.post('/api', async(req, res) => {
     try {
         const request = await axios({
             method: 'POST',
