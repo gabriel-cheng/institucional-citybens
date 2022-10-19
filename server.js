@@ -19,7 +19,7 @@ const cors = require('cors');
 
 (function() {
     app.use('/', router);
-    app.use('/api8465378731184354684', router);
+    app.use('/api', router);
 })();
 
 (function() {
