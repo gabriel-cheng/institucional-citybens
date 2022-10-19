@@ -24,7 +24,7 @@
             </div>
 
             <div class="termos-de-uso">
-                <input onload="mostrarValue();" class="checkbox-termos" type="checkbox" name="dadosInputTermos" id="" required checked>
+                <input class="checkbox-termos" type="checkbox" name="dadosInputTermos" id="" required checked>
                 <p>
                     Eu concordo com o
                     <a target="_blank" href="/termos-de-uso">termo de privacidade</a>
@@ -39,6 +39,52 @@
 </main>
 
 <script>
+    const btn = document.querySelector('.btn-enviar-dados');
+    const texto = document.querySelector('.escolha-text-input').value;
+    let bem = '';
+
+    btn.addEventListener('click', request);
+
+    switch(texto) {
+        case 'Consórcio de Imóveis':
+            bem = 'imovel'
+            break;
+        case 'Consórcio de Automóveis':
+            bem = 'auto'
+            break;
+        case 'Consórcio de Motos':
+            bem = 'moto'
+            break;
+        case 'Consórcio de Serviços':
+            bem = 'servicos'
+            break;
+        case 'Consórcio de Pesados':
+            bem = 'pesado'
+            break;
+        case 'Consórcio de Eletrônicos':
+            bem = 'eletro'
+            break;
+        default:
+            console.log('Item não encontrado');
+            break;
+    }
+
+    function request(event) {
+        console.log(texto);
+
+        fetch('http://localhost:3000/api', {
+            method: 'post',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({bem: bem})
+        })
+        .then(e => e.json())
+        .then(e => JSON.stringify(e))
+        .then(e => console.log(e))
+        .catch(err => console.log({error_message: err}));
+
+        event.preventDefault();
+    }
+
     window.addEventListener('load', () => {
         const valor = document.querySelector('.checkbox-termos');
 
