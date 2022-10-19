@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const api = require('../models/api');
 
-router.post('/api8465378731184354684', api);
+router.post('/api', api);
 
 router.get('/filiais', (request, response) => {
     response.render('filiais');
