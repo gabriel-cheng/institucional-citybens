@@ -27,11 +27,11 @@
                 <div class="section-5-range-1">
                     <p>Valor a pagar</p>
                     <h3 class="h3-valor-pagar">R$ 130.000,00</h3>
-                    <input value="130000" class="input-pagar" min="40000" max="130000" step="1000" type="range" name="range-1">
+                    <input value="" class="input-pagar" min="" max="" step="1000" type="range" name="range-1">
                     <div class="section-5-range-description">
-                        <p>R$ 40.000,00</p>
-                        <p>R$ 85.000,00</p>
-                        <p>R$ 130.000,00</p>
+                        <p class="minValorParcela"></p>
+                        <p class="metadeValorParcela"></p>
+                        <p class="maxValorParcela"></p>
                     </div>
                 </div>
                 <div class="section-5-range-2">
@@ -57,7 +57,7 @@
                 </div>
                 <div class="info-content-2">
                     <p>Total a pagar</p>
-                    <input name="valorPagar" type="text" id="display_pagar" value="R$ 130.000,00" readonly>
+                    <input name="valorPagar" type="text" id="display_pagar" value="" readonly>
                 </div>
                 <div class="info-content-3">
                     <p>Parcelas</p>
@@ -74,3 +74,112 @@
         </form>
     </div>
 </main>
+
+<script>
+    const inputValor = document.querySelector('.input-pagar');
+    const inputParcelas = document.querySelector('.input-parcelas');
+    const h3ValorPagar = document.querySelector('.h3-valor-pagar');
+    const h3ValorParcelas = document.querySelector('.h3-valor-parcelas');
+    const displayPagar = document.querySelector('#display_pagar');
+    const displayParcelas = document.querySelector('#display_parcelas');
+    const minValorParcela = document.querySelector('.minValorParcela');
+    const maxValorParcela = document.querySelector('.maxValorParcela');
+    const metadeValorParcela = document.querySelector('.metadeValorParcela');
+    const inputPagar = document.querySelector('.input-pagar');
+
+    function formatoBRL(n, c, d, t) {
+        c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+        return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+    }
+
+    (function rangeManipulation() {
+        (function() {
+            function mostrarValores(input, saida) {
+                input.addEventListener('input', () => {
+                    const value = input.value;
+                    saida.innerHTML = `R$ ${formatoBRL(value)}`;
+                });
+            }
+
+            mostrarValores(inputValor, h3ValorPagar);
+            mostrarValores(inputParcelas, h3ValorParcelas);
+        })();
+
+        (function() {
+            function formDisponibilidade(input, display) {
+                try {
+                    input.addEventListener('input', () => {
+                        display.value = `R$ ${formatoBRL(input.value)}`;
+                    });
+                } catch {
+                    input.addEventListener('change', () => {
+                        display.innerHTML = `R$ ${formatoBRL(input.value)}`;
+                    });
+                }
+            }
+
+            formDisponibilidade(inputValor, displayPagar);
+            formDisponibilidade(inputParcelas, displayParcelas);
+        })();
+    })();
+
+    (function requestDynamicValues() {
+        const btn = document.querySelector('.section-5-input');
+        const texto = document.querySelector('.escolha-text-input').value;
+        let bem = '';
+        let resValues = {};
+
+        window.addEventListener('load', request);
+
+        switch(texto) {
+            case 'Consórcio de Imóveis':
+                bem = 'imovel'
+                break;
+            case 'Consórcio de Automóveis':
+                bem = 'auto'
+                break;
+            case 'Consórcio de Motos':
+                bem = 'moto'
+                break;
+            case 'Consórcio de Serviços':
+                bem = 'servicos'
+                break;
+            case 'Consórcio de Pesados':
+                bem = 'pesado'
+                break;
+            case 'Consórcio de Eletrônicos':
+                bem = 'eletro'
+                break;
+            default:
+                console.log('Item não encontrado');
+                break;
+        }
+
+        async function request(event) {
+            const request = await fetch('http://localhost:3000/api', {
+                method: 'post',
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({bem: bem})
+            })
+
+            const reqConvertJson = await request.json();
+            const data = await reqConvertJson.data;
+
+            resValues = {
+                minValorParcela: JSON.stringify(data.smaaler),
+                maxValorParcela: JSON.stringify(data.largest)
+            }
+
+            const soma = (parseInt(resValues.minValorParcela) + parseInt(resValues.maxValorParcela)) / 2;
+
+            inputPagar.min = resValues.minValorParcela;
+            inputPagar.max = resValues.maxValorParcela;
+            inputPagar.value = resValues.maxValorParcela;
+            displayPagar.value = `R$ ${formatoBRL(resValues.maxValorParcela)}`;
+
+            metadeValorParcela.textContent = `R$ ${formatoBRL(soma)}`;
+            minValorParcela.textContent = `R$ ${formatoBRL(resValues.minValorParcela)}`;
+            maxValorParcela.textContent = `R$ ${formatoBRL(resValues.maxValorParcela)}`;
+        }
+    })();
+</script>
