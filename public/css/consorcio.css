@@ -55,6 +55,7 @@
     position: relative;
     padding: 0 15px;
     font-size: 1.8em;
+    cursor: pointer;
 }
 
 #input-drop:focus {
@@ -189,7 +190,7 @@ span {
     bottom: 0;
     background-image: linear-gradient(to bottom, transparent 0%, #000 99%);
     width: 100%;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 0 10px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
