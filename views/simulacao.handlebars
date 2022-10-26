@@ -4,7 +4,27 @@
         width: 100%;
         margin: 0 0 30px 0;
     }
-
+    #formaDeSimulacaoSelect {
+        margin: 0 0 50px 0;
+        max-width: 190px;
+        width: 100%;
+        border: 2px solid var(--city-background-blue);
+        background-color: #0000;
+        color: #fff;
+        font-size: 1.8rem;
+        cursor: pointer;
+        border-radius: 7px;
+        outline: 0;
+    }
+    option {
+        color: #000
+    }
+    .formaDeSimulacaoP {
+        font-size: 1.6rem;
+    }
+    abbr {
+        font-size: 10px;
+    }
     @media screen and (max-width: 867px) {
         .consorcio-dados-title {
             max-width: 520px;
@@ -22,26 +42,31 @@
     </div>
     <div class="section-5-contents">
         <div class="section-5-content-1">
+            <p class="formaDeSimulacaoP">Simular por:</p>
+            <select oninput="definirFormaSimulacao();" name="formaDeSimulacao" id="formaDeSimulacaoSelect">
+                <option value="valorBem" selected>Valor do bem</option>
+                <option value="valorParcela">Valor de parcela</option>
+            </select>
             <h1>Simular consórcio</h1>
             <div class="section-5-range-container">
                 <div class="section-5-range-1">
-                    <p>Valor a pagar</p>
-                    <h3 class="h3-valor-pagar">R$ 130.000,00</h3>
-                    <input value="" class="input-pagar" min="" max="" step="1000" type="range" name="range-1">
+                    <p>Valor do bem</p>
+                    <h3 class="h3-valor-pagar"></h3>
+                    <input value="" class="input-pagar" min="" max="" step="500" type="range" name="range-1">
                     <div class="section-5-range-description">
-                        <p class="minValorParcela"></p>
-                        <p class="metadeValorParcela"></p>
-                        <p class="maxValorParcela"></p>
+                        <p class="minValorPagar"></p>
+                        <p class="metadeValorPagar"></p>
+                        <p class="maxValorPagar"></p>
                     </div>
                 </div>
                 <div class="section-5-range-2">
                     <p>Valor de parcelas</p>
-                    <h3 class="h3-valor-parcelas">R$ 6.600,00</h3>
-                    <input value="6600" class="input-parcelas" min="600" max="6600" step="600" type="range" name="range-2">
+                    <h3 class="h3-valor-parcelas"></h3>
+                    <input value="" class="input-parcelas" min="" max="" step="100" type="range" name="range-2">
                     <div class="section-5-range-description">
-                        <p>R$ 600,00</p>
-                        <p>R$ 3.600,00</p>
-                        <p>R$ 6.600,00</p>
+                        <p class="minValorParcela"></p>
+                        <p class="metadeValorParcela"></p>
+                        <p class="maxValorParcela"></p>
                     </div>
                 </div>
             </div>
@@ -76,16 +101,18 @@
 </main>
 
 <script>
-    const inputValor = document.querySelector('.input-pagar');
+    const inputPagar = document.querySelector('.input-pagar');
     const inputParcelas = document.querySelector('.input-parcelas');
     const h3ValorPagar = document.querySelector('.h3-valor-pagar');
     const h3ValorParcelas = document.querySelector('.h3-valor-parcelas');
     const displayPagar = document.querySelector('#display_pagar');
     const displayParcelas = document.querySelector('#display_parcelas');
+    const minValorPagar = document.querySelector('.minValorPagar');
+    const maxValorPagar = document.querySelector('.maxValorPagar');
+    const metadeValorPagar = document.querySelector('.metadeValorPagar');
     const minValorParcela = document.querySelector('.minValorParcela');
     const maxValorParcela = document.querySelector('.maxValorParcela');
     const metadeValorParcela = document.querySelector('.metadeValorParcela');
-    const inputPagar = document.querySelector('.input-pagar');
 
     function formatoBRL(n, c, d, t) {
         c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
@@ -101,7 +128,7 @@
                 });
             }
 
-            mostrarValores(inputValor, h3ValorPagar);
+            mostrarValores(inputPagar, h3ValorPagar);
             mostrarValores(inputParcelas, h3ValorParcelas);
         })();
 
@@ -118,7 +145,7 @@
                 }
             }
 
-            formDisponibilidade(inputValor, displayPagar);
+            formDisponibilidade(inputPagar, displayPagar);
             formDisponibilidade(inputParcelas, displayParcelas);
         })();
     })();
@@ -166,20 +193,60 @@
             const data = await reqConvertJson.data;
 
             resValues = {
-                minValorParcela: JSON.stringify(data.smaaler),
-                maxValorParcela: JSON.stringify(data.largest)
-            }
+                minValorPagar: JSON.stringify(data.smaaler),
+                maxValorPagar: JSON.stringify(data.largest),
+                minValorParcela: JSON.stringify(data.samallestInstallament),
+                maxValorParcela: JSON.stringify(data.biggestInstallament)
+            };
+            const somaPagar = (parseInt(resValues.minValorPagar) + parseInt(resValues.maxValorPagar)) / 2;
+            const somaParcela = (parseInt(resValues.minValorParcela) + parseInt(resValues.maxValorParcela)) / 2;
 
-            const soma = (parseInt(resValues.minValorParcela) + parseInt(resValues.maxValorParcela)) / 2;
+            inputPagar.min = resValues.minValorPagar;
+            inputPagar.max = resValues.maxValorPagar;
+            inputPagar.value = resValues.maxValorPagar;
+            displayPagar.value = `R$ ${formatoBRL(resValues.maxValorPagar)}`;
 
-            inputPagar.min = resValues.minValorParcela;
-            inputPagar.max = resValues.maxValorParcela;
-            inputPagar.value = resValues.maxValorParcela;
-            displayPagar.value = `R$ ${formatoBRL(resValues.maxValorParcela)}`;
+            h3ValorPagar.textContent = `R$ ${formatoBRL(resValues.maxValorPagar)}`
+            h3ValorParcelas.textContent = `R$ ${formatoBRL(resValues.maxValorParcela)}`
 
-            metadeValorParcela.textContent = `R$ ${formatoBRL(soma)}`;
+            inputParcelas.min = resValues.minValorParcela;
+            inputParcelas.max = resValues.maxValorParcela;
+            inputParcelas.value = resValues.maxValorParcela;
+            displayParcelas.value = `R$ ${formatoBRL(resValues.maxValorParcela)}`;
+
+            metadeValorPagar.textContent = `R$ ${formatoBRL(somaPagar)}`;
+            minValorPagar.textContent = `R$ ${formatoBRL(resValues.minValorPagar)}`;
+            maxValorPagar.textContent = `R$ ${formatoBRL(resValues.maxValorPagar)}`;
+
+            metadeValorParcela.textContent = `R$ ${formatoBRL(somaParcela)}`;
             minValorParcela.textContent = `R$ ${formatoBRL(resValues.minValorParcela)}`;
             maxValorParcela.textContent = `R$ ${formatoBRL(resValues.maxValorParcela)}`;
         }
     })();
+
+    window.addEventListener('load', definirFormaSimulacao);
+    function definirFormaSimulacao() {
+        const formaSimulacao = document.querySelector('#formaDeSimulacaoSelect');
+        const rangeBem = document.querySelector('.section-5-range-1');
+        const rangeParcela = document.querySelector('.section-5-range-2');
+        const informacaoValoresBem = document.querySelector('.info-content-2');
+        const informacaoValoresParcelas = document.querySelector('.info-content-3');
+
+        switch(formaSimulacao.value) {
+            case 'valorBem':
+                rangeBem.style.display = 'block';
+                informacaoValoresBem.style.display = 'block';
+                rangeParcela.style.display = 'none';
+                informacaoValoresParcelas.style.display = 'none';
+                break;
+            case 'valorParcela':
+                rangeParcela.style.display = 'block';
+                informacaoValoresParcelas.style.display = 'block';
+                rangeBem.style.display = 'none';
+                informacaoValoresBem.style.display = 'none';
+                break;
+            default:
+                break;
+        }
+    }
 </script>
