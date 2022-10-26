@@ -23,10 +23,6 @@ router.post('/disponibilidade', (request, response) => {
 });
 
 router.post('/simulacao', (request, response) => {
-    if(request.body.dadosInputTermos.value == 'on') {
-        dadosInputTermos.value = 'paranaue'
-    }
-
     response.render('simulacao', {
         text: request.body.consorcioDadosValue,
         dadosNomeContent: request.body.dadosInputNome,
