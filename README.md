@@ -32,5 +32,5 @@ $npm run start
 
 ## ✒️ Autores
 
-* **Gabriel Carvalho** - *Desenvolvimento da Estrutura Back-end/Front-end* - [Gabriel Carvalho](https://github.com/gabriel-cheng)
+* **Gabriel Carvalho** - *Desenvolvimento da estrutura Back-end/Front-end* - [Gabriel Carvalho](https://github.com/gabriel-cheng)
 * **Diogo Espindola** - *Desenvolvimento e finalização da estilização do front-end* - [Diogo Espindola](https://github.com/rissollis)
