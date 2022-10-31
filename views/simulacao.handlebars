@@ -74,7 +74,7 @@
                 <p>*Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
         </div>
-        <form action="/disponibilidade" method="POST" class="section-5-info-container">
+        <form action="/disponibilidade" method="POST" class="section-5-info-container" onsubmit="enviarParaWhatsapp();">
             <div class="section-5-info-content">
                 <div class="info-content-1">
                     <h1>Visualizar valores</h1>
@@ -113,6 +113,53 @@
     const minValorParcela = document.querySelector('.minValorParcela');
     const maxValorParcela = document.querySelector('.maxValorParcela');
     const metadeValorParcela = document.querySelector('.metadeValorParcela');
+
+    function enviarParaWhatsapp() {
+        const nome = document.querySelector('[name=simulacaoHiddenDadoNome]').value;
+        const email = document.querySelector('[name=simulacaoHiddenDadoEmail]').value;
+        const celular = document.querySelector('[name=simulacaoHiddenDadoCelular]').value;
+        const cep = document.querySelector('[name=simulacaoHiddenDadoCep]').value;
+        const termos = document.querySelector('[name=simulacaoHiddenDadoTermos]').value;
+        const tipoConsorcio = document.querySelector('.escolha-text').textContent;
+        const valor = displayPagar.value;
+        const parcela = displayParcelas.value;
+        let tipoPagamento;
+        const formaDeSimulacao = document.querySelector('#formaDeSimulacaoSelect');
+
+        if(formaDeSimulacao.value == 'valorBem') {
+            formaDeSimulacao.textContent = 'valor do bem';
+            tipoPagamento = valor;
+        } else if(formaDeSimulacao.value == 'valorParcela') {
+            formaDeSimulacao.textContent = 'valor da parcela';
+            tipoPagamento = parcela;
+        } else {
+            console.log('Forma de simulação não reconhecida');
+        }
+
+        function firstCaseUp(nome) {
+            let nomeFirstCaseUp = nome.split(" ");
+
+            for(let i = 0; i < nomeFirstCaseUp.length; i++) {
+                nomeFirstCaseUp[i] = nomeFirstCaseUp[i][0].toUpperCase() + nomeFirstCaseUp[i].substr(1);
+            }
+
+            return nomeFirstCaseUp.join(" ");
+        }
+
+        const url = "https://wa.me/5518991163599?text="
+            + `*Olá, me chamo ${firstCaseUp(nome)} e tenho interesse em fazer um consórcio com a Citybens!*` + "%0a"
+            + "%0a"
+            + "*Estes são meus dados, por favor entre em contato comigo*" + "%0a"
+            + "%0a"
+            + "*Nome*: " + firstCaseUp(nome) + "%0a"
+            + "*E-mail*: " + email + "%0a"
+            + "*Telefone*: " + celular + "%0a"
+            + "*Cep*: " + cep + "%0a"
+            + "*Termos de uso*: " + termos + "%0a"
+            + "*Desejo fazer um*: " + tipoConsorcio + "%0a"
+            + `*Desejo pagar pelo ${formaDeSimulacao.textContent}, no valor de*: ` + tipoPagamento;
+        window.open(url, '_blank').focus();
+    }
 
     function formatoBRL(n, c, d, t) {
         c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
@@ -183,21 +230,21 @@
         }
 
         async function request(event) {
-            const request = await fetch('http://localhost:3000/api', {
+            const response = await fetch('http://localhost:3000/api', {
                 method: 'post',
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({bem: bem})
-            })
+            }).then(e => e.json())
 
-            const reqConvertJson = await request.json();
-            const data = await reqConvertJson.data;
+            const data = response.data;
 
             resValues = {
-                minValorPagar: JSON.stringify(data.smaaler),
-                maxValorPagar: JSON.stringify(data.largest),
-                minValorParcela: JSON.stringify(data.samallestInstallament),
-                maxValorParcela: JSON.stringify(data.biggestInstallament)
+                minValorPagar: data.smaaler,
+                maxValorPagar: data.largest,
+                minValorParcela: Math.round(data.samallestInstallament),
+                maxValorParcela: Math.round(data.biggestInstallament)
             };
+
             const somaPagar = (parseInt(resValues.minValorPagar) + parseInt(resValues.maxValorPagar)) / 2;
             const somaParcela = (parseInt(resValues.minValorParcela) + parseInt(resValues.maxValorParcela)) / 2;
 

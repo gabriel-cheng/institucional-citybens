@@ -9,17 +9,7 @@ router.get('/filiais', (request, response) => {
 });
 
 router.post('/disponibilidade', (request, response) => {
-    response.send(
-        '<h1>Recebi seus dados!</h1><br><br>' +
-        `Nome: ${request.body.simulacaoHiddenDadoNome}<br>` +
-        `Email: ${request.body.simulacaoHiddenDadoEmail}<br>` +
-        `Celular: ${request.body.simulacaoHiddenDadoCelular}<br>` +
-        `Cep: ${request.body.simulacaoHiddenDadoCep}<br>` +
-        `Termos: ${request.body.simulacaoHiddenDadoTermos}<br>` +
-        `Consórcio: ${request.body.consorcioDadosValue}<br>` +
-        `Valor: ${request.body.valorPagar}<br>` +
-        `Parcelas: ${request.body.valorParcelas}`
-    );
+    response.render('disponibilidade');
 });
 
 router.post('/simulacao', (request, response) => {
