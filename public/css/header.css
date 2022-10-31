@@ -50,10 +50,14 @@
     transition: 0.3s ease-out;
 }
 
-.header-navigation li a:hover{
-    transition: ease-in 0.3s;
-    margin: 0px 12px 0px 12px;
+.header-navigation ul li a:hover{
     color: var(--city-background-green);
+    transition: ease-in 0.2s;
+}
+
+.header-navigation ul li:hover{
+    transform: translateY(-3px);
+    transition: ease-in 0.2s;
 }
 
 .header-navigation ul::after {
