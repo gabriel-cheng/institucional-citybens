@@ -30,6 +30,68 @@
 }
 
 .left-card-container p {
+    font-size: 2vw;
+    margin: 0;
+    text-align: center;
+}
+
+.right-card-slider p {
+    margin: 0;
+    color: black;
+}
+
+.left-card-container p span {
+    color: var(--city-background-green);
+    flex-wrap: wrap;
+}
+
+.top-card-button {
+    background-color: var(--city-background-blue);
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    max-width: 250px;
+    border: 0;
+}
+
+.top-card-button:hover {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s ease;
+}
+
+/* Aditional test Content
+.section-1-top-card-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+}
+
+.main-top-card {
+    display: flex;
+    justify-content: center;
+    max-width: 4000px;
+    width: 85%;
+}
+
+.left-card-container {
+    background-color: var(--city-background-3);
+    grid-area: left-container;
+    border-radius: 25px 0 0 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px;
+    font-size: 2.5em;
+    width: 100%;
+    color: white;
+}
+
+.left-card-container p {
     font-size: 2.3vw;
     margin: 0;
 }
@@ -60,6 +122,32 @@
     color: black;
     transition: background-color 0.3s ease;
 }
+.adittionalTestContent {
+    max-width: 1400px;
+    width: 100%;
+    max-height: 1200px;
+    position: relative;
+}
+.testVideo {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    position: absolute;
+    z-index: -1;
+}
+.fraseContainerTest {
+    width: 120px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.fraseContainerTest p {
+    color: var(--city-background-3) !important;
+    font-size: 1.8rem;
+}
+/* Fim aditional test Content */
 
 .left-card-container,
 .right-card-slider {
@@ -84,63 +172,91 @@
 /* Fim section 1 top card */
 
 /* Section 2 */
-.section-2-main-container {
+#section2MainContainer {
+    width: 100%;
+    height: 500px;
     margin: 70px 0 0 0;
-}
-
-.section-2-contents {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.section-2-cards-container {
-    margin: 25px 0 0 0;
     display: flex;
     justify-content: center;
+}
+.section2Contents {
+    width: 100%;
+    max-width: 2700px;
+    height: 500px;
     overflow: auto;
+    display: flex;
+    padding: 15px 20px;
+}
+.section2Contents::-webkit-scrollbar {
+    height: 10px;
 }
 
-.section-2-cards-container,
-.section-2-contents h1 {
-    max-width: 1237px;
+.section2Contents::-webkit-scrollbar-track {
+    background: transparent;
+    padding: 2px;
+}
+
+.section2Contents::-webkit-scrollbar-thumb {
+    background-color: rgb(22, 22, 22);
+}
+.section2Card1,
+.section2Card2,
+.section2Card3,
+.section2Card4 {
+    min-width: 500px;
     width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 20px;
 }
-
-.section-2-contents h1 {
-    max-width: 1237px;
+.topicDescriptionContainer {
     width: 100%;
-    color: var(--city-background-green);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.397);
+    border-radius: 20px;
 }
-
-.card-description {
-    width: 280px;
-    background-color: var(--city-background-blue);
+.topicTypeDescription {
+    display: inline-block;
+    font-size: 3rem;
+}
+.cardDescription {
+    background-color: rgba(0, 0, 0, 0.788);
+    position: absolute;
+    bottom: 0;
+    border-radius: 30px 30px 19px 19px;
     padding: 20px;
-    border-radius: 15px;
+    width: 100%;
+    height: 146px;
 }
-
-.section-2-card-1,
-.section-2-card-2,
-.section-2-card-3 {
+.cardDescription p {
+    color: var(--city-background-green);
+    font-size: 1.6rem;
+}
+.section2Contents div:not(:last-child) {
     margin: 0 20px 0 0;
 }
-
-.section-2-card-1,
-.section-2-card-2,
-.section-2-card-3,
-.section-2-card-4 {
-    width: 280px;
-    background-color: #f6f6f6;
-    border-radius: 15px 15px 20px 20px;
+.section2Card1,
+.section2Card2,
+.section2Card3,
+.section2Card4 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
-
-.section-2-card-1 img,
-.section-2-card-2 img,
-.section-2-card-3 img,
-.section-2-card-4 img {
-    width: 100%;
-    border-radius: 15px;
+.section2Card1 {
+    background-image: url("/images/background/section-2/agro.jpg");
+}
+.section2Card2 {
+    background-image: url("/images/background/section-2/automovel.jpg");
+}
+.section2Card3 {
+    background-image: url("/images/background/section-2/construcao.jpg");
+}
+.section2Card4 {
+    background-image: url("/images/background/section-2/nautico.jpg");
 }
 /* Fim section 2 */
 
@@ -340,208 +456,109 @@
 }
 /* Fim sessão 6 */
 
-/* Sessão 7 */
-.section-7-main-container {
-    margin: 70px 0 0 0;
+/* Sessão do Sobre */
+#section7MainContainer {
+    width: 100%;
     display: flex;
     justify-content: center;
+}
+.s7Subcontainer {
     width: 100%;
-}
-
-.section-7-card {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: auto;
-    grid-template-areas:
-        'card-1 card-2'
-     ;
-}
-
-.section-7-left-card {
-    background-color: var(--city-background-3);
-    display: grid;
-    justify-items: center;
-    grid-template-areas:
-        'title'
-        'input'
-        'moedas'
-        'taxa'
-    ;
-    border-radius: 25px 0 0 25px;
-    padding: 40px 30px;
-    color: var(--city-background-4);
-    font-size: 13px;
-    grid-area: card-1;
-    text-align: center;
-}
-
-.card-left-taxa {
-    grid-area: taxa;
-}
-
-.section-7-right-card h1 {
-    text-align: center;
-}
-
-.section-7-left-card,
-.section-7-right-card {
-    max-width: 500px;
-    width: 100%;
-}
-
-.section-7-left-card h1 {
-    color: #fff;
-    font-weight: 200;
-    font-size: 2em;
-    grid-area: title;
-}
-
-.section-7-left-card h1,
-.input-number-container input[type=number] {
-    margin: 0 0 6% 0;
-}
-
-.input-number-container {
-    width: 100%;
-    position: relative;
-    grid-area: input;
-}
-
-.left-card-contents {
-    max-width: 430px;
-    width: 100%;
-}
-
-.input-number-container input[type=number] {
-    width: 100%;
-    height: 70px;
-    border-radius: 20px;
-    border: 2px solid var(--city-background-blue);
-    padding: 40px 20px 20px 20px;
-    font-size: 18px;
-}
-
-.input-number-container input[type=number]:focus {
-    outline: 0;
-}
-
-.manual-placeholder {
-    color: var(--city-background-4);
-    position: absolute;
-    left: 20px;
-    top: 0;
-    font-size: 20px;
-}
-
-.moedas-container {
-    margin: 10px 0 0 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.moedas-container button {
-    border-radius: 30px;
-    padding: 3px 15px;
-    border: 0;
-    font-size: 12px;
-    font-weight: 400;
-    cursor: pointer;
-    width: 60px;
-    height: 30px;
-}
-
-.moedas-container button:hover {
-    background-color: var(--city-background-green);
-    transition-duration: 0.3s;
-}
-
-.moedas-container button:focus {
-    background-color: var(--city-background-green);
-    color: #fff;
-}
-
-.section-7-right-card {
-    border-radius: 0 25px 25px 0;
+    max-width: 2700px;
+    height: auto;
     background-color: var(--city-background-2);
-    padding: 20px 50px;
+    padding: 40px 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    grid-area: card-2;
+    flex-direction: column;
 }
-
-.section-7-right-card-container {
+.s7titleContainer {
     width: 100%;
-    text-align: center;
+    max-width: 1400px;
+    justify-content: start;
+    margin: 0 0 20px 0;
 }
-
-.section-7-right-card-container th {
-    color: #262626;
-    font-size: 1.5rem;
-    font-weight: 100;
-    padding: 10px 0;
-}
-
-.section-7-right-card-container td {
-    font-size: 1.8rem;
-    padding: 8px 0;
-    font-weight: 100;
-}
-
-.section-7-right-card-container tr:not(:last-child) {
-    border-bottom: 1px solid rgb(202, 202, 202);
-}
-
-.section-7-right-card-container
-td:first-child,
-th:first-child {
-    text-align: start;
-}
-
-.section-7-right-card-container
-th:last-child {
-    text-align: end;
-}
-
-.section-7-right-card-container
-td:last-child {
+.s7titleContainer h1 {
     color: var(--city-background-blue);
-    text-align: end;
+    font-size: 6rem;
 }
-
-.section-7-table-buttons {
+.s7cardLogoContainer {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
-    margin: 20px 0 0 0;
+    justify-content: start;
 }
-
-.section-7-table-buttons
-button {
-    width: 170px;
-    height: 35px;
-    border-radius: 25px;
+.s7CardsContainer {
+    display: grid;
+    grid-template-areas:
+        "s7card1 s7card2"
+        "s7card3 s7card3"
+    ;
+    gap: 15px;
+    max-width: 1400px;
 }
-
-.section-7-table-buttons
-button:nth-of-type(1) {
-    background-color: var(--city-background-blue);
-    border: 0;
+.s7card {
+    width: auto;
+    height: 320px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.s7background {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    position: absolute;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+}
+.s7background1 {
+    background-image: url(/images/background/citybens.jpg);
+}
+.s7background2 {
+    background-image: url(/images/background/section-2/agro.jpg);
+}
+.s7background3 {
+    background-image: url(/images/background/familia-carro.jpg);
+}
+.s7card:hover > .s7background {
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
+}
+.s7cardInternContainer {
+    background-color: rgba(0, 0, 0, 0.432);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 1.6rem ;
     color: #fff;
 }
-
-.section-7-table-buttons
-button:nth-of-type(1):hover{
-    background-color: #0511F2;
-    transition: background-color 0.3s ease;
+.s7cardLogotipo {
+    width: 150px;
+    margin: 0 0 30px 0;
 }
-
-.section-7-table-buttons
-button:nth-of-type(2) {
-    border: 2px solid var(--city-background-blue);
+.s7background {
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
 }
-/* Fim sessão 7 */
+.s7card1 {
+    grid-area: s7card1;
+    margin: 0 0 0 70px;
+}
+.s7card2 {
+    grid-area: s7card2;
+    margin: 0 70px 0 0;
+}
+.s7card3 {
+    grid-area: s7card3;
+    margin: 0 70px;
+}
+.s7card3 p {
+    width: 600px;
+}
+/* Fim sessão do sobre */
 
 /* Sessão 8 */
 .section-8-main-container {
