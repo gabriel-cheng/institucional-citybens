@@ -172,7 +172,7 @@
 /* Fim section 1 top card */
 
 /* Section 2 */
-.section2MainContainer {
+#section2MainContainer {
     width: 100%;
     height: 500px;
     margin: 70px 0 0 0;
@@ -457,7 +457,107 @@
 /* Fim sessão 6 */
 
 /* Sessão do Sobre */
-
+#section7MainContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.s7Subcontainer {
+    width: 100%;
+    max-width: 2700px;
+    height: auto;
+    background-color: var(--city-background-2);
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.s7titleContainer {
+    width: 100%;
+    max-width: 1400px;
+    justify-content: start;
+    margin: 0 0 20px 0;
+}
+.s7titleContainer h1 {
+    color: var(--city-background-blue);
+    font-size: 6rem;
+}
+.s7cardLogoContainer {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+.s7CardsContainer {
+    display: grid;
+    grid-template-areas:
+        "s7card1 s7card2"
+        "s7card3 s7card3"
+    ;
+    gap: 15px;
+    max-width: 1400px;
+}
+.s7card {
+    width: auto;
+    height: 320px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.s7background {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    position: absolute;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+}
+.s7background1 {
+    background-image: url(/images/background/citybens.jpg);
+}
+.s7background2 {
+    background-image: url(/images/background/section-2/agro.jpg);
+}
+.s7background3 {
+    background-image: url(/images/background/familia-carro.jpg);
+}
+.s7card:hover > .s7background {
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
+}
+.s7cardInternContainer {
+    background-color: rgba(0, 0, 0, 0.432);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 1.6rem ;
+    color: #fff;
+}
+.s7cardLogotipo {
+    width: 150px;
+    margin: 0 0 30px 0;
+}
+.s7background {
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+.s7card1 {
+    grid-area: s7card1;
+    margin: 0 0 0 70px;
+}
+.s7card2 {
+    grid-area: s7card2;
+    margin: 0 70px 0 0;
+}
+.s7card3 {
+    grid-area: s7card3;
+    margin: 0 70px;
+}
+.s7card3 p {
+    width: 600px;
+}
 /* Fim sessão do sobre */
 
 /* Sessão 8 */
