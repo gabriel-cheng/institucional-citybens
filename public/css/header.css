@@ -3,7 +3,7 @@
     justify-content: center;
     width: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 99999;
     transition: .3s ease-in-out;
     top: 0;
     background-color: var(--city-background-5);
