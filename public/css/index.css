@@ -471,6 +471,16 @@
 }
 /* Fim sessão do sobre */
 
+/* Sessão outros */
+.sectionOutrosMain {
+    width: 100%;
+}
+.secOutrosSubcontainer {
+    width: 100%;
+    max-width: 2700px;
+}
+/* Fim sessão outros */
+
 /* Sessão 8 */
 .section-8-main-container {
     margin: 70px 0 0 0;
