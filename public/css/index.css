@@ -172,6 +172,94 @@
 }
 /* Fim section 2 */
 
+/* Sessão outros */
+.sectionOutrosMain {
+    width: 100%;
+    margin: 70px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+.secOutrosSubcontainer {
+    width: 100%;
+    max-width: 2700px;
+}
+.secPrimaryMessageContainer {
+    text-align: center;
+    text-transform: uppercase;
+}
+.secPrimaryMessageContainer p {
+    color: var(--city-background-green);
+    font-size: 1.9rem;
+}
+.secPrimaryMessageContainer h1 {
+    color: var(--city-background-2);
+    font-size: 3rem;
+}
+.secOutrosVantagens {
+    display: flex;
+    justify-content: center;
+    margin: 70px 0 0 0;
+    padding: 0 0 30px 0;
+    position: relative;
+}
+.secOutrosVantagens::after {
+    content: "";
+    width: 70%;
+    height: 0.5px;
+    background-color: var(--city-background-2);
+    position: absolute;
+    bottom: 0;
+}
+.secVantagens {
+    width: 450px;
+    border: 1px solid var(--city-background-green);
+    padding: 20px;
+    border-radius: 20px;
+}
+.secVantagens:not(:last-child) {
+    margin: 0 30px 0 0;
+}
+.secVantagemContentPrimary {
+    display: flex;
+    align-items: center;
+    margin: 0 0 40px 0;
+}
+.secVantagemIcon {
+    margin: 0 10px 0 0;
+}
+.secVantagemTitle h1 {
+    color: #fff;
+    border-bottom: 1px solid var(--city-background-green);
+    padding: 0 0 10px 0;
+}
+.secVantagemContentSecondary p {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 100;
+    text-align: justify;
+}
+.secOutrosSecondary {
+    margin: 70px 0 0 0;
+}
+.secSecondaryMessageContainer {
+    margin: 0 0 20px 0;
+}
+.secSecondaryMessageContainer h1 {
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+.secSecondVideo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.secSecondVideo video {
+    width: 90%;
+}
+/* Fim sessão outros */
+
 /* Sessão 3 */
 .section-3-main-container {
     display: flex;
@@ -470,16 +558,6 @@
     width: 600px;
 }
 /* Fim sessão do sobre */
-
-/* Sessão outros */
-.sectionOutrosMain {
-    width: 100%;
-}
-.secOutrosSubcontainer {
-    width: 100%;
-    max-width: 2700px;
-}
-/* Fim sessão outros */
 
 /* Sessão 8 */
 .section-8-main-container {
