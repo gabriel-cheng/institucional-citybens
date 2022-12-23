@@ -1,19 +1,19 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const api = require('../models/api');
+const api = require("../models/api");
 
-router.post('/api', api);
+router.post("/api", api);
 
-router.get('/filiais', (request, response) => {
-    response.render('filiais');
+router.get("/filiais", (request, response) => {
+    response.render("filiais");
 });
 
-router.post('/disponibilidade', (request, response) => {
-    response.render('disponibilidade');
+router.post("/disponibilidade", (request, response) => {
+    response.render("disponibilidade");
 });
 
-router.post('/simulacao', (request, response) => {
-    response.render('simulacao', {
+router.post("/simulacao", (request, response) => {
+    response.render("simulacao", {
         text: request.body.consorcioDadosValue,
         dadosNomeContent: request.body.dadosInputNome,
         dadosEmailContent: request.body.dadosInputEmail,
@@ -29,16 +29,16 @@ router.post('/simulacao', (request, response) => {
     });
 });
 
-router.post('/informe-seus-dados', (request, response) => {
-    response.render('informe-seus-dados', {text: request.body.sonho});
+router.post("/informe-seus-dados", (request, response) => {
+    response.render("informe-seus-dados", {text: request.body.sonho});
 });
 
-router.get('/consorcio', (request, response) => {
-    response.render('consorcio');
+router.get("/consorcio", (request, response) => {
+    response.render("consorcio");
 });
 
-router.get('/', (request, response) => {
-    response.render('index');
+router.get("/", (request, response) => {
+    response.render("index");
 });
 
-module.exports = router
+module.exports = router;

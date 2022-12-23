@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const axios = require('axios');
+const axios = require("axios");
 
-const apiRouter = router.post('/api', async(req, res) => {
+const apiRouter = router.post("/api", async(req, res) => {
     try {
         const request = await axios({
-            method: 'POST',
-            url: 'https://citybens.com.br/tipo-consorcio',
+            method: "POST",
+            url: "https://citybens.com.br/tipo-consorcio",
             headers: {"Content-Type": "application/json"},
             data: req.body
         });

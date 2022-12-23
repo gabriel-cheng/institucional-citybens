@@ -1,1 +1,1 @@
-code . && npm run server
+code . && npm run dev
