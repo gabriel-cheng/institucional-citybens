@@ -182,6 +182,7 @@
 .secOutrosSubcontainer {
     width: 100%;
     max-width: 2700px;
+    overflow: auto;
 }
 .secPrimaryMessageContainer {
     text-align: center;
@@ -199,7 +200,7 @@
     display: flex;
     justify-content: center;
     margin: 70px 0 0 0;
-    padding: 0 0 30px 0;
+    padding: 0 20px 30px 20px;
     position: relative;
 }
 .secOutrosVantagens::after {
@@ -266,22 +267,23 @@
     height: auto;
     margin: 70px 0 0 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 .ondeEncSubcontainer {
     width: 100%;
     max-width: 2700px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    overflow: auto;
 }
 .ondeEncTitleContainer {
     width: 95%;
     color: #fff;
     margin: 0 0 25px 0;
 }
-.ondeEncCardsContaner {
+.ondeEncCardsContainer {
     display: flex;
+    padding: 20px;
 }
 .ondeEncCard {
     width: 450px;
@@ -683,7 +685,8 @@
     margin: 0 70px;
 }
 .s7card3 p {
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
 }
 /* Fim sessão do sobre */
 
@@ -886,7 +889,6 @@
         min-height: 312px;
     }
 }
-
 @media screen and (max-width: 867px) {
     .main-top-card {
         display: grid;
@@ -915,7 +917,24 @@
         border-radius: 0 0 25px 25px;
     }
 }
-
+@media screen and (max-width: 796px) {
+    .s7CardsContainer {
+        grid-template-areas:
+            "s7card1"
+            "s7card2"
+            "s7card3"
+        ;
+    }
+    .s7card {
+        margin: 0 20px;
+    }
+    .s7titleContainer {
+        padding: 20px;
+    }
+    .s7titleContainer h1 {
+        font-size: 10vw;
+    }
+}
 @media screen and (max-width: 621px) {
     .section-2-card-1,
     .section-2-card-2,
@@ -936,25 +955,30 @@
     .section-3-titles h1 {
         font-size: 6vw;
     }
-
     .playstore-appstore-icons {
         flex-direction: row;
         align-items: center;
     }
-
     .playstore-appstore-icons img {
         max-width: 180px;
         width: 40%;
         min-width: 60px;
         height: auto;
     }
-
     .playstore-appstore-icons img:nth-of-type(1) {
         margin: 0 0 0 0;
     }
-
     .playstore-appstore-icons img:nth-of-type(2) {
         margin: 0 0 0 10px;
+    }
+    .ondeEncSubcontainer {
+        overflow: initial;
+    }
+    .ondeEncCardsContainer {
+        flex-direction: column;
+    }
+    .ondeEncCard {
+        margin: 0 0 30px 0 !important;
     }
 }
 

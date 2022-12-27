@@ -131,6 +131,7 @@ dt img {
             'content-2'
             'content-3'
         ;
+        text-align: -webkit-center;
     }
     .footer-content-1 {
         grid-area: content-1;
@@ -150,8 +151,10 @@ dt img {
         text-align: center;
         display: flex;
         flex-direction: column;
-        align-items: center;
         margin: 0;
+    }
+    .footerContent:not(:first-child) {
+        margin: 40px 0 0 0;
     }
     .footerContent {
         width: 100%;
