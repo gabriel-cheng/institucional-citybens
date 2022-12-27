@@ -1,0 +1,15 @@
+{
+    "name": "institucinal-citybens",
+    "version": 2,
+    "public": true,
+    "build": {
+        "src": "npm run start",
+        "use": "@vercel/node"
+    },
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "server.js"
+        }
+    ]
+}
