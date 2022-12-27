@@ -182,7 +182,6 @@
 .secOutrosSubcontainer {
     width: 100%;
     max-width: 2700px;
-    overflow: auto;
 }
 .secPrimaryMessageContainer {
     text-align: center;
