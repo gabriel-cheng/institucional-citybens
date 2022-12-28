@@ -19,7 +19,7 @@
 }
 .footer-section-1 {
     color: #fff;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     padding: 30px 60px;
     background-color: var(--city-background-5);
     display: flex;
@@ -189,5 +189,8 @@ dt img {
             'content-4'
         ;
         justify-content: center;
+    }
+    .footerNossosContatos h1 {
+        font-size: 9vw;
     }
 }
