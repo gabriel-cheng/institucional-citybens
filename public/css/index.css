@@ -100,18 +100,6 @@
     display: flex;
     padding: 15px 20px;
 }
-.section2Contents::-webkit-scrollbar {
-    height: 10px;
-}
-
-.section2Contents::-webkit-scrollbar-track {
-    background: transparent;
-    padding: 2px;
-}
-
-.section2Contents::-webkit-scrollbar-thumb {
-    background-color: rgb(22, 22, 22);
-}
 .section2Card1,
 .section2Card2,
 .section2Card3,
@@ -205,6 +193,7 @@
 .secOutrosCardsSubcontainer {
     display: flex;
     overflow: auto;
+    padding: 0 0 20px 0;
 }
 .secOutrosVantagens {
     display: flex;
@@ -271,7 +260,7 @@
 }
 /* Fim sessão outros */
 
-/* Onde nos encontrar */
+/* Onde nos encontrar
 
 #ondeEncontrarContainer {
     width: 100%;
@@ -404,7 +393,7 @@
     background-color: red;
 }
 
-/* Fim onde nos encontrar */
+Fim onde nos encontrar */
 
 /* Sessão 3 */
 .section-3-main-container {
@@ -500,6 +489,7 @@
 .s7titleContainer h1 {
     color: var(--city-background-blue);
     font-size: 6rem;
+    padding: 0 20px;
 }
 .s7cardLogoContainer {
     width: 100%;
@@ -765,7 +755,8 @@
         padding: 20px;
     }
     .s7titleContainer h1 {
-        font-size: 10vw;
+        font-size: 7vw;
+        padding: 0;
     }
 }
 @media screen and (max-width: 538px) {

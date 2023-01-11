@@ -48,3 +48,15 @@ a {
 p {
     color: #fff;
 }
+.scrollbarStyle::-webkit-scrollbar {
+    height: 10px;
+}
+
+.scrollbarStyle::-webkit-scrollbar-track {
+    background: transparent;
+    padding: 2px;
+}
+
+.scrollbarStyle::-webkit-scrollbar-thumb {
+    background-color: rgb(22, 22, 22);
+}

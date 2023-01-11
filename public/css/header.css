@@ -7,14 +7,13 @@
     transition: .3s ease-in-out;
     top: 0;
     background-color: var(--city-background-5);
-    padding: 0 0 10px 0;
+    padding: 20px 0 20px 0;
 }
 
 .header-subcontainer {
     display: flex;
     align-items: center;
     width: 85%;
-    padding: 10px 0 0 0;
 }
 
 .header-logo a img{
@@ -91,7 +90,7 @@
     display: none;
     color: #fff;
 }
-@media screen and (max-width: 867px) {
+@media screen and (max-width: 957px) {
     .header-navigation > ul, .navigation-button {
         display: none;
     }
@@ -134,7 +133,7 @@
     .menu-toggle {
         position: absolute;
         right: 7.5vw;
-        top: 10px;
+        top: 20px;
     }
 
     .header-navigation.on
