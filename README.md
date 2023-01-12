@@ -21,7 +21,7 @@ $npm install
 ```
 ou
 ```
-yarn
+$yarn
 ```
 
 3°- Dentro do diretório clonado, rode o seguinte comando para iniciar a aplicação:
