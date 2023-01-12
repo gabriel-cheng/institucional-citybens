@@ -10,11 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gabriel-cheng/institucional-project.git"
+    "url": "git+https://github.com/gabriel-cheng/institucional-citybens.git"
   },
   "keywords": [],
   "author": "Gabriel Henrique Souza de Carvalho",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/gabriel-cheng/institucional-project/issues"
   },
