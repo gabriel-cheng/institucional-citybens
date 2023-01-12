@@ -37,7 +37,10 @@
         <p class="dados-hello">Simulação</p>
         <div class="opcao-consorcio-escolhida">
             <i class="escolha-icone material-icons"></i>
-            <p class="escolha-text">{{text}}</p>
+            <div>
+                <p class="escolha-text"></p>
+                <p class="last_word_format"></p>
+            </div>
         </div>
     </div>
     <div class="section-5-contents">
@@ -89,11 +92,6 @@
                     <input name="valorParcelas" type="text" id="display_parcelas" value="R$ 6.600,00" readonly>
                 </div>
                 <input type="hidden" name="consorcioDadosValue" class="escolha-text-input" value="{{text}}">
-                <input type="hidden" name="simulacaoHiddenDadoNome" class="escolha-text-input" value="{{dadosNomeContent}}">
-                <input type="hidden" name="simulacaoHiddenDadoEmail" class="escolha-text-input" value="{{dadosEmailContent}}">
-                <input type="hidden" name="simulacaoHiddenDadoCelular" class="escolha-text-input" value="{{dadosCelularContent}}">
-                <input type="hidden" name="simulacaoHiddenDadoCep" class="escolha-text-input" value="{{dadosCepContent}}">
-                <input type="hidden" name="simulacaoHiddenDadoTermos" class="escolha-text-input" value="{{dadosTermosContent}}">
             </div>
             <input type="submit" class="section-5-input" value="Verificar disponibilidade">
         </form>
@@ -101,6 +99,20 @@
 </main>
 
 <script>
+    window.onload = () => {
+        const valor = document.querySelector('.checkbox-termos');
+        const icone = sessionStorage.getItem("icone");
+        const consorcioDe = sessionStorage.getItem("consorcioDe");
+        const span = sessionStorage.getItem("span");
+
+        document.querySelector(".last_word_format").textContent = span;
+        document.querySelector(".escolha-text").textContent = consorcioDe;
+        document.querySelector(".escolha-icone").textContent = icone;
+
+        requestDatasFromLocalApi();
+        definirFormaSimulacao()
+    };
+
     const inputPagar = document.querySelector('.input-pagar');
     const inputParcelas = document.querySelector('.input-parcelas');
     const h3ValorPagar = document.querySelector('.h3-valor-pagar');
@@ -114,114 +126,29 @@
     const maxValorParcela = document.querySelector('.maxValorParcela');
     const metadeValorParcela = document.querySelector('.metadeValorParcela');
 
-    function enviarParaWhatsapp() {
-        const nome = document.querySelector('[name=simulacaoHiddenDadoNome]').value;
-        const email = document.querySelector('[name=simulacaoHiddenDadoEmail]').value;
-        const celular = document.querySelector('[name=simulacaoHiddenDadoCelular]').value;
-        const cep = document.querySelector('[name=simulacaoHiddenDadoCep]').value;
-        const termos = document.querySelector('[name=simulacaoHiddenDadoTermos]').value;
-        const tipoConsorcio = document.querySelector('.escolha-text').textContent;
-        const valor = displayPagar.value;
-        const parcela = displayParcelas.value;
-        let tipoPagamento;
-        const formaDeSimulacao = document.querySelector('#formaDeSimulacaoSelect');
+    async function requestDatasFromLocalApi() {
+        const bemInformadoNoDropbox = sessionStorage.getItem("span");
+        let bem = "";
 
-        if(formaDeSimulacao.value == 'valorBem') {
-            formaDeSimulacao.textContent = 'valor do bem';
-            tipoPagamento = valor;
-        } else if(formaDeSimulacao.value == 'valorParcela') {
-            formaDeSimulacao.textContent = 'valor da parcela';
-            tipoPagamento = parcela;
-        } else {
-            console.log('Forma de simulação não reconhecida');
-        }
-
-        function firstCaseUp(nome) {
-            let nomeFirstCaseUp = nome.split(" ");
-
-            for(let i = 0; i < nomeFirstCaseUp.length; i++) {
-                nomeFirstCaseUp[i] = nomeFirstCaseUp[i][0].toUpperCase() + nomeFirstCaseUp[i].substr(1);
-            }
-
-            return nomeFirstCaseUp.join(" ");
-        }
-
-        const url = "https://wa.me/5518991163599?text="
-            + `*Olá, me chamo ${firstCaseUp(nome)} e tenho interesse em fazer um consórcio com a Citybens!*` + "%0a"
-            + "%0a"
-            + "*Estes são meus dados, por favor entre em contato comigo*" + "%0a"
-            + "%0a"
-            + "*Nome*: " + firstCaseUp(nome) + "%0a"
-            + "*E-mail*: " + email + "%0a"
-            + "*Telefone*: " + celular + "%0a"
-            + "*Cep*: " + cep + "%0a"
-            + "*Termos de uso*: " + termos + "%0a"
-            + "*Desejo fazer um*: " + tipoConsorcio + "%0a"
-            + `*Desejo pagar pelo ${formaDeSimulacao.textContent}, no valor de*: ` + tipoPagamento;
-        window.open(url, '_blank').focus();
-    }
-
-    function formatoBRL(n, c, d, t) {
-        c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
-        return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
-    }
-
-    (function rangeManipulation() {
-        (function() {
-            function mostrarValores(input, saida) {
-                input.addEventListener('input', () => {
-                    const value = input.value;
-                    saida.innerHTML = `R$ ${formatoBRL(value)}`;
-                });
-            }
-
-            mostrarValores(inputPagar, h3ValorPagar);
-            mostrarValores(inputParcelas, h3ValorParcelas);
-        })();
-
-        (function() {
-            function formDisponibilidade(input, display) {
-                try {
-                    input.addEventListener('input', () => {
-                        display.value = `R$ ${formatoBRL(input.value)}`;
-                    });
-                } catch {
-                    input.addEventListener('change', () => {
-                        display.innerHTML = `R$ ${formatoBRL(input.value)}`;
-                    });
-                }
-            }
-
-            formDisponibilidade(inputPagar, displayPagar);
-            formDisponibilidade(inputParcelas, displayParcelas);
-        })();
-    })();
-
-    (function requestDynamicValues() {
-        const btn = document.querySelector('.section-5-input');
-        const texto = document.querySelector('.escolha-text-input').value;
-        let bem = '';
         let resValues = {};
 
-        window.addEventListener('load', request);
-
-        switch(texto) {
-            case 'Consórcio de Imóveis':
+        switch(bemInformadoNoDropbox) {
+            case "Imóveis":
                 bem = 'imovel'
                 break;
-            case 'Consórcio de Automóveis':
+            case "Automóveis":
                 bem = 'auto'
                 break;
-            case 'Consórcio de Motos':
+            case "Motos":
                 bem = 'moto'
                 break;
-            case 'Consórcio de Serviços':
+            case "Serviços":
                 bem = 'servicos'
                 break;
-            case 'Consórcio de Pesados':
+            case "Pesados":
                 bem = 'pesado'
                 break;
-            case 'Consórcio de Eletrônicos':
+            case "Eletrônicos":
                 bem = 'eletro'
                 break;
             default:
@@ -229,7 +156,7 @@
                 break;
         }
 
-        async function request(event) {
+        try {
             const response = await fetch('http://localhost:3000/api', {
                 method: 'post',
                 headers: {"Content-Type": "application/json"},
@@ -268,10 +195,80 @@
             metadeValorParcela.textContent = `R$ ${formatoBRL(somaParcela)}`;
             minValorParcela.textContent = `R$ ${formatoBRL(resValues.minValorParcela)}`;
             maxValorParcela.textContent = `R$ ${formatoBRL(resValues.maxValorParcela)}`;
+        } catch(err) {
+            console.log({request_error: err});
         }
-    })();
+    }
 
-    window.addEventListener('load', definirFormaSimulacao);
+    function enviarParaWhatsapp() {
+        const tipoConsorcio = sessionStorage.getItem("tipoConsorcio");
+        const valor = displayPagar.value;
+        const parcela = displayParcelas.value;
+        let tipoPagamento;
+        const formaDeSimulacao = document.querySelector('#formaDeSimulacaoSelect');
+        const dadosUsuario = JSON.parse(sessionStorage.getItem("dadosUsuario"));
+
+        if(formaDeSimulacao.value == 'valorBem') {
+            formaDeSimulacao.textContent = 'valor do bem';
+            tipoPagamento = valor;
+        } else if(formaDeSimulacao.value == 'valorParcela') {
+            formaDeSimulacao.textContent = 'valor da parcela';
+            tipoPagamento = parcela;
+        } else {
+            console.log('Forma de simulação não reconhecida');
+        }
+
+        function firstCaseUp(nome) {
+            let nomeFirstCaseUp = nome.split(" ");
+
+            for(let i = 0; i < nomeFirstCaseUp.length; i++) {
+                nomeFirstCaseUp[i] = nomeFirstCaseUp[i][0].toUpperCase() + nomeFirstCaseUp[i].substr(1);
+            }
+
+            return nomeFirstCaseUp.join(" ");
+        }
+
+        const url = "https://wa.me/5518991163599?text="
+            + `*Olá, me chamo ${firstCaseUp(dadosUsuario.name)} e tenho interesse em fazer um consórcio com a Citybens!*` + "%0a"
+            + "%0a"
+            + "*Estes são meus dados, por favor entre em contato comigo*" + "%0a"
+            + "%0a"
+            + "*Nome*: " + firstCaseUp(dadosUsuario.name) + "%0a"
+            + "*E-mail*: " + dadosUsuario.email + "%0a"
+            + "*Telefone*: " + dadosUsuario.celular + "%0a"
+            + "*Cep*: " + dadosUsuario.cep + "%0a"
+            + "*Termos de uso*: " + dadosUsuario.termos + "%0a"
+            + "*Desejo fazer um*: " + tipoConsorcio + "%0a"
+            + `*Desejo pagar pelo ${formaDeSimulacao.textContent}, no valor de*: ` + tipoPagamento;
+        window.open(url, '_blank').focus();
+    }
+
+    function formatoBRL(n, c, d, t) {
+        c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+        return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+    }
+
+    function mostrarValoresNoh3(input, saida) {
+        input.addEventListener('input', () => {
+            const value = input.value;
+            saida.innerHTML = `R$ ${formatoBRL(value)}`;
+        });
+    }
+    mostrarValoresNoh3(inputPagar, h3ValorPagar);
+    mostrarValoresNoh3(inputParcelas, h3ValorParcelas);
+
+    function formDisponibilidade(input, display) {
+        input.addEventListener('input', () => {
+            display.value = `R$ ${formatoBRL(input.value)}`;
+        });
+
+        input.addEventListener('change', () => {
+            display.innerHTML = `R$ ${formatoBRL(input.value)}`;
+        });
+    }
+    formDisponibilidade(inputPagar, displayPagar);
+    formDisponibilidade(inputParcelas, displayParcelas);
+
     function definirFormaSimulacao() {
         const formaSimulacao = document.querySelector('#formaDeSimulacaoSelect');
         const rangeBem = document.querySelector('.section-5-range-1');

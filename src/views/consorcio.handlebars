@@ -56,3 +56,26 @@
         </div>
     </div>
 </main>
+
+<script>
+    const item = document.querySelectorAll(".item");
+    document.querySelector("#form-sonho").addEventListener("submit", setSessionStorageDropboxValue);
+
+    for(let i = 0; i < item.length; i++) {
+        item[i].addEventListener("mousedown", function(e) {
+            const icon = e.currentTarget.childNodes[1].textContent;
+            const consorcioDe = e.currentTarget.childNodes[3].firstChild.textContent;
+            const span = e.currentTarget.childNodes[3].lastElementChild.textContent;
+
+            sessionStorage.setItem("span", span);
+            sessionStorage.setItem("consorcioDe", consorcioDe);
+            sessionStorage.setItem("icone", icon);
+        });
+    }
+
+    function setSessionStorageDropboxValue() {
+        const dropText = document.querySelector("#input-drop").value;
+
+        sessionStorage.setItem("tipoConsorcio", dropText);
+    }
+</script>

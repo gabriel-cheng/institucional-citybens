@@ -4,7 +4,10 @@
             <p class="dados-hello">Olá!</p>
             <div class="opcao-consorcio-escolhida">
                 <i class="escolha-icone material-icons"></i>
-                <p class="escolha-text">{{text}}</p>
+                <div>
+                    <p class="escolha-text"></p>
+                    <p class="last_word_format"></p>
+                </div>
             </div>
             <p>*Antes de continuar, precisamos de algumas informações.</p>
         </div>
@@ -24,7 +27,7 @@
             </div>
 
             <div class="termos-de-uso">
-                <input class="checkbox-termos" type="checkbox" name="dadosInputTermos" id="" required checked>
+                <input class="checkbox-termos" type="checkbox" name="dadosInputTermos" id="input-termos" required checked>
                 <p>
                     Eu concordo com o <a target="_blank" href="/termos-de-uso">termo de privacidade</a>
                 </p>
@@ -37,14 +40,43 @@
     </div>
 </main>
 
+<style>
+</style>
+
 <script>
-    window.addEventListener('load', () => {
+    const formulario = document.querySelector(".consorcio-dados-form");
+
+    formulario.addEventListener("submit", () => {
+        const name = document.querySelector("#input-name").value;
+        const email = document.querySelector("#input-email").value;
+        const celular = document.querySelector("#input-celular").value;
+        const cep = document.querySelector("#input-cep").value;
+        const termos = document.querySelector("#input-termos").value;
+
+        const dadosUser = JSON.stringify({
+            name: name,
+            email: email,
+            celular: celular,
+            cep: cep,
+            termos: termos
+        });
+        sessionStorage.setItem("dadosUsuario", dadosUser);
+    });
+
+    window.onload = () => {
         const valor = document.querySelector('.checkbox-termos');
+        const icone = sessionStorage.getItem("icone");
+        const consorcioDe = sessionStorage.getItem("consorcioDe");
+        const span = sessionStorage.getItem("span");
+
+        document.querySelector(".last_word_format").textContent = span;
+        document.querySelector(".escolha-text").textContent = consorcioDe;
+        document.querySelector(".escolha-icone").textContent = icone;
 
         if(valor.checked) {
             valor.value = 'Concordo com os termos'
         } else {
             valor.value = 'Não concordo com os termos'
         }
-    });
+    };
 </script>
