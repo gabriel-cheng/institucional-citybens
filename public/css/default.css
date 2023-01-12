@@ -58,5 +58,5 @@ p {
 }
 
 .scrollbarStyle::-webkit-scrollbar-thumb {
-    background-color: rgb(22, 22, 22);
+    background-color: rgb(114 114 114);
 }

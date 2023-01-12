@@ -522,13 +522,13 @@ Fim onde nos encontrar */
     transition: all .3s ease-in-out;
 }
 .s7background1 {
-    background-image: url(/images/background/citybens.jpg);
+    background-image: url(/images/background/citybens.png);
 }
 .s7background2 {
-    background-image: url(/images/background/section-2/agro.jpg);
+    background-image: url(/images/background/section-2/agro.png);
 }
 .s7background3 {
-    background-image: url(/images/background/familia-carro.jpg);
+    background-image: url(/images/background/familia-carro.png);
 }
 .s7card:hover > .s7background {
     transform: scale(1.1);
