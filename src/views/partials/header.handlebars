@@ -25,3 +25,28 @@
         </nav>
     </div>
 </header>
+
+<script>
+    const menuSection = document.querySelector(".header-navigation");
+    const menuToggle = menuSection.querySelector(".menu-toggle");
+    let show = true;
+
+    menuToggle.addEventListener("click", () => {
+
+        document.body.style.overflow = show ? "hidden" : "initial";
+
+        menuSection.classList.toggle("on", show);
+        show = !show;
+    });
+
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("header-container").style.top = "0";
+        } else {
+            document.getElementById("header-container").style.top = "-90px";
+        }
+        prevScrollpos = currentScrollPos;
+    };
+</script>

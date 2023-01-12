@@ -1,4 +1,20 @@
+const axios = require("axios");
+
 module.exports = {
+    api: async(req, res) => {
+        try {
+            const request = await axios({
+                method: "POST",
+                url: "https://citybens.com.br/tipo-consorcio",
+                headers: {"Content-Type": "application/json"},
+                data: req.body
+            });
+
+            res.status(200).json(request.data);
+        } catch(err) {
+            console.log({error_message: err});
+        }
+    },
     filiais: (req, res) => {
         res.render("filiais");
     },
@@ -6,20 +22,7 @@ module.exports = {
         res.render("disponibilidade");
     },
     simulacao: (req, res) => {
-        res.render("simulacao", {
-            text: req.body.consorcioDadosValue,
-            dadosNomeContent: req.body.dadosInputNome,
-            dadosEmailContent: req.body.dadosInputEmail,
-            dadosCelularContent: req.body.dadosInputCelular,
-            dadosCepContent: req.body.dadosInputCep,
-            dadosTermosContent: req.body.dadosInputTermos,
-            formDatas: {
-                nome: req.body.inputName,
-                email: req.body.inputEmail,
-                celular: req.body.inputCelular,
-                cep: req.body.inputCep
-            }
-        });
+        res.render("simulacao");
     },
     informeSeusDados: (req, res) => {
         res.render("informe-seus-dados", {text: req.body.sonho});

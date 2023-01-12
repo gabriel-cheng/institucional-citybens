@@ -1,9 +1,7 @@
 const router = require("express").Router();
-const api = require("../models/api");
 const controller = require("../controllers/index.controller");
 
-router.post("/api", api);
-
+router.post("/api", controller.api);
 router.get("/filiais", controller.filiais);
 router.post("/disponibilidade", controller.disponibilidade);
 router.post("/simulacao", controller.simulacao);
