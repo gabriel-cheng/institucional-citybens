@@ -30,6 +30,7 @@
     background-color: var(--city-background-2);
     width: 100%;
     height: 2px;
+    cursor: pointer;
 }
 
 .section-5-range-description {
