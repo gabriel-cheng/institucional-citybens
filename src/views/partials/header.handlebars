@@ -29,15 +29,25 @@
 <script>
     const menuSection = document.querySelector(".header-navigation");
     const menuToggle = menuSection.querySelector(".menu-toggle");
+    const navigations = menuSection.querySelectorAll("li");
     let show = true;
 
-    menuToggle.addEventListener("click", () => {
+    for(let i = 0; i < navigations.length; i++) {
+        setToggleEvent(navigations[i]);
+    }
 
+    setToggleEvent(menuToggle);
+
+    function setToggleEvent(el) {
+        return el.addEventListener("click", toggleHeaderResponsivity);
+    }
+
+    function toggleHeaderResponsivity() {
         document.body.style.overflow = show ? "hidden" : "initial";
 
         menuSection.classList.toggle("on", show);
         show = !show;
-    });
+    }
 
     var prevScrollpos = window.pageYOffset;
     window.onscroll = function() {
