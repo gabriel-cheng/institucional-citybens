@@ -238,29 +238,7 @@
     font-weight: 100;
     text-align: justify;
 }
-.secOutrosSecondary {
-    margin: 70px 0 0 0;
-}
-.secSecondaryMessageContainer {
-    margin: 0 0 20px 0;
-}
-.secSecondaryMessageContainer h1 {
-    color: #fff;
-    font-size: 3rem;
-    text-transform: uppercase;
-    text-align: center;
-}
-.secSecondVideo {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.secSecondVideo video {
-    width: 90%;
-}
 /* Fim sessão outros */
-
-/* Onde nos encontrar
 
 #ondeEncontrarContainer {
     width: 100%;
@@ -317,13 +295,13 @@
     transition: all .3s ease-in-out;
 }
 .ondeEncBg1{
-    background-image: url(/images/background/aracatuba.jpeg);
+    background-image: url(/images/background/aracatuba.png);
 }
 .ondeEncBg2{
-    background-image: url(/images/background/rio-preto.jpg);
+    background-image: url(/images/background/rio-preto.png);
 }
 .ondeEncBg3{
-    background-image: url(/images/background/rio-de-janeiro.jpg);
+    background-image: url(/images/background/rio-de-janeiro.png);
 }
 .ondeEncCard:not(:last-child) {
     margin: 0 30px 0 0;
@@ -392,8 +370,6 @@
 .ondeEncCardButton a::after {
     background-color: red;
 }
-
-Fim onde nos encontrar */
 
 /* Sessão 3 */
 .section-3-main-container {
