@@ -29,11 +29,15 @@
 <script>
     const menuSection = document.querySelector(".header-navigation");
     const menuToggle = menuSection.querySelector(".menu-toggle");
+    const navigationsContainerUl = menuSection.querySelector("ul");
     const navigations = menuSection.querySelectorAll("li");
+    const navigationsContainerStyles = getComputedStyle(navigationsContainerUl);
     let show = true;
 
-    for(let i = 0; i < navigations.length; i++) {
-        setToggleEvent(navigations[i]);
+    if(navigationsContainerStyles.display == "none") {
+        for(let i = 0; i < navigations.length; i++) {
+            setToggleEvent(navigations[i]);
+        }
     }
 
     setToggleEvent(menuToggle);
