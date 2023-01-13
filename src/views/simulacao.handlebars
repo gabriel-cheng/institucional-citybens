@@ -161,15 +161,15 @@
                 method: 'post',
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({bem: bem})
-            }).then(e => e.json())
-
-            const data = response.data;
+            })
+            .then(e => e.json())
+            .then(e => e.data)
 
             resValues = {
-                minValorPagar: data.smaaler,
-                maxValorPagar: data.largest,
-                minValorParcela: Math.round(data.samallestInstallament),
-                maxValorParcela: Math.round(data.biggestInstallament)
+                minValorPagar: response.smaaler,
+                maxValorPagar: response.largest,
+                minValorParcela: Math.round(response.samallestInstallament),
+                maxValorParcela: Math.round(response.biggestInstallament)
             };
 
             const somaPagar = (parseInt(resValues.minValorPagar) + parseInt(resValues.maxValorPagar)) / 2;
