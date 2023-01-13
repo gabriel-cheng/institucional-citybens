@@ -243,15 +243,16 @@
 #ondeEncontrarContainer {
     width: 100%;
     height: auto;
-    margin: 70px 0 0 0;
+    margin: 50px 0 0 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .ondeEncSubcontainer {
     width: 100%;
     max-width: 2700px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 }
 .ondeEncTitleContainer {
     width: 95%;
@@ -260,15 +261,13 @@
     max-width: 2700px;
 }
 .ondeEncCardsContainer {
-    overflow: auto;
-}
-.ondeEncCardsSubcontainer {
     display: flex;
-    justify-content: center;
-    padding: 20px;
+    overflow: auto;
+    padding: 20px 20px;
 }
 .ondeEncCard {
-    width: 450px;
+    min-width: 450px;
+    /* width: 450px; */
     height: 600px;
     position: relative;
     z-index: 1;
@@ -377,7 +376,7 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    margin: 70px 0 0 0;
+    margin: 50px 0 0 0;
     height: auto;
 }
 .section-3-grid-items {
@@ -767,6 +766,9 @@
     }
 }
 @media screen and (max-width: 493px) {
+    .section-3-main-container {
+        margin: 0;
+    }
     .secOutrosCardsSubcontainer {
         flex-direction: column;
         overflow: initial;
@@ -777,6 +779,24 @@
     }
     .secVantagens:not(:last-child) {
         margin: 0 0 30px 0;
+    }
+    .ondeEncCardsContainer {
+        flex-direction: column;
+        overflow: initial;
+    }
+    .ondeEncCard {
+        min-width: 90vw;
+        height: 99vw;
+    }
+    .ondeEncCardTitle h1 {
+        font-size: 7vw;
+    }
+    .ondeEncCard1 {
+        margin: 0 !important
+    }
+    .ondeEncCard2,
+    .ondeEncCard3 {
+        margin-top: 20px 0 !important;
     }
 }
 @media screen and (max-width: 484px) {
@@ -801,9 +821,6 @@
     }
     .ondeEncSubcontainer {
         overflow: initial;
-    }
-    .ondeEncCardsSubcontainer {
-        flex-direction: column;
     }
     .ondeEncCard {
         margin: 0 0 30px 0 !important;
