@@ -99,8 +99,6 @@
 </main>
 
 <script>
-    const port = process.env.PORT || 3000;
-
     window.onload = () => {
         const valor = document.querySelector('.checkbox-termos');
         const icone = sessionStorage.getItem("icone");
@@ -159,7 +157,7 @@
         }
 
         try {
-            const response = await fetch(`http://localhost:${port}/api`, {
+            const response = await fetch('/api', {
                 method: 'post',
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({bem: bem})
