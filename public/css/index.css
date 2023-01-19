@@ -19,8 +19,8 @@
 .main-top-card {
     display: flex;
     justify-content: center;
-    max-width: 4000px;
-    width: 85%;
+    max-width: 2700px;
+    width: 95%;
 }
 .left-card-container {
     background-color: var(--city-background-3);
@@ -65,12 +65,9 @@
 }
 .left-card-container,
 .right-card-slider {
-    max-width: 1400px;
-    width: 80%;
-    min-width: 280px;
-    max-height: 1400px;
+    width: 100%;
+    max-height: 800px;
     height: 35vw;
-    min-height: 320px
 }
 .right-card-slider {
     border-radius: 0 25px 25px 0;
@@ -93,12 +90,12 @@
     justify-content: center;
 }
 .section2Contents {
-    width: 100%;
+    width: 95%;
     max-width: 2700px;
     height: 500px;
     overflow: auto;
     display: flex;
-    padding: 15px 20px;
+    padding: 15px 0;
 }
 .section2Card1,
 .section2Card2,
@@ -193,13 +190,14 @@
 .secOutrosCardsSubcontainer {
     display: flex;
     overflow: auto;
+    width: 95%;
     padding: 0 0 20px 0;
 }
 .secOutrosVantagens {
     display: flex;
     justify-content: center;
     margin: 70px 0 0 0;
-    padding: 0 20px 30px 20px;
+    padding: 0 0 50px 0;
     position: relative;
 }
 .secVantagens {
@@ -258,7 +256,7 @@
     width: 95%;
     color: #fff;
     margin: 0 0 25px 0;
-    max-width: 2700px;
+    max-width: 1450px;
 }
 .ondeEncCardsContainer {
     display: flex;
@@ -267,7 +265,6 @@
 }
 .ondeEncCard {
     min-width: 450px;
-    /* width: 450px; */
     height: 600px;
     position: relative;
     z-index: 1;
@@ -381,7 +378,7 @@
 }
 .section-3-grid-items {
     max-width: 2700px;
-    width: 90%;
+    width: 95%;
     background-color: var(--city-background-3);
     border-radius: 20px;
     display: grid;
@@ -450,7 +447,7 @@
     width: 100%;
     max-width: 2700px;
     height: auto;
-    padding: 40px 0;
+    padding: 20px 0 0 0;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -635,7 +632,7 @@
         margin-right: 12%;
     }
     .section-8-cards-container {
-        padding: 0 10px;
+        padding: 0 20px 20px 20px;
         justify-content: initial;
     }
 }
@@ -692,6 +689,9 @@
     }
 }
 @media screen and (max-width: 867px) {
+    #main-container {
+        padding: 85px 0 0 0;
+    }
     .main-top-card {
         display: grid;
         grid-template-areas:
@@ -701,7 +701,7 @@
     }
     .left-card-container,
     .right-card-slider {
-        width: 95vw;
+        width: 100%;
         height: 40vw;
         min-height: 270px;
     }
@@ -724,10 +724,10 @@
         ;
     }
     .s7card {
-        margin: 0 20px;
+        margin: 0 10px;
     }
     .s7titleContainer {
-        padding: 20px;
+        padding: 0 20px;
     }
     .s7titleContainer h1 {
         font-size: 7vw;
@@ -742,7 +742,7 @@
         overflow: initial;
         height: auto;
         flex-direction: column;
-        padding: 15px 10px;
+        padding: 15px 0;
     }
     .topicTypeDescription {
         font-size: 6vw;
@@ -771,28 +771,34 @@
     }
     .secOutrosCardsSubcontainer {
         flex-direction: column;
+        align-items: center;
         overflow: initial;
+        padding: 0 !important;
     }
     .secVantagens {
         width: 100%;
-        min-width: 309px;
+        min-width: auto;
     }
     .secVantagens:not(:last-child) {
         margin: 0 0 30px 0;
     }
-    .ondeEncCardsContainer {
-        flex-direction: column;
+    .ondeEncSubcontainer {
         overflow: initial;
     }
+    .ondeEncCardsContainer {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        overflow: initial;
+        padding: 20px 0;
+    }
     .ondeEncCard {
-        min-width: 90vw;
-        height: 99vw;
+        min-width: 95%;
+        height: 100vw;
+        margin: 0 0 30px 0 !important;
     }
     .ondeEncCardTitle h1 {
         font-size: 7vw;
-    }
-    .ondeEncCard1 {
-        margin: 0 !important
     }
     .ondeEncCard2,
     .ondeEncCard3 {
@@ -818,12 +824,6 @@
     }
     .playstore-appstore-icons img:nth-of-type(2) {
         margin: 0 0 0 10px;
-    }
-    .ondeEncSubcontainer {
-        overflow: initial;
-    }
-    .ondeEncCard {
-        margin: 0 0 30px 0 !important;
     }
 }
 @media screen and (max-width: 460px) {

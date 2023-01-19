@@ -163,7 +163,7 @@ dt img {
 }
 @media screen and (max-width: 551px) {
     .footer-section-2 {
-        padding: 8px 0;
+        padding: 15px 0;
         grid-template-areas:
             'logo'
             'icons'
