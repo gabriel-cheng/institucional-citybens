@@ -834,15 +834,10 @@
         padding: 20px 10vw;
     }
     .top-card-button {
-        max-width: 203px;
-        width: 70vw;
-        font-size: 2.9vw;
+        font-size: 3.2vw;
     }
 }
 @media screen and (max-width: 430px) {
-    .top-card-button {
-        font-size: 3.1;
-    }
     .cardDescription P {
         font-size: 3.5vw;
     }
@@ -850,9 +845,6 @@
 @media screen and (max-width: 380px) {
     .blog-title {
         padding: 0 6px;
-    }
-    .top-card-button {
-        font-size: 3.5vw;
     }
 }
 @media screen and (max-width: 362px) {
