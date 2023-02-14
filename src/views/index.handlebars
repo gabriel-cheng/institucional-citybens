@@ -216,28 +216,71 @@
                 <button class="blog-button">Acessar</button>
             </div>
             <div class="section-8-cards-container">
-                <div class="section-8-card section-8-card-1">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta explicabo quam hic, maxime nesciunt, odio at deleniti aspernatur id nostrum molestias voluptates ut laudantium reiciendis officia, ad quo quaerat minus.</p>
-                    <div class="card-date-container">
-                        <h1>26</h1>
-                        <p>2022</p>
-                    </div>
-                </div>
-                <div class="section-8-card section-8-card-2">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At minus animi officiis illum cumque, fugit beatae soluta deserunt explicabo laborum veritatis corporis molestias, maiores autem porro dignissimos id ea eaque.</p>
-                    <div class="card-date-container">
-                        <h1>27</h1>
-                        <p>2022</p>
-                    </div>
-                </div>
-                <div class="section-8-card section-8-card-3">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis necessitatibus soluta quos consequatur dignissimos voluptatem tempore reiciendis dicta neque, vero officiis. Rem ipsum dignissimos nostrum enim adipisci ut eaque eligendi?</p>
-                    <div class="card-date-container">
-                        <h1>28</h1>
-                        <p>2022</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 </main>
+
+<script>
+    const allPosts = [];
+
+    window.onload = () => {
+        loadPostsFromBlog();
+    }
+
+    async function request() {
+        const url = "http://localhost:5000/posts"
+
+        try {
+            const response = await fetch(url, {
+                method: "GET"
+            })
+            .then(e => e.json())
+
+            response.forEach(el => allPosts.push(el));
+            return response;
+        } catch(err) {
+            console.log({find_posts_error: err});
+        }
+    }
+
+    async function loadPostsFromBlog() {
+        const sec8Contents = document.querySelector(".section-8-cards-container");
+        const data = await request();
+
+        for(let i = 0; i < data.length; i++) {
+            const a = mountBlogCard(data[i].title, data[i].description);
+
+            sec8Contents.appendChild(a);
+        }
+    }
+
+    function mountBlogCard(blogTitle, blogDescription) {
+        const section8Card = createNewHTMLElement("div", "section-8-card");
+        const cardBlogTitle = createNewHTMLElement("div", "card-blog-title");
+        const h1Title = createNewHTMLElement("h1");
+        const cardBlogDescription = createNewHTMLElement("div", "card-blog-description");
+        const pDescription = createNewHTMLElement("p");
+
+        h1Title.textContent = blogTitle;
+        pDescription.textContent = blogDescription;
+
+        cardBlogTitle.appendChild(h1Title);
+        cardBlogDescription.appendChild(pDescription);
+
+        [cardBlogTitle, cardBlogDescription].forEach(el => section8Card.appendChild(el));
+
+        return section8Card;
+    }
+
+    function createNewHTMLElement(el, __class = null) {
+        const element = document.createElement(el);
+        if(__class != null) {
+            element.classList.add(__class);
+        }
+
+        return element;
+    }
+
+    createNewHTMLElement();
+</script>
