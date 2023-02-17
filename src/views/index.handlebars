@@ -209,21 +209,107 @@
             </div>
         </div>
     </section>
-    <section class="section-8-main-container">
-        <div class="section-8-contents">
-            <div class="blog-title">
-                <h1>Blog citybens</h1>
-                <button class="blog-button">Acessar</button>
-            </div>
-            <div class="section-8-cards-container">
-            </div>
+    <section class="blogMainContainer">
+        <div class="blogSubcontainer">
+            <div class="scrollbarStyle blogCardsContainer"></div>
         </div>
     </section>
 </main>
 
-<script>
-    const allPosts = [];
+<style>
+    .blogMainContainer {
+        width: 100%;
+        height: auto;
+        margin: 50px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .blogSubcontainer {
+        width: 100%;
+        max-width: 2700px;
+        display: flex;
+        justify-content: center;
+    }
+    .blogCardsContainer {
+        display: flex;
+        overflow: auto;
+        padding: 20px 10px;
+    }
+    .blogCard {
+        max-width: 500px;
+        min-width: 500px;
+        height: 600px;
+        background-color: #fafafa;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        border-radius: 20px;
+    }
+    .blogCard:not(:last-child) {
+        margin: 0 20px 0 0;
+    }
+    .blogBackgroundContainer {
+        max-width: 500px;
+        width: 100%;
+    }
+    .blogBackgroundContainer img {
+        max-width: 500px;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+    }
+    .blogBodyContent {
+        padding: 10px 20px;
+    }
+    .blogBodyTitle {
+        margin: 0 0 15px 0;
+    }
+    .blogBodyDescription {
+        overflow-y: auto;
+        max-height: 215px;
+        color: black;
+    }
+    .blogBodyDescription p {
+        color: black;
+        font-size: 1.3rem;
+        font-weight: 300;
+    }
+    .blogDateContainer {
+        position: absolute;
+        bottom: 20px;
+    }
+    .blogDateContainer p {
+        color: black;
+        font-size: 1.3rem;
+    }
+    .blogPubButton {
+        position: absolute;
+        bottom: 30px;
+        right: 20px;
+    }
+    .blogPubButton a {
+        font-size: 1.3rem;
+    }
+    @media screen and (max-width: 519px) {
+        .blogCard {
+            max-width: 500px;
+            min-width: 100%;
+            height: 160vw;
+            max-height: 600px;
+        }
+    }
+    @media screen and (max-width: 335px) {
+        .blogPubButton {
+            bottom: 50px;
+        }
+        .blogDateContainer {
+            right: 20px;
+        }
+    }
+</style>
 
+<script>
     window.onload = () => {
         loadPostsFromBlog();
     }
@@ -237,7 +323,6 @@
             })
             .then(e => e.json())
 
-            response.forEach(el => allPosts.push(el));
             return response;
         } catch(err) {
             console.log({find_posts_error: err});
@@ -245,32 +330,53 @@
     }
 
     async function loadPostsFromBlog() {
-        const sec8Contents = document.querySelector(".section-8-cards-container");
+        const blogCardsContainer = document.querySelector(".blogCardsContainer");
         const data = await request();
 
         for(let i = 0; i < data.length; i++) {
-            const a = mountBlogCard(data[i].title, data[i].description);
+            const pictureSrc = data[i].pictureSrc;
+            const pictureUrl = `http://localhost:5000/${pictureSrc}`;
+            const a = mountBlogCard(data[i].title, data[i].description, pictureUrl);
 
-            sec8Contents.appendChild(a);
+            blogCardsContainer.appendChild(a);
         }
     }
 
-    function mountBlogCard(blogTitle, blogDescription) {
-        const section8Card = createNewHTMLElement("div", "section-8-card");
-        const cardBlogTitle = createNewHTMLElement("div", "card-blog-title");
-        const h1Title = createNewHTMLElement("h1");
-        const cardBlogDescription = createNewHTMLElement("div", "card-blog-description");
+    function mountBlogCard(title, description, pictureSrc) {
+        const blogCard = createNewHTMLElement("div", "blogCard");
+        const blogBodyContainer = createNewHTMLElement("div", "blogBodyContainer");
+        const blogBackgroundContainer = createNewHTMLElement("div", "blogBackgroundContainer");
+        const img = createNewHTMLElement("img");
+        const blogBodyContent = createNewHTMLElement("div", "blogBodyContent");
+        const blogBodyTitle = createNewHTMLElement("div", "blogBodyTitle");
+        const h1 = createNewHTMLElement("h1");
+        const blogBodyDescription = createNewHTMLElement("div", "blogBodyDescription");
         const pDescription = createNewHTMLElement("p");
+        const blogDateContainer = createNewHTMLElement("div", "blogDateContainer");
+        const pBlogDate = createNewHTMLElement("blogDate");
+        const blogPubButton = createNewHTMLElement("div", "blogPubButton");
+        const aButton = createNewHTMLElement("a");
 
-        h1Title.textContent = blogTitle;
-        pDescription.textContent = blogDescription;
+        aButton.href = "/consorcio";
+        aButton.textContent = "Publicação completa →";
+        blogPubButton.appendChild(aButton);
+        pBlogDate.textContent = "Teste de elemento JS";
+        blogDateContainer.appendChild(pBlogDate);
+        pDescription.textContent = description;
+        blogBodyDescription.appendChild(pDescription);
+        h1.textContent = title;
+        blogBodyTitle.appendChild(h1);
+        blogBodyContent.appendChild(blogBodyTitle);
+        blogBodyContent.appendChild(blogBodyDescription);
+        blogBodyContent.appendChild(blogDateContainer);
+        blogBodyContent.appendChild(blogPubButton);
+        img.src = URL.createObjectURL(new Blob([pictureSrc], {type: 'image/jpg'}));
+        blogBackgroundContainer.appendChild(img);
+        blogBodyContainer.appendChild(blogBackgroundContainer);
+        blogBodyContainer.appendChild(blogBodyContent);
+        blogCard.appendChild(blogBodyContainer);
 
-        cardBlogTitle.appendChild(h1Title);
-        cardBlogDescription.appendChild(pDescription);
-
-        [cardBlogTitle, cardBlogDescription].forEach(el => section8Card.appendChild(el));
-
-        return section8Card;
+        return blogCard;
     }
 
     function createNewHTMLElement(el, __class = null) {
