@@ -257,6 +257,7 @@
     .blogBackgroundContainer img {
         max-width: 500px;
         width: 100%;
+        max-height: 282px;
         border-radius: 20px 20px 0 0;
     }
     .blogBodyContent {
@@ -334,12 +335,17 @@
         const data = await request();
 
         for(let i = 0; i < data.length; i++) {
-            const pictureSrc = data[i].pictureSrc;
-            const pictureUrl = `http://localhost:5000/${pictureSrc}`;
-            const a = mountBlogCard(data[i].title, data[i].description, pictureUrl);
+            const pictureName = data[i].pictureSrc.split("\\")[2];
+            const blogCard = mountBlogCard(data[i].title, data[i].description, backgroundImage(pictureName));
 
-            blogCardsContainer.appendChild(a);
+            blogCardsContainer.appendChild(blogCard);
         }
+
+
+    }
+
+    function backgroundImage(filename) {
+        return `http://localhost:5000/posts/files/${filename}`;
     }
 
     function mountBlogCard(title, description, pictureSrc) {
@@ -370,7 +376,7 @@
         blogBodyContent.appendChild(blogBodyDescription);
         blogBodyContent.appendChild(blogDateContainer);
         blogBodyContent.appendChild(blogPubButton);
-        img.src = URL.createObjectURL(new Blob([pictureSrc], {type: 'image/jpg'}));
+        img.src = pictureSrc;
         blogBackgroundContainer.appendChild(img);
         blogBodyContainer.appendChild(blogBackgroundContainer);
         blogBodyContainer.appendChild(blogBodyContent);
