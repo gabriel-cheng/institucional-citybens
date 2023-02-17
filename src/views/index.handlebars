@@ -331,6 +331,7 @@
     async function loadPostsFromBlog() {
         const blogCardsContainer = document.querySelector(".blogCardsContainer");
         const data = await request();
+        data.reverse();
 
         for(let i = 0; i < data.length; i++) {
             const pictureName = data[i].pictureSrc.split("\\")[2];
