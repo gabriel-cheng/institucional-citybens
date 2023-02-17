@@ -246,17 +246,17 @@
     flex-direction: column;
     align-items: center;
 }
-.ondeEncSubcontainer {
-    width: 100%;
-    max-width: 2700px;
-    display: flex;
-    justify-content: center;
-}
 .ondeEncTitleContainer {
     width: 95%;
     color: #fff;
     margin: 0 0 25px 0;
     max-width: 1450px;
+}
+.ondeEncSubcontainer {
+    width: 100%;
+    max-width: 2700px;
+    display: flex;
+    justify-content: center;
 }
 .ondeEncCardsContainer {
     display: flex;
@@ -541,86 +541,6 @@
     width: 100%;
 }
 /* Fim sessão do sobre */
-
-/* Sessão 8 */
-.section-8-main-container {
-    margin: 70px 0 0 0;
-}
-.section-8-main-container h1 {
-    margin-bottom: 0;
-}
-.blog-title {
-    margin: 0 0 30px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1120px;
-    width: 100%;
-    padding: 0 20px;
-    color: var(--city-background-green);
-}
-.blog-button {
-    padding: 8px 20px;
-    background-color: var(--city-background-blue);
-    border: 0;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 1.3rem;
-    color: white;
-}
-.blog-button:hover {
-    background-color: white;
-    color: black;
-    transition: background-color 0.3s ease;
-}
-.section-8-contents {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.section-8-cards-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    overflow: auto;
-}
-.section-8-card {
-    max-width: 360px;
-    width: 100%;
-    max-height: 400px;
-    height: 100vw;
-    min-height: 312px;
-    background-color: var(--city-background-blue);
-    padding: 30px 25px;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.section-8-card:not(:last-child) {
-    margin: 0 20px 0 0;
-}
-.card-date-container::before {
-    content: " ";
-    width: 100%;
-    height: 2px;
-    background-color: rgba(255, 255, 255, 1);
-    position: absolute;
-    top: 0;
-}
-.card-date-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    padding: 25px 0 0 0 ;
-}
-.card-date-container h1 {
-    font-size: 2.5em;
-    color: var(--city-background-green);
-}
-/* Fim sessão 8 */
 
 /**/
 /* Media queries */
