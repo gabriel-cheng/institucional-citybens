@@ -253,6 +253,7 @@
     .blogBackgroundContainer {
         max-width: 500px;
         width: 100%;
+        position: relative;
     }
     .blogBackgroundContainer img {
         max-width: 500px;
@@ -278,7 +279,8 @@
     }
     .blogDateContainer {
         position: absolute;
-        bottom: 20px;
+        bottom: 10px;
+        font-size: 1.4rem;
     }
     .blogDateContainer p {
         color: black;
@@ -286,11 +288,14 @@
     }
     .blogPubButton {
         position: absolute;
-        bottom: 30px;
-        right: 20px;
+        bottom: 5px;
+        left: 5px;
+        background-color: rgba(0, 0, 0, 0.486);
+        padding: 0 5px;
     }
     .blogPubButton a {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+        color: white
     }
     @media screen and (max-width: 519px) {
         .blogCard {
@@ -298,14 +303,6 @@
             min-width: 100%;
             height: 160vw;
             max-height: 600px;
-        }
-    }
-    @media screen and (max-width: 335px) {
-        .blogPubButton {
-            bottom: 50px;
-        }
-        .blogDateContainer {
-            right: 20px;
         }
     }
 </style>
@@ -363,10 +360,7 @@
         const blogPubButton = createNewHTMLElement("div", "blogPubButton");
         const aButton = createNewHTMLElement("a");
 
-        aButton.href = "/consorcio";
-        aButton.textContent = "Publicação completa →";
-        blogPubButton.appendChild(aButton);
-        pBlogDate.textContent = "Teste de elemento JS";
+        pBlogDate.textContent = "17 fev. 2023";
         blogDateContainer.appendChild(pBlogDate);
         pDescription.textContent = description;
         blogBodyDescription.appendChild(pDescription);
@@ -375,9 +369,12 @@
         blogBodyContent.appendChild(blogBodyTitle);
         blogBodyContent.appendChild(blogBodyDescription);
         blogBodyContent.appendChild(blogDateContainer);
-        blogBodyContent.appendChild(blogPubButton);
         img.src = pictureSrc;
+        aButton.href = "/consorcio";
+        aButton.textContent = "Publicação completa →";
+        blogPubButton.appendChild(aButton);
         blogBackgroundContainer.appendChild(img);
+        blogBackgroundContainer.appendChild(blogPubButton);
         blogBodyContainer.appendChild(blogBackgroundContainer);
         blogBodyContainer.appendChild(blogBodyContent);
         blogCard.appendChild(blogBodyContainer);
