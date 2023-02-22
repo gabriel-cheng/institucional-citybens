@@ -335,7 +335,7 @@
 
         for(let i = 0; i < data.length; i++) {
             const pictureName = data[i].pictureSrc.split("\\")[2];
-            const blogCard = mountBlogCard(data[i].title, data[i].description, backgroundImage(pictureName));
+            const blogCard = mountBlogCard(data[i].title, data[i].description, backgroundImage(pictureName), data[i].date);
 
             blogCardsContainer.appendChild(blogCard);
         }
@@ -345,7 +345,7 @@
         return `http://localhost:5000/posts/files/${filename}`;
     }
 
-    function mountBlogCard(title, description, pictureSrc) {
+    function mountBlogCard(title, description, pictureSrc, date) {
         const blogCard = createNewHTMLElement("div", "blogCard");
         const blogBodyContainer = createNewHTMLElement("div", "blogBodyContainer");
         const blogBackgroundContainer = createNewHTMLElement("div", "blogBackgroundContainer");
@@ -359,8 +359,9 @@
         const pBlogDate = createNewHTMLElement("blogDate");
         const blogPubButton = createNewHTMLElement("div", "blogPubButton");
         const aButton = createNewHTMLElement("a");
+        const currentDate = date.split("T")[0].split("-").reverse();
 
-        pBlogDate.textContent = "17 fev. 2023";
+        pBlogDate.textContent = `${currentDate[0]}/${currentDate[1]}/${currentDate[2]}`;
         blogDateContainer.appendChild(pBlogDate);
         pDescription.textContent = description;
         blogBodyDescription.appendChild(pDescription);
