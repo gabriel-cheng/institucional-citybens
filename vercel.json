@@ -11,16 +11,9 @@
         },
         {
             "src": "**/*/.handlebars",
-            "use": "handlebars-cli"
-        },
-        {
-            "src": "src/views/*.handlebars",
-            "use": "handlebars-cli",
+            "use": "handlebars",
             "config": {
-                "partials": {
-                    "header": "src/views/partials/header.handlebars",
-                    "footer": "src/views/partials/footer.handlebars"
-                }
+                "extensions": ["handlebars"]
             }
         }
     ]
