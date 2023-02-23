@@ -12,9 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/gabriel-cheng/institucional-citybens.git"
   },
-  "engines": {
-    "node": "14.x"
-  },
   "keywords": [],
   "author": "Gabriel Henrique Souza de Carvalho",
   "license": "MIT",
