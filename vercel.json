@@ -13,9 +13,6 @@
             "src": "src/views/*.handlebars",
             "use": "handlebars-cli",
             "config": {
-                "layouts": {
-                    "main": "src/views/layouts/main.handlebars"
-                },
                 "partials": {
                     "header": "src/views/partials/header.handlebars",
                     "footer": "src/views/partials/footer.handlebars"
