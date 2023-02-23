@@ -2,8 +2,25 @@
     "version": 2,
     "builds": [
         {
-            "src": "node src/index.js",
+            "src": "src/index.js",
             "use": "@vercel/node"
+        },
+        {
+            "src": "public/**",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "src/views/*.handlebars",
+            "use": "handlebars-cli",
+            "config": {
+                "layouts": {
+                    "main": "src/views/layouts/main.handlebars"
+                },
+                "partials": {
+                    "header": "src/views/partials/header.handlebars",
+                    "footer": "src/views/partials/footer.handlebars"
+                }
+            }
         }
     ]
 }
