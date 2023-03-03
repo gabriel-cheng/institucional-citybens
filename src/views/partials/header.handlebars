@@ -34,11 +34,9 @@
     const navigationsContainerStyles = getComputedStyle(navigationsContainerUl);
     let show = true;
 
-    window.onload = () => {
-        if(navigationsContainerStyles.display == "none") {
-            for(let i = 0; i < navigations.length; i++) {
-                setToggleEvent(navigations[i]);
-            }
+    if(navigationsContainerStyles.display == "none") {
+        for(let i = 0; i < navigations.length; i++) {
+            setToggleEvent(navigations[i]);
         }
     }
 
