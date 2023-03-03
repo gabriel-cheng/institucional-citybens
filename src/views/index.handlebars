@@ -1,3 +1,99 @@
+<style>
+    .blogMainContainer {
+        width: 100%;
+        height: auto;
+        margin: 50px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .blogSubcontainer {
+        width: 100%;
+        max-width: 2700px;
+        display: flex;
+        justify-content: center;
+    }
+    .blogCardsContainer {
+        display: flex;
+        overflow: auto;
+        padding: 20px 0;
+        margin: 0 10px;
+    }
+    .blogCard {
+        max-width: 500px;
+        min-width: 500px;
+        height: 600px;
+        background-color: #fafafa;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        border-radius: 20px;
+    }
+    .blogCard:not(:last-child) {
+        margin: 0 20px 0 0;
+    }
+    .blogBackgroundContainer {
+        max-width: 500px;
+        width: 100%;
+        position: relative;
+    }
+    .blogBackgroundContainer img {
+        max-width: 500px;
+        width: 100%;
+        max-height: 282px;
+        border-radius: 20px 20px 0 0;
+    }
+    .blogBodyContent {
+        padding: 10px 20px;
+    }
+    .blogBodyTitle {
+        margin: 0 0 15px 0;
+    }
+    .blogBodyTitle h1 {
+        font-weight: bold;
+    }
+    .blogBodyDescription {
+        overflow-y: auto;
+        max-height: 215px;
+        color: black;
+        padding: 0 10px 0 0;
+    }
+    .blogBodyDescription p {
+        color: black;
+        font-size: 1.6rem;
+        font-weight: 300;
+    }
+    .blogDateContainer {
+        position: absolute;
+        bottom: 10px;
+        font-size: 1.4rem;
+    }
+    .blogDateContainer p {
+        color: black;
+        font-size: 1.3rem;
+    }
+    .blogPubButton {
+        position: absolute;
+        bottom: 5px;
+        left: 5px;
+        background-color: rgba(0, 0, 0, 0.486);
+        padding: 0 5px;
+    }
+    .blogPubButton a {
+        font-size: 1.5rem;
+        color: white
+    }
+    @media screen and (max-width: 519px) {
+        .blogCard {
+            max-width: 500px;
+            min-width: 100%;
+            height: 160vw;
+            max-height: 600px;
+        }
+    }
+</style>
+
 <main id="main-container">
     <section class="section-1-top-card-container">
         <div class="main-top-card">
@@ -217,109 +313,15 @@
     </section>
 </main>
 
-<style>
-    .blogMainContainer {
-        width: 100%;
-        height: auto;
-        margin: 50px 0 0 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .blogSubcontainer {
-        width: 100%;
-        max-width: 2700px;
-        display: flex;
-        justify-content: center;
-    }
-    .blogCardsContainer {
-        display: flex;
-        overflow: auto;
-        padding: 20px 0;
-        margin: 0 10px;
-    }
-    .blogCard {
-        max-width: 500px;
-        min-width: 500px;
-        height: 600px;
-        background-color: #fafafa;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-        border-radius: 20px;
-    }
-    .blogCard:not(:last-child) {
-        margin: 0 20px 0 0;
-    }
-    .blogBackgroundContainer {
-        max-width: 500px;
-        width: 100%;
-        position: relative;
-    }
-    .blogBackgroundContainer img {
-        max-width: 500px;
-        width: 100%;
-        max-height: 282px;
-        border-radius: 20px 20px 0 0;
-    }
-    .blogBodyContent {
-        padding: 10px 20px;
-    }
-    .blogBodyTitle {
-        margin: 0 0 15px 0;
-    }
-    .blogBodyTitle h1 {
-        font-weight: bold;
-    }
-    .blogBodyDescription {
-        overflow-y: auto;
-        max-height: 215px;
-        color: black;
-        padding: 0 10px 0 0;
-    }
-    .blogBodyDescription p {
-        color: black;
-        font-size: 1.6rem;
-        font-weight: 300;
-    }
-    .blogDateContainer {
-        position: absolute;
-        bottom: 10px;
-        font-size: 1.4rem;
-    }
-    .blogDateContainer p {
-        color: black;
-        font-size: 1.3rem;
-    }
-    .blogPubButton {
-        position: absolute;
-        bottom: 5px;
-        left: 5px;
-        background-color: rgba(0, 0, 0, 0.486);
-        padding: 0 5px;
-    }
-    .blogPubButton a {
-        font-size: 1.5rem;
-        color: white
-    }
-    @media screen and (max-width: 519px) {
-        .blogCard {
-            max-width: 500px;
-            min-width: 100%;
-            height: 160vw;
-            max-height: 600px;
-        }
-    }
-</style>
-
 <script>
+    const baseURL = "{{ baseURL }}";
+
     window.onload = () => {
         loadPostsFromBlog();
     }
 
     async function request() {
-        const url = "http://localhost:5000/posts"
+        const url = `${baseURL}/posts`
 
         try {
             const response = await fetch(url, {
@@ -347,7 +349,7 @@
     }
 
     function backgroundImage(filename) {
-        return `http://localhost:5000/posts/files/${filename}`;
+        return `${baseURL}/posts/files/${filename}`;
     }
 
     function mountBlogCard(title, description, pictureSrc, date) {

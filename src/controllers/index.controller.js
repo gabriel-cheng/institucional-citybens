@@ -31,6 +31,6 @@ module.exports = {
         res.render("consorcio");
     },
     index: (req, res) => {
-        res.render("index");
+        res.render("index", { baseURL: process.env.BASEURL });
     }
 };
